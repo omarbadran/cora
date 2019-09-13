@@ -25,7 +25,7 @@ const files = {
 }
 
 /**
- * Compile SASS
+ * Styles
  */
 function styles () {    
     return gulp.src(files.sass.src)
@@ -39,7 +39,7 @@ function styles () {
 
 
 /**
- * Compile javascript
+ * Scripts
  */
 function scripts () {
     return gulp.src(files.js.src)
