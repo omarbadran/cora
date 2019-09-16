@@ -1,41 +1,52 @@
 <?php
 /**
- * Cora Options
- *
- *
- * @package      CoraDashboard
- * @author       Omar Badran
-*/
-
-global $cora_options;
-
-$cora_options = new CoraFramework( array(
-    'id'         => 'cora',
-    'page_title' => esc_html__('Cora Settings' , 'cora'),
-    'menu_title' => esc_html__('Cora' , 'cora'),
-    'display_version' => 'v1.0.0'
-));
-
-
-
-/**
- *  Menu Options 
+ * Menu options
  * 
+ * @since 1.0.0
+ * @author Omar Badran
 */
 
-# Add the section
-$cora_options->add_section([
+# Add Section
+$this->options->add_section([
     'id'        =>  'menu',
     'title'     =>  esc_html__('Menu' , 'cora'),
     'icon'      =>  'sort',
 ]);
 
+# Layout
+$this->options->add_field([
+    'id'           =>  'layout',
+    'section'      =>  'menu',
+    'title'        =>   esc_html__('Layout' , 'cora'),
+    'type'         =>   'select',
+    'default'      =>   'vertical',
+    'options'      =>   [
+        [
+            'id'    => 'vertical',
+            'text'  =>  esc_html__('Vertical' , 'cora')
+        ],
+        [
+            'id'    => 'horizontal',
+            'text'  =>  esc_html__('Horizontal' , 'cora')
+        ],
+    ]
+]);
+
+# Layout
+$this->options->add_field([
+    'id'           =>  'collapse_button',
+    'section'      =>  'menu',
+    'title'        =>   esc_html__('Collapse Button' , 'cora'),
+    'type'         =>   'switch',
+    'default'      =>   true,
+    'condition'    =>   ['layout', '===', 'vertical']
+]);
+
 
 # Menu Items
 add_action('_admin_menu', function (){
-    global $cora_options;
     
-    $cora_options->add_field([
+    $this->options->add_field([
         'id'        =>  'items',
         'section'   =>  'menu',
         'title'     =>  esc_html__('Menu Items' , 'cora'),
@@ -83,11 +94,11 @@ add_action('_admin_menu', function (){
                 'id'    =>  'hide_for',
                 'title' =>  esc_html__('Hide For' , 'cora'),
                 'type'  =>  'select',
-                'options' => cora_get_roles(),
+                'options' => $this->get_roles(),
                 'multiple' => true
             ]
         ],
-        'default'   =>  cora_get_menu_items(),
+        'default' =>  $this->get_menu_items(),
         'new_item_default'  => [
             'type'          =>  'link',
             'title'         =>  esc_html__('New Item', 'cora'),
