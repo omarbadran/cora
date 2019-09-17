@@ -99,7 +99,7 @@ class Cora {
         add_action( 'admin_enqueue_scripts', array( $this  , "scripts" ) );
 
         # Load modules
-        foreach (['menu', 'optimization'] as $module) {
+        foreach (['menu', 'dashboard', 'theme', 'media', 'optimization'] as $module) {
 
             require_once $this->dir . "modules/$module/class.$module.php";
 

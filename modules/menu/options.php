@@ -89,7 +89,7 @@ add_action('_admin_menu', function (){
                 'title' =>  esc_html__('Page Content' , 'cora'),
                 'type'  =>  'editor',
                 'condition' => ['type', '==', 'page']
-                ],
+            ],
             [
                 'id'    =>  'hide_for',
                 'title' =>  esc_html__('Hide For' , 'cora'),
