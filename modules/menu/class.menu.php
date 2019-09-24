@@ -37,6 +37,10 @@ class Cora_Menu {
 
         # Build menu
         add_action( 'admin_menu', array( $this  , "build_menu" ), PHP_INT_MAX );
+        
+        add_filter( 'gettext', array( $this  , "collapse_menu_text" ), 10, 3 );
+
+        add_filter( 'adminmenu', array( $this  , "branding" ) );
 
     }
 
@@ -59,14 +63,15 @@ class Cora_Menu {
         # Detect if new items were added, maybe the user installed a new plugin?
         if($before_edit !== $items){
             $should_update = true;
-        }
 
-        # Add new items
-        foreach ($before_edit as $key => $item) {
-            if (! in_array( $item['info'], array_column($items, 'info') ) ) {
-                $items[] = $item;
+            # Add new items
+            foreach ($before_edit as $key => $item) {
+                if (! in_array( $item['info'], array_column($items, 'info') ) ) {
+                    $items[] = $item;
+                }
             }
         }
+
         
         # Removed items missing items    
         foreach ($items as $item) {
@@ -122,8 +127,8 @@ class Cora_Menu {
             }
             
             # Custom Icon
-            if ( isset($custom_icon) ) {
-                $item[6] = 'dashicons-cora-' . $custom_icon;
+            if ( isset($value['custom_icon']) ) {
+                $item[6] = 'dashicons-cora-' . $value['custom_icon'];
             }
 
             # Add the item
@@ -192,5 +197,38 @@ class Cora_Menu {
         return $roles;
 
     }
+
+    /**
+     * Change 'Collapse menu' text.
+     *
+     * @since       1.0.0
+     * @access      public
+     * @return      array
+     */
+    public function collapse_menu_text($translated, $original, $domain) {
+
+        if ($original == 'Collapse menu'){
+            return 'Hide navigation'; 
+        }
+
+        return $translated;
+
+    }
+
+    /**
+     * Branding.
+     *
+     * @since       1.0.0
+     * @access      public
+     * @return      array
+     */
+    public function branding() {
+
+        $name = get_bloginfo();
+
+        echo "<li class='cora-branding'>$name</li>";
+
+    }
+
 
 }

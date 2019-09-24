@@ -1,0 +1,290 @@
+/* Admin Menu: variables */
+
+:root{
+    --menu_width: 220px;
+    --menu_folded_width: 55px;
+}
+
+
+/* Admin Menu: Hide arrow */
+
+#adminmenumain{
+    a.wp-has-current-submenu:after, a.current:after {
+        display: none;
+    }
+    .wp-menu-arrow{
+        display: none;
+    }
+}
+
+
+/* Admin Menu: Menu Width */
+
+#adminmenumain{
+
+    #adminmenu, .wp-submenu, #adminmenuback, #adminmenuwrap {
+        width: var(--menu_width);
+    }
+      
+    .wp-submenu {
+        left: calc(var(--menu_width) - 30px);
+    }
+
+}
+
+
+/* Admin Menu: Folded width */
+
+.folded #adminmenumain {
+
+    #adminmenu,
+    #adminmenuback,
+    #adminmenuwrap,
+    .wp-submenu,
+    li.menu-top,
+    .wp-menu-image,
+    .collapse-button-icon
+    {
+        width: var(--menu_folded_width);
+    }
+    
+    .opensub .wp-submenu{
+        left: var(--menu_folded_width) !important;
+    }
+
+    li{
+        background: transparent !important;
+        a{
+            border-radius: 4px;
+            margin: 0 10px;
+            .wp-menu-image{
+                width: 37px;
+            }
+        }
+    }
+
+}
+
+
+/* Admin Menu: Custom icons */
+
+#adminmenumain{
+    div[class*=' dashicons-cora']::before{
+        font-family: 'Material Icons' !important;
+        font-weight: normal;
+        font-style: normal;
+        display: inline-block;
+        line-height: 1;
+        text-transform: none;
+        letter-spacing: normal;
+        word-wrap: normal;
+        white-space: nowrap;
+        direction: ltr;
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+        -moz-osx-font-smoothing: grayscale;
+        font-feature-settings: 'liga';
+    }    
+}
+
+
+/* Admin Menu: Items (not folded) */
+
+body:not(.folded) #adminmenumain{
+
+    #adminmenu{
+        padding: 0 30px;
+        box-sizing: border-box;
+        float: left;
+        margin-top: 95px;
+    }
+
+    a.menu-top{
+        padding: 0px 10px;
+        border-radius: 4px;
+    }
+
+    li.menu-top{
+        border-radius: 4px;
+    }
+
+    div.wp-menu-image{
+        width: fit-content;
+        margin-right: 14px;
+    }
+
+    div.wp-menu-name {
+        padding: 10px 0 6px 0;
+        line-height: 1;    
+    }
+
+    .wp-menu-image::before{
+        font-size: 18px;
+        padding: 0;
+        line-height: 30px;    
+    }
+    
+    li.menu-top {
+        min-height: 30px;
+        float: left;
+        width: 100%;
+    }
+    .wp-menu-image{
+        height: 30px;
+    }
+
+    .wp-has-current-submenu .wp-submenu,
+    .wp-has-current-submenu .wp-submenu:hover
+    {
+        width: 100%;
+        padding-bottom: 20px;
+    }
+
+    .wp-not-current-submenu:hover:after{
+        display: none;
+    }
+
+    #adminmenu .wp-submenu-head, #adminmenu a.menu-top{
+        font-family: 'Josefin Sans', sans-serif;
+        font-weight: bold;
+    }
+}
+
+
+/* Admin Menu: Items (folded) */
+
+body.folded #adminmenumain{
+    .wp-menu-image::before{
+        font-size: 20px;
+    }
+}
+
+
+/* Admin Menu: Colors */
+
+#adminmenuback,
+#adminmenuwrap,
+#adminmenu {
+	background: var(--menu_background);
+}
+
+#adminmenu a {
+	color: var(--menu_item_text);
+}
+
+#adminmenu div.wp-menu-image:before {
+	color: var(--menu_item_text);
+}
+
+#adminmenu a:hover,
+#adminmenu li.menu-top:hover,
+#adminmenu li.opensub > a.menu-top,
+#adminmenu li > a.menu-top:focus {
+	color: var(--menu_highlight_text);
+	background-color: var(--menu_highlight_background);
+}
+
+#collapse-button{
+    color: var(--menu_item_text);
+    float: left;
+    margin-top: 15px;
+
+    &:hover, &:focus{
+        color: var(--menu_highlight_text);
+    }
+}
+
+#adminmenu .wp-submenu li.current,
+#adminmenu li.menu-top:hover div.wp-menu-image:before,
+#adminmenu li.opensub > a.menu-top div.wp-menu-image:before {
+	color: var(--menu_highlight_text);
+}
+
+
+#adminmenu .wp-submenu,
+#adminmenu .wp-has-current-submenu .wp-submenu,
+#adminmenu .wp-has-current-submenu.opensub .wp-submenu,
+.folded #adminmenu .wp-has-current-submenu .wp-submenu,
+#adminmenu a.wp-has-current-submenu:focus + .wp-submenu {
+	background: var(--menu_background);
+}
+
+#adminmenu li.wp-has-submenu.wp-not-current-submenu.opensub:hover:after {
+	border-right-color: var(--menu_background);
+}
+
+#adminmenu .wp-submenu .wp-submenu-head {
+	color: var(--menu_item_text);
+}
+
+#adminmenu .wp-has-current-submenu .wp-submenu a,
+.folded #adminmenu .wp-has-current-submenu .wp-submenu a,
+#adminmenu a.wp-has-current-submenu:focus + .wp-submenu a,
+#adminmenu .wp-has-current-submenu.opensub .wp-submenu a {
+	color: var(--menu_item_text);
+
+	&:focus, &:hover {
+		color: var(--menu_highlight_text);
+	}
+}
+
+#adminmenu .wp-submenu a {
+	color: var(--menu_item_text);
+
+	&:focus, &:hover {
+		color: var(--menu_highlight_text);
+	}
+}
+
+
+#adminmenu .opensub .wp-submenu li.current a,
+#adminmenu a.wp-has-current-submenu:focus + .wp-submenu li.current a,
+#adminmenu .wp-has-current-submenu.opensub .wp-submenu li.current a {
+	color: var(--menu_item_text);
+
+	&:hover, &:focus {
+		color: var(--menu_item_text);
+	}
+}
+
+ul#adminmenu a.wp-has-current-submenu:after,
+ul#adminmenu > li.current > a.current:after {
+    border-right-color: #f1f1f1;
+}
+
+#adminmenu li.current a.menu-top,
+#adminmenu li.wp-has-current-submenu a.wp-has-current-submenu,
+#adminmenu li.wp-has-current-submenu .wp-submenu .wp-submenu-head,
+.folded #adminmenu li.current.menu-top {
+	color: var(--menu_highlight_text);
+	background: var(--menu_highlight_background);
+}
+
+#adminmenu .current div.wp-menu-image:before,
+#adminmenu li.wp-has-current-submenu div.wp-menu-image:before,
+#adminmenu a.current:hover div.wp-menu-image:before,
+#adminmenu li.wp-has-current-submenu a:focus div.wp-menu-image:before,
+#adminmenu li.wp-has-current-submenu.opensub div.wp-menu-image:before,
+#adminmenu li:hover div.wp-menu-image:before,
+#adminmenu li a:focus div.wp-menu-image:before,
+#adminmenu li.opensub div.wp-menu-image:before,
+.ie8 #adminmenu li.opensub div.wp-menu-image:before {
+	color: var(--menu_highlight_text);
+}
+
+/* Admin Menu: Branding */
+
+.cora-branding{
+    font-family: Josefin Sans,sans-serif;
+    font-weight: 700;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    font-size: 25px;
+    color: var(--menu_highlight_text);
+}
+body.folded{
+    .cora-branding{
+        display: none;
+    }
+}
