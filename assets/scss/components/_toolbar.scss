@@ -1,4 +1,4 @@
-/* Admin Menu: width */
+/* Toolbar: width */
 
 body:not(.folded) #wpadminbar{
     left: var(--menu_width);
@@ -8,4 +8,8 @@ body:not(.folded) #wpadminbar{
 body.folded #wpadminbar{
     left: var(--menu_folded_width);
     width: calc(100% - var(--menu_folded_width));
+}
+
+html.wp-toolbar {
+    padding: 0px;
 }

@@ -1,3 +1,27 @@
 /* Typography: load fonts */
 
 @import url('https://fonts.googleapis.com/css?family=Josefin+Sans:700');
+
+
+/* Typography: Links */
+
+a{
+    color: var(--primary_link_color);
+}
+
+/* Typography: Headings */
+
+h1{
+    color: var(--primary_text_color);
+    font-family: Josefin Sans,sans-serif;
+    font-weight: 700;
+}
+
+.wrap h1{
+    margin-bottom: 15px;
+}
+
+#dashboard-widgets h3, #dashboard-widgets h4, #dashboard_quick_press .drafts h2, h2, h3 {
+    color: var(--primary_text_color);
+}
+

@@ -1,0 +1,112 @@
+/* Layout */
+
+body {
+    background: var(--primary_background_color);
+    color: var(--primary_text_color);
+}
+
+#wpcontent, #wpfooter {
+    margin-left: var(--menu_width);
+    padding: 50px 40px;
+}
+
+.folded {
+    #wpcontent, #wpfooter {
+        margin-left: var(--menu_folded_width);
+    }    
+}
+
+.wrap {
+    margin: 0;
+}
+
+
+/* Boxes */
+
+.postbox, .stuffbox{
+    border: none;
+    box-shadow: none;
+    background: var(--secondary_background_colour);
+    border-radius: 5px;
+
+    * {
+        border-color: transparent !important;
+    }
+
+    .inside {
+        margin: 18px 0;
+    }    
+}
+
+.metabox-holder {
+    .postbox>h3, .stuffbox>h3, h2.hndle, h3.hndle {
+        font-size: 14px;
+        padding: 10px 14px;
+        font-weight: 700;
+        padding-bottom: 14px;
+    }
+}
+
+/* Dashboard */
+
+.community-events ul{
+    background: rgba(0, 0, 0, 0.08);
+    li{
+        color: var(--secondary_text_colour);
+
+    }
+}
+#dashboard_quick_press .drafts li time{
+    color: var(--secondary_text_colour);
+}
+#future-posts ul span, #published-posts ul span{
+    color: var(--secondary_text_colour);
+}
+
+/* Meta Links */
+
+#screen-meta{
+    background-color: var(--secondary_background_colour);
+    border: transparent  !important;
+    margin-bottom: 15px;
+}
+
+#contextual-help-back{
+    background-color: var(--secondary_background_colour);
+    border: 0;
+}
+
+.contextual-help-tabs{
+
+    a:hover{
+        color: var(--secondary_text_colour) ;
+    }
+
+    .active{
+        background: var(--primary_background_color);
+
+        a{
+            border: 0;
+            color: var(--primary_text_color);
+        }        
+    }
+
+}
+
+
+#screen-meta-links {
+    button {
+        background: var(--secondary_background_colour)  !important;
+        color: var(--secondary_text_colour)  !important;
+        border-radius: 3px  !important;
+        border: transparent  !important;
+
+        &:active, &:focus, &:hover {
+            color: #32373c;
+        }
+    }
+}
+
+
+
+/* Buttons */

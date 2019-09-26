@@ -1,11 +1,3 @@
-/* Admin Menu: variables */
-
-:root{
-    --menu_width: 220px;
-    --menu_folded_width: 55px;
-}
-
-
 /* Admin Menu: Hide arrow */
 
 #adminmenumain{
@@ -96,7 +88,7 @@ body:not(.folded) #adminmenumain{
         padding: 0 30px;
         box-sizing: border-box;
         float: left;
-        margin-top: 95px;
+        margin-top: 90px;
     }
 
     a.menu-top{

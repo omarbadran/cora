@@ -4,13 +4,13 @@
 defined( 'ABSPATH' ) || exit;
 
 /**
- * Colors Class
+ * appearance Class
  * 
  * 
  * @since 1.0.0
  * @author Omar Badran
  */
-class Cora_Colors {
+class Cora_appearance {
     
     /**
      * Options framework class.
@@ -55,7 +55,7 @@ class Cora_Colors {
 
         foreach ($this->options->fields as $field) {
 
-            if ($field['section'] == 'colors' && $field['type'] == 'color') {
+            if ($field['section'] == 'appearance' && $field['type'] == 'color') {
 
                 $id = $field['id'];
                 $section = $field['section'];
@@ -84,7 +84,7 @@ class Cora_Colors {
             <script>
                 jQuery(document).ready(function($) {
                     <?php foreach ($this->options->fields as $field) { ?>
-                        CoraFramework.$watch( "values.colors.<?php echo $field['id'] ?>", newVal => {
+                        CoraFramework.$watch( "values.appearance.<?php echo $field['id'] ?>", newVal => {
                             document.documentElement.style.setProperty("--<?php echo $field['id'] ?>", newVal);                            
                         })
                     <?php } ?>

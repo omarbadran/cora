@@ -9,7 +9,7 @@
 # Add Section
 $this->options->add_section([
     'id'        =>  'menu',
-    'title'     =>  esc_html__('Menu' , 'cora'),
+    'title'     =>  esc_html__('Admin Menu' , 'cora'),
     'icon'      =>  'sort',
 ]);
 
