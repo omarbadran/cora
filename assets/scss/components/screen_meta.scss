@@ -1,0 +1,42 @@
+/* Meta Links */
+
+#screen-meta{
+    background-color: var(--secondary_background_colour);
+    border: transparent  !important;
+    margin-bottom: 15px;
+}
+
+#contextual-help-back{
+    background-color: var(--secondary_background_colour);
+    border: 0;
+}
+
+.contextual-help-tabs{
+
+    a:hover{
+        color: var(--secondary_text_colour) ;
+    }
+
+    .active{
+        background: var(--primary_background_color);
+
+        a{
+            border: 0;
+            color: var(--primary_text_color);
+        }        
+    }
+
+}
+
+#screen-meta-links {
+    button {
+        background: var(--secondary_background_colour)  !important;
+        color: var(--secondary_text_colour)  !important;
+        border-radius: 3px  !important;
+        border: transparent  !important;
+
+        &:active, &:focus, &:hover {
+            color: #32373c;
+        }
+    }
+}

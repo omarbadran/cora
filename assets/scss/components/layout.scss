@@ -1,0 +1,21 @@
+/* Layout */
+
+body {
+    background: var(--primary_background_color);
+    color: var(--primary_text_color);
+}
+
+#wpcontent, #wpfooter {
+    margin-left: var(--menu_width);
+    padding: 50px 40px;
+}
+
+.folded {
+    #wpcontent, #wpfooter {
+        margin-left: var(--menu_folded_width);
+    }    
+}
+
+.wrap {
+    margin: 0;
+}

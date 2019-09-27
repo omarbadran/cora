@@ -1,0 +1,17 @@
+/* Dashboard */
+
+.community-events ul{
+    background: rgba(0, 0, 0, 0.08);
+    li{
+        color: var(--secondary_text_colour);
+
+    }
+}
+
+#dashboard_quick_press .drafts li time{
+    color: var(--secondary_text_colour);
+}
+
+#future-posts ul span, #published-posts ul span{
+    color: var(--secondary_text_colour);
+}

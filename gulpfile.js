@@ -1,6 +1,5 @@
 const gulp = require('gulp');
 
-const sourcemaps = require('gulp-sourcemaps');
 const sass = require('gulp-sass');
 const concat = require('gulp-concat');
 const babel = require('gulp-babel');
@@ -8,6 +7,7 @@ const uglify = require('gulp-uglify');
 const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
+var sassGlob = require('gulp-sass-glob');
 
 
 /**
@@ -15,7 +15,7 @@ const cssnano = require('cssnano');
  */
 const files = { 
     sass: {
-        src:    'assets/scss/**/*.scss',
+        src:    'assets/scss/*.scss',
         dist:   'assets/css'
     },
     js: {
@@ -29,10 +29,9 @@ const files = {
  */
 function styles () {    
     return gulp.src(files.sass.src)
-        .pipe(sourcemaps.init())
+        .pipe(sassGlob())
         .pipe(sass())
         .pipe(postcss([ autoprefixer(), cssnano() ]))
-        .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest(files.sass.dist)
     );
 }
