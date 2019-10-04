@@ -44,3 +44,27 @@ $this->options->add_field([
     'type'      =>  'color',
     'default'   =>  '#02B875'
 ]);
+
+$this->options->add_field([
+    'id'        =>  'menu_submenu_background',
+    'section'   =>  'appearance',
+    'title'     =>  'Submenu background',
+    'type'      =>  'color',
+    'default'   =>  '#363C43'
+]);
+
+$this->options->add_field([
+    'id'        =>  'menu_submenu_item_text',
+    'section'   =>  'appearance',
+    'title'     =>  'Submenu item text',
+    'type'      =>  'color',
+    'default'   =>  'rgba(255, 255, 255, 0.2)'
+]);
+
+$this->options->add_field([
+    'id'        =>  'menu_submenu_highlight_text',
+    'section'   =>  'appearance',
+    'title'     =>  'Submenu item text (Highlight)',
+    'type'      =>  'color',
+    'default'   =>  'rgba(255, 255, 255, 0.9)'
+]);

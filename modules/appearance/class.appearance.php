@@ -83,11 +83,11 @@ class Cora_appearance {
         ?>
             <script>
                 jQuery(document).ready(function($) {
-                    <?php foreach ($this->options->fields as $field) { ?>
+                    <?php foreach ($this->options->fields as $field) { if($field['section'] == 'appearance') {?>
                         CoraFramework.$watch( "values.appearance.<?php echo $field['id'] ?>", newVal => {
                             document.documentElement.style.setProperty("--<?php echo $field['id'] ?>", newVal);                            
                         })
-                    <?php } ?>
+                    <?php }} ?>
                 });
             </script>
         <?php

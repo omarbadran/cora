@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "gulp scripts & gulp styles & gulp watch"
+    "start": "gulp scripts & gulp styles & gulp watch",
+    "sass": "gulp styles"
   },
   "repository": {
     "type": "git",

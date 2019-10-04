@@ -1,0 +1,39 @@
+/* Posts */
+.comment-ays,
+.feature-filter,
+.imgedit-group,
+.popular-tags,
+.stuffbox,
+.widgets-holder-wrap,
+.wp-editor-container,
+p.popular-tags,
+table.widefat {
+    margin: 20px 0px;
+    float: left;
+    width: 100%;
+    background: var(--secondary_background_colour);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.alternate, .striped>tbody>:nth-child(odd), ul.striped>:nth-child(odd){
+    background-color: var(--secondary_background_colour);
+}
+
+.widefat thead td, .widefat thead th {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.widefat tfoot td, .widefat tfoot th{
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.row-actions {
+    color: var(--secondary_background_colour);
+}
+
+.subsubsub {
+    margin: 15px 0 0;
+}
+
+.ac_match, .subsubsub a.current {
+    color: var(--primary_text_color);
+}

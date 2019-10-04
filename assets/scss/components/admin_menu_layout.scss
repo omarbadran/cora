@@ -1,0 +1,206 @@
+/* Admin Menu: Hide arrow */
+
+#adminmenumain {
+    a.wp-has-current-submenu:after, a.current:after {
+        display: none;
+    }
+    .wp-menu-arrow{
+        display: none;
+    }
+}
+
+
+/* Admin Menu: not-folded */
+
+@mixin not-folded{
+
+    #adminmenumain{
+        
+        #adminmenu, .wp-submenu, #adminmenuback, #adminmenuwrap {
+            width: var(--menu_width);
+        }
+
+        li.opensub:not(.wp-has-current-submenu) .wp-submenu {
+            width: calc(var(--menu_width) - 60px);
+            left: calc(var(--menu_width) - 25px);
+            border-radius: 4px;
+        }
+
+        #adminmenu {
+            padding: 0 30px;
+            box-sizing: border-box;
+            float: left;
+            margin-top: 90px;
+        }
+
+        li.menu-top {
+            border-radius: 4px;
+        }
+
+        a.menu-top {
+            padding: 0 10px !important;
+            border-radius: 4px;
+            font-size: 14px !important;
+            height: 30px !important;
+        }
+
+        div.wp-menu-image{
+            width: fit-content !important;
+            margin-right: 14px;
+            position: relative !important;        
+        }
+
+        div.wp-menu-name {
+            padding: 0;
+            line-height: 30px;
+            position: relative !important;
+            left: 0 !important;
+        }
+
+        .wp-menu-image::before {
+            font-size: 18px;
+            padding: 0;
+            line-height: 30px;    
+        }
+        
+        li.menu-top {
+            min-height: 30px;
+            float: left;
+            width: 100%;
+        }
+
+        .wp-menu-image {
+            height: 30px;
+        }
+
+        li.wp-has-current-submenu {
+            margin: 15px 0;
+
+            a.menu-top {
+                border-radius: 4px 4px 0px 0px;
+            }
+
+            .wp-submenu, .wp-submenu:hover{
+                width: 100%;
+                padding: 8px 0px;
+                border-radius: 0px 0px 4px 4px;
+            }
+        }
+
+
+        .wp-not-current-submenu:hover:after {
+            display: none;
+        }
+
+        #adminmenu .wp-submenu-head, #adminmenu a.menu-top {
+            font-weight: bold;
+        }
+
+    }
+
+}
+
+
+/* Admin Menu: Folded */
+
+@mixin folded {
+
+    #adminmenumain{
+        
+        #adminmenu, #adminmenuback, #adminmenuwrap, li.menu-top, .collapse-button-icon {
+            width: var(--menu_folded_width);
+        }
+        
+        .opensub .wp-submenu {
+            left: var(--menu_folded_width) !important;
+            border-radius: 4px;
+        }
+    
+        li {
+            background: transparent !important;
+    
+            a{
+                border-radius: 4px;
+                margin: 0 10px;
+                .wp-menu-image{
+                    width: 100%;
+                    text-align: center;
+                    float: left;
+                    left: 0;
+                }
+            }
+        }
+    
+        .wp-menu-image::before {
+            font-size: 20px;
+        }
+    }
+}
+
+
+/* Admin Menu: Use mixins */
+
+body.folded:not(.auto-fold){
+    @include folded;
+}
+
+@media only screen and (min-width: 960px) {
+    body:not(.folded){
+        @include not-folded;
+    }
+}
+
+@media only screen and (min-width: 782px) and (max-width: 960px) {    
+    .auto-fold{
+        @include folded;
+    }
+    body:not(.auto-fold):not(.folded){
+        @include not-folded;
+    }
+}
+
+@media screen and (max-width: 782px) {
+    @include not-folded;
+}
+
+
+/* Admin Menu: Custom icons */
+
+#adminmenumain{
+    div[class*=' dashicons-cora']::before{
+        font-family: 'Material Icons' !important;
+        font-weight: normal;
+        font-style: normal;
+        display: inline-block;
+        line-height: 30px;
+        text-transform: none;
+        letter-spacing: normal;
+        word-wrap: normal;
+        white-space: nowrap;
+        direction: ltr;
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+        -moz-osx-font-smoothing: grayscale;
+        font-feature-settings: 'liga';
+    }    
+}
+
+
+/* Admin Menu: Collapse button */
+
+#collapse-button {
+    margin-top: 15px;
+    float: left;
+}
+
+
+/* Admin Menu: Branding */
+
+.cora-branding {
+    font-weight: 700;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    font-size: 25px;
+    color: var(--menu_highlight_text);
+}

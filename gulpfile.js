@@ -27,7 +27,9 @@ const files = {
 /**
  * Styles
  */
-function styles () {    
+function styles () {
+    console.log('Compiling SASS');
+    
     return gulp.src(files.sass.src)
         .pipe(sassGlob())
         .pipe(sass())
@@ -41,6 +43,8 @@ function styles () {
  * Scripts
  */
 function scripts () {
+    console.log('Compiling JS');
+
     return gulp.src(files.js.src)
         .pipe(concat('app.min.js'))
         .pipe(babel({
@@ -65,3 +69,5 @@ function watch () {
 exports.styles = styles;
 exports.scripts = scripts;
 exports.watch = watch;
+
+exports.default = gulp.series(styles, scripts, watch);
