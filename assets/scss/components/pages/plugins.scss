@@ -1,0 +1,13 @@
+/* Plugins */
+
+.plugins tr {
+    background: inherit;
+}
+
+.plugins .active td, .plugins .active th {
+    background-color: rgba(0, 0, 0, 0.06);
+}
+
+.widefat ol, .widefat p, .widefat ul {
+    color: var(--primary_text_color);
+}

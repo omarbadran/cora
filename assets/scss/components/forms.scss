@@ -16,10 +16,24 @@ input[type=url],
 input[type=week],
 select,
 textarea {
+    box-shadow: none;
     background-color: var(--primary_background_color);
     border-color: var(--secondary_background_colour) !important;
     color: var(--secondary_text_colour);
 }
 ::placeholder, ::-webkit-input-placeholder, :-ms-input-placeholder {
     color: var(--secondary_text_colour) !important;
+}
+
+
+.form-wrap p, p.description {
+    color: var(--secondary_text_colour);
+}
+
+.form-table th, .form-wrap label {
+    color: var(--primary_text_color);   
+}
+
+.form-wrap .form-field {
+    margin: 2em 0;
 }

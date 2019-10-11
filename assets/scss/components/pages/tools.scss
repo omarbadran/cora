@@ -1,0 +1,52 @@
+/* Tools */
+
+.importer-title {
+    color: var(--primary_text_color);
+}
+
+.site-health #wpcontent {
+    padding: 0 !important;
+}
+
+.health-check-header h1 {
+    margin: 2rem .8rem;
+}
+
+.health-check-header {
+    background: var(--secondary_background_colour);
+    border-bottom: none;
+}
+
+.health-check-accordion {
+    border: none;
+}
+
+.health-check-accordion-trigger {
+    background: var(--secondary_background_colour);
+    color: var(--secondary_text_colour);
+}
+
+.health-check-accordion-heading {
+    border-color: var(--primary_background_color);
+}
+
+.health-check-accordion-trigger:active, .health-check-accordion-trigger:hover {
+    background: var(--secondary_background_colour);
+}
+
+.health-check-accordion-trigger .badge {
+    color: var(--secondary_text_colour);
+    border-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+.health-check-accordion-panel {
+    background: var(--secondary_background_colour);
+}
+
+.privacy_requests tbody td {
+    background: transparent;
+}
+
+.privacy_requests tfoot td:first-child, .privacy_requests thead td:first-child {
+    border-left: none;
+}

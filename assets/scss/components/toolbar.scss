@@ -1,15 +1,9 @@
-/* Toolbar: width */
-
-body:not(.folded):not(.auto-fold) #wpadminbar {
-    left: var(--menu_width);
-    width: calc(100% - var(--menu_width));
-}
-
-body.folded #wpadminbar, .auto-fold #wpadminbar{
-    left: var(--menu_folded_width);
-    width: calc(100% - var(--menu_folded_width));
-}
+/* Toolbar */
 
 html.wp-toolbar {
     padding: 0px;
+}
+
+#wpadminbar {
+    background: transparent;
 }

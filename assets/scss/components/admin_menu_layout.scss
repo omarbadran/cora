@@ -1,7 +1,7 @@
 /* Admin Menu: Hide arrow */
 
 #adminmenumain {
-    a.wp-has-current-submenu:after, a.current:after {
+    a.wp-has-current-submenu:after, a.current:after, .wp-submenu:after, .opensub:hover:after {
         display: none;
     }
     .wp-menu-arrow{
@@ -10,11 +10,53 @@
 }
 
 
+/* Admin Menu: Custom icons */
+
+#adminmenumain{
+    div[class*=' dashicons-cora']::before{
+        font-family: 'Material Icons' !important;
+        font-weight: normal;
+        font-style: normal;
+        display: inline-block;
+        line-height: 30px;
+        text-transform: none;
+        letter-spacing: normal;
+        word-wrap: normal;
+        white-space: nowrap;
+        direction: ltr;
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+        -moz-osx-font-smoothing: grayscale;
+        font-feature-settings: 'liga';
+    }    
+}
+
+
+/* Admin Menu: Collapse button */
+
+#collapse-button {
+    margin-top: 15px;
+    float: left;
+}
+
+
+/* Admin Menu: Branding */
+
+.cora-branding {
+    font-weight: 700;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    font-size: 25px;
+    color: var(--menu_highlight_text);
+}
+
+
 /* Admin Menu: not-folded */
 
-@mixin not-folded{
+@mixin not-folded {
 
-    #adminmenumain{
+    #adminmenumain {
         
         #adminmenu, .wp-submenu, #adminmenuback, #adminmenuwrap {
             width: var(--menu_width);
@@ -55,6 +97,7 @@
             line-height: 30px;
             position: relative !important;
             left: 0 !important;
+            letter-spacing: 0.3px;
         }
 
         .wp-menu-image::before {
@@ -98,6 +141,34 @@
 
     }
 
+    #wpcontent, 
+	#wpfooter{
+		margin-left: var(--menu_width);
+		.rtl &{
+			margin-left: 0;
+			margin-right: var(--menu_width);
+		}
+    }
+    
+	.rtl{
+		#adminmenu .opensub:not(.wp-menu-open) .wp-submenu,
+		.components-notice-list,
+		.edit-post-header{
+			left: 0 !important;
+			right: var(--menu_width);
+		}
+    }
+
+    #wpadminbar {
+        left: var(--menu_width);
+        width: calc(100% - var(--menu_width));
+    }
+
+	.edit-post-header,
+	.components-notice-list{
+		left: var(--menu_width) !important;
+    }
+
 }
 
 
@@ -105,7 +176,7 @@
 
 @mixin folded {
 
-    #adminmenumain{
+    #adminmenumain {
         
         #adminmenu, #adminmenuback, #adminmenuwrap, li.menu-top, .collapse-button-icon {
             width: var(--menu_folded_width);
@@ -134,73 +205,82 @@
         .wp-menu-image::before {
             font-size: 20px;
         }
+
+        .cora-branding {
+            display: none;
+        }    
     }
+
+	#wpcontent, 
+	#wpfooter{
+		margin-left: var(--menu_folded_width);
+		.rtl &{
+			margin-left: 0;
+			margin-right: var(--menu_folded_width);
+		}
+    }
+
+     #wpadminbar {
+        left: var(--menu_folded_width);
+        width: calc(100% - var(--menu_folded_width));
+    }
+
+	.rtl{
+		#adminmenu .opensub:not(.wp-menu-open) .wp-submenu,
+		.components-notice-list,
+		.edit-post-header{
+			left: 0 !important;
+			right: var(--menu_folded_width);
+		}
+    }
+    
+	.edit-post-header,
+	.components-notice-list{
+		left: var(--menu_folded_width) !important;
+    }
+    
 }
 
 
 /* Admin Menu: Use mixins */
 
-body.folded:not(.auto-fold){
-    @include folded;
-}
 
+// Big Screens
 @media only screen and (min-width: 960px) {
-    body:not(.folded){
+    body:not(.folded) {
         @include not-folded;
     }
 }
 
+body.folded:not(.auto-fold) {
+    @include folded;
+}
+
+
+// Auto fold
 @media only screen and (min-width: 782px) and (max-width: 960px) {    
     .auto-fold{
         @include folded;
     }
-    body:not(.auto-fold):not(.folded){
+    body:not(.auto-fold):not(.folded) {
         @include not-folded;
     }
 }
 
+// Small Screens
 @media screen and (max-width: 782px) {
     @include not-folded;
-}
+    
+    .cora-branding {
+        display: none;    
+    }
 
+    .wp-submenu {
+        margin: 0 !important;
+        left: 0 !important;        
+    }
 
-/* Admin Menu: Custom icons */
-
-#adminmenumain{
-    div[class*=' dashicons-cora']::before{
-        font-family: 'Material Icons' !important;
-        font-weight: normal;
-        font-style: normal;
-        display: inline-block;
-        line-height: 30px;
-        text-transform: none;
-        letter-spacing: normal;
-        word-wrap: normal;
-        white-space: nowrap;
-        direction: ltr;
-        -webkit-font-smoothing: antialiased;
-        text-rendering: optimizeLegibility;
-        -moz-osx-font-smoothing: grayscale;
-        font-feature-settings: 'liga';
-    }    
-}
-
-
-/* Admin Menu: Collapse button */
-
-#collapse-button {
-    margin-top: 15px;
-    float: left;
-}
-
-
-/* Admin Menu: Branding */
-
-.cora-branding {
-    font-weight: 700;
-    position: absolute;
-    top: 30px;
-    left: 30px;
-    font-size: 25px;
-    color: var(--menu_highlight_text);
+    #wpadminbar {
+        width: 100% !important;
+    }
 }

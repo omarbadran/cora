@@ -1,6 +1,9 @@
 /* Dashboard */
+#activity-widget #the-comment-list li.comment-item {
+    background: rgba(0, 0, 0, 0.1);
+}
 
-.community-events ul{
+.community-events ul {
     background: rgba(0, 0, 0, 0.08);
     li{
         color: var(--secondary_text_colour);
@@ -8,15 +11,25 @@
     }
 }
 
-#dashboard_quick_press .drafts li time{
+#dashboard_quick_press .drafts li time {
     color: var(--secondary_text_colour);
 }
 
-#future-posts ul span, #published-posts ul span{
+#future-posts ul span, #published-posts ul span {
     color: var(--secondary_text_colour);
 }
 
-.welcome-panel{
-    border: none;
+.welcome-panel {
     background: var(--secondary_background_colour);
+    border: none;
+    border-radius: 5px;
+}
+
+.welcome-panel-column p, .welcome-panel p {
+    color: var(--secondary_text_colour);
+}
+
+
+.community-events-footer {
+    color: transparent;
 }

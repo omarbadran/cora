@@ -7,7 +7,7 @@ body {
 
 #wpcontent, #wpfooter {
     margin-left: var(--menu_width);
-    padding: 50px 40px;
+    padding: 65px 40px 50px 40px;
 }
 
 .folded {
@@ -18,4 +18,55 @@ body {
 
 .wrap {
     margin: 0;
+}
+
+.page-title-action {
+    background: rgba(0, 0, 0, 0.15) !important;
+    color: var(--secondary_text_colour) !important;
+    border: none !important;
+    border-radius: 4px;
+
+    &:hover {
+        background: rgba(0, 0, 0, 0.3) !important;
+    }
+}
+
+#titlediv #title {
+    background-color: var(--primary_background_color);
+}
+
+#major-publishing-actions{
+    background: transparent;
+    border: 0;
+}
+
+.wp-editor-container {
+    border-color: var(--secondary_background_colour) !important;
+
+    .quicktags-toolbar {
+        background: var(--secondary_background_colour) !important;
+        border: none;
+    }
+}
+
+.notification-dialog {
+    background: var(--secondary_background_colour);
+}
+
+.card {
+    border: none;
+    box-shadow: none;
+    background: var(--secondary_background_colour);
+    border-radius: 5px;
+}
+
+.notice, div.error, div.updated {
+    background-color: rgba(0, 0, 0, 0.1) !important;
+    border-radius: 5px;
+    box-shadow: none;
+}
+
+hr {
+    border-top: 1px solid rgba(150, 140, 140, 0.2);
+    border-bottom: 1px solid rgba(150, 140, 140, 0.2);
 }

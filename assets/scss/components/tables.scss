@@ -1,0 +1,19 @@
+/* tables */
+
+table {
+
+    tfoot tr td,
+    tfoot tr th,
+    thead tr td,
+    thead tr th,
+    .comment-grey-bubble:before,
+    .sorting-indicator:before
+    {
+        color: var(--secondary_text_colour)  !important;
+    }
+
+    td, th {
+        color: var(--primary_text_color)  !important;
+    }
+    
+}
