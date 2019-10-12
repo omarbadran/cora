@@ -4,6 +4,65 @@ html.wp-toolbar {
     padding: 0px;
 }
 
-#wpadminbar {
-    background: transparent;
+// Toolbar wrapper
+
+#wpadminbar {    
+    padding: 5px 30px;
+    height: 43px;
+    box-sizing: border-box;
+    background: var(--toolbar_background) !important;
+
+    // Toolbar items
+    #wp-toolbar {
+
+        ul.ab-top-menu > li {
+            
+            // Top links
+            > a.ab-item {
+                border-radius: 4px;
+                padding: 0px 8px !important;
+
+                &, &::before, span, span::before {
+                    color: var(--toolbar_item_text) !important;
+                }
+
+            }
+            
+            a.ab-item:hover {
+                color: var(--toolbar_highlight_text) !important;
+            }
+
+            // On hover
+            &:hover , &.hover {
+                
+                > a.ab-item {
+                    
+                    background-color: var(--toolbar_highlight_background);
+
+                    &, &::before, span, span::before {
+                        color: var(--toolbar_highlight_text) !important;
+                    }
+                    
+                }
+            }
+
+            // Submenu
+            .ab-sub-wrapper, .shortlink-input {
+                background-color: var(--toolbar_highlight_background);
+                margin-top: 8px;
+                border-radius: 4px;
+                box-shadow: 0 0px 30px rgba(0,0,0,.1);
+            }
+            
+            // Secondary submenu
+            ul.ab-sub-secondary {
+                &, .ab-submenu {
+                    background-color: rgba(0, 0, 0, 0.1);
+                }
+            }
+
+        }
+
+    }
+
 }

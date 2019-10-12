@@ -13,12 +13,14 @@ $this->options->add_section([
     'icon'      =>  'invert_colors',
 ]);
 
+// Menu Colors
+
 $this->options->add_field([
     'id'        =>  'menu_background',
     'section'   =>  'appearance',
     'title'     =>  'Background',
     'type'      =>  'color',
-    'default'   =>  '#363C43'
+    'default'   =>  '#404852'
 ]);
 
 $this->options->add_field([
@@ -50,7 +52,7 @@ $this->options->add_field([
     'section'   =>  'appearance',
     'title'     =>  'Submenu background',
     'type'      =>  'color',
-    'default'   =>  '#363C43'
+    'default'   =>  'rgb(83, 91, 102)'
 ]);
 
 $this->options->add_field([
@@ -67,4 +69,37 @@ $this->options->add_field([
     'title'     =>  'Submenu item text (Highlight)',
     'type'      =>  'color',
     'default'   =>  'rgba(255, 255, 255, 0.9)'
+]);
+
+// Toolbar Colors
+$this->options->add_field([
+    'id'        =>  'toolbar_background',
+    'section'   =>  'appearance',
+    'title'     =>  'Toolbar background',
+    'type'      =>  'color',
+    'default'   =>  '#4a525d'
+]);
+
+$this->options->add_field([
+    'id'        =>  'toolbar_item_text',
+    'section'   =>  'appearance',
+    'title'     =>  'Item text',
+    'type'      =>  'color',
+    'default'   =>  'rgba(255, 255, 255, 0.4)'
+]);
+
+$this->options->add_field([
+    'id'        =>  'toolbar_highlight_text',
+    'section'   =>  'appearance',
+    'title'     =>  'Item text (Highlight)',
+    'type'      =>  'color',
+    'default'   =>  'rgba(255, 255, 255, 0.9)'
+]);
+
+$this->options->add_field([
+    'id'        =>  'toolbar_highlight_background',
+    'section'   =>  'appearance',
+    'title'     =>  'Item background (Highlight)',
+    'type'      =>  'color',
+    'default'   =>  '#404852'
 ]);

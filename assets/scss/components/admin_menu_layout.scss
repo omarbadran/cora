@@ -66,6 +66,7 @@
             width: calc(var(--menu_width) - 60px);
             left: calc(var(--menu_width) - 25px);
             border-radius: 4px;
+            box-shadow: 0 0px 30px rgba(0,0,0,.1);
         }
 
         #adminmenu {
@@ -282,5 +283,6 @@ body.folded:not(.auto-fold) {
 
     #wpadminbar {
         width: 100% !important;
+        left: 0;    
     }
 }
