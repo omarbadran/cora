@@ -1,5 +1,18 @@
 /* Media */
 
+.media-frame {
+    input[type=email]
+    input[type=number],
+    input[type=password],
+    input[type=search],
+    input[type=text],
+    input[type=url],
+    select,
+    textarea {
+        border-color: var(--secondary_background_colour);
+    }    
+}
+
 .wp-filter {
     border: none;
     background-color: var(--secondary_background_colour);

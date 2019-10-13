@@ -13,7 +13,14 @@ $this->options->add_section([
     'icon'      =>  'invert_colors',
 ]);
 
+
 // Menu Colors
+$this->options->add_field([
+    'id'        =>  'toolbar_background',
+    'section'   =>  'appearance',
+    'type'      =>  'html',
+    'content'   =>  'hello <span>world</span>'
+]);
 
 $this->options->add_field([
     'id'        =>  'menu_background',

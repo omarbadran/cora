@@ -281,8 +281,17 @@ body.folded:not(.auto-fold) {
         left: 0 !important;        
     }
 
-    #wpadminbar {
-        width: 100% !important;
-        left: 0;    
+	.rtl{
+		#adminmenu .opensub:not(.wp-menu-open) .wp-submenu,
+		.components-notice-list,
+		.edit-post-header{
+			left: 0 !important;
+			right: 0;
+		}
+    }
+    
+	.edit-post-header,
+	.components-notice-list{
+		left: 0 !important;
     }
 }

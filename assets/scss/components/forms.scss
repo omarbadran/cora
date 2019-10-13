@@ -18,7 +18,7 @@ select,
 textarea {
     box-shadow: none;
     background-color: var(--primary_background_color);
-    border-color: var(--secondary_background_colour) !important;
+    border-color: var(--secondary_background_colour);
     color: var(--secondary_text_colour);
 }
 ::placeholder, ::-webkit-input-placeholder, :-ms-input-placeholder {

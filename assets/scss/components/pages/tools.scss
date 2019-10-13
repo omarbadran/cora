@@ -8,13 +8,10 @@
     padding: 0 !important;
 }
 
-.health-check-header h1 {
-    margin: 2rem .8rem;
-}
-
 .health-check-header {
     background: var(--secondary_background_colour);
     border-bottom: none;
+    padding-top: 46px;
 }
 
 .health-check-accordion {
