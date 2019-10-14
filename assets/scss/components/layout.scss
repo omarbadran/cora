@@ -7,7 +7,7 @@ body {
 
 #wpcontent, #wpfooter {
     margin-left: var(--menu_width);
-    padding: 70px 40px 50px 40px;
+    padding: 80px 50px 50px;
 }
 
 .folded {
@@ -22,7 +22,7 @@ body {
 
 .page-title-action {
     background: rgba(0, 0, 0, 0.15) !important;
-    color: var(--secondary_text_colour) !important;
+    color: var(--secondary_text_color) !important;
     border: none !important;
     border-radius: 4px;
 
@@ -41,22 +41,22 @@ body {
 }
 
 .wp-editor-container {
-    border-color: var(--secondary_background_colour) !important;
+    border-color: var(--secondary_background_color) !important;
 
     .quicktags-toolbar {
-        background: var(--secondary_background_colour) !important;
+        background: var(--secondary_background_color) !important;
         border: none;
     }
 }
 
 .notification-dialog {
-    background: var(--secondary_background_colour);
+    background: var(--secondary_background_color);
 }
 
 .card {
     border: none;
     box-shadow: none;
-    background: var(--secondary_background_colour);
+    background: var(--secondary_background_color);
     border-radius: 5px;
 }
 

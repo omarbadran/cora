@@ -130,6 +130,13 @@ class Cora {
             $this->url."/assets/css/menu-icons.css"
         );
 
+        # Settings page
+        wp_enqueue_style( 
+            'cora-settings',
+            $this->url."/assets/css/settings.css"
+        );
+        
+
         # Cora
         wp_enqueue_style( 
             'cora',

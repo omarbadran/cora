@@ -9,7 +9,7 @@
 }
 
 .health-check-header {
-    background: var(--secondary_background_colour);
+    background: var(--secondary_background_color);
     border-bottom: none;
     padding-top: 46px;
 }
@@ -19,8 +19,8 @@
 }
 
 .health-check-accordion-trigger {
-    background: var(--secondary_background_colour);
-    color: var(--secondary_text_colour);
+    background: var(--secondary_background_color);
+    color: var(--secondary_text_color);
 }
 
 .health-check-accordion-heading {
@@ -28,16 +28,16 @@
 }
 
 .health-check-accordion-trigger:active, .health-check-accordion-trigger:hover {
-    background: var(--secondary_background_colour);
+    background: var(--secondary_background_color);
 }
 
 .health-check-accordion-trigger .badge {
-    color: var(--secondary_text_colour);
+    color: var(--secondary_text_color);
     border-color: rgba(0, 0, 0, 0.1) !important;
 }
 
 .health-check-accordion-panel {
-    background: var(--secondary_background_colour);
+    background: var(--secondary_background_color);
 }
 
 .privacy_requests tbody td {

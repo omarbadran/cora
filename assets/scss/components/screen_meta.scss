@@ -4,7 +4,7 @@
 }
 
 #screen-meta{
-    background-color: var(--secondary_background_colour);
+    background-color: var(--secondary_background_color);
     border: transparent  !important;
     margin-bottom: 15px;
     margin-right: 0;
@@ -12,14 +12,14 @@
 }
 
 #contextual-help-back{
-    background-color: var(--secondary_background_colour);
+    background-color: var(--secondary_background_color);
     border: 0;
 }
 
 .contextual-help-tabs{
 
     a:hover{
-        color: var(--secondary_text_colour) ;
+        color: var(--secondary_text_color) ;
     }
 
     .active{
@@ -35,8 +35,8 @@
 
 #screen-meta-links {
     button {
-        background: var(--secondary_background_colour)  !important;
-        color: var(--secondary_text_colour)  !important;
+        background: var(--secondary_background_color)  !important;
+        color: var(--secondary_text_color)  !important;
         border-radius: 3px  !important;
         border: transparent  !important;
 

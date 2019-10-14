@@ -1,0 +1,118 @@
+/* Settings Pgae */
+
+html body #cf {
+
+    .cf-body {
+        background: rgba(0, 0, 0, 0.1);
+    }
+    
+    .cf-header {
+
+        h1 {
+            color: var(--primary_text_color);
+            font-family: Josefin Sans, -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+        }
+
+        span {
+            background: rgba(0, 0, 0, 0.1);
+            color: var(--secondary_text_color);
+            margin: 17px 0 18px 20px;
+            line-height: 26px;
+        }
+
+    }
+
+    .cf-nav {
+        background: rgba(0, 0, 0, 0.03);
+
+        li {
+            color: var(--secondary_text_color);
+            opacity: 0.3;
+                    
+            &.active {
+                color: var(--primary_text_color);
+                background: rgba(0, 0, 0, 0.1);
+                opacity: 1;
+            }
+        }
+
+    }
+    
+    .cf-content {
+        h2 {
+            color: var(--primary_text_color);
+        }
+
+        .cf-field {
+            .cf-field-title {
+                color: var(--secondary_text_color);
+            }
+        }
+    }
+
+    //  Seprater
+    .cora-separator {
+        background: rgba(0,0,0,.1);
+        padding: 10px 20px;
+        border-radius: 4px;
+        width: fit-content;
+        margin: 0;
+        margin-top: 15px;    
+    }
+
+}
+
+/* Fields */
+
+html body {
+
+    // Repeater field
+    .cf-repeater-item {
+        background: var(--secondary_background_color);
+        
+        .cf-repeater-item-head {
+            span {
+                color: var(--secondary_text_color);
+            }
+
+            svg {
+                fill: var(--secondary_text_color);
+            }
+
+            i.cf-status-arrow {
+                color: var(--secondary_text_color);
+            }
+        }
+
+        .cf-repeater-item-fields {
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            
+            .cf-repeater-item-field {
+
+                .cf-repeater-item-title {
+                    color: var(--secondary_text_color);
+                }
+                
+                .select2-selection {
+                    border: 1px solid rgba(0, 0, 0, 0.1) !important;
+                }
+            }
+        }
+        
+    }
+        
+    // Select field
+
+    .select2-dropdown, .select2-selection--multiple {
+        background-color: var(--secondary_background_color) !important;
+    }
+
+    .select2-container--default .select2-selection--single {
+        background-color: var(--secondary_background_color);
+
+        .select2-selection__rendered {
+            color: var(--primary_text_color);
+        }
+    }
+    
+}

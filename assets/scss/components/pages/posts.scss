@@ -12,12 +12,13 @@ table.widefat {
     margin: 20px 0px;
     float: left;
     width: 100%;
-    background: var(--secondary_background_colour);
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    background: var(--secondary_background_color);
+    border: 0px solid rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
 }
 
 .alternate, .striped>tbody>:nth-child(odd), ul.striped>:nth-child(odd){
-    background-color: var(--secondary_background_colour);
+    background-color: var(--secondary_background_color);
 }
 
 .widefat thead td, .widefat thead th {
@@ -28,7 +29,7 @@ table.widefat {
 }
 
 .row-actions {
-    color: var(--secondary_background_colour);
+    color: var(--secondary_background_color);
 }
 
 .subsubsub {

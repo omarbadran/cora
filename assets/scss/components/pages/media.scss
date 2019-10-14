@@ -9,18 +9,18 @@
     input[type=url],
     select,
     textarea {
-        border-color: var(--secondary_background_colour);
+        border-color: var(--secondary_background_color);
     }    
 }
 
 .wp-filter {
     border: none;
-    background-color: var(--secondary_background_colour);
+    background-color: var(--secondary_background_color);
     border-radius: 4px;
 }
 
 .media-frame.mode-grid .uploader-inline , .media-frame-content, .edit-attachment-frame .attachment-info{
-    border-color: var(--secondary_background_colour);
+    border-color: var(--secondary_background_color);
 }
 
 .media-modal-content, .media-frame-content {
@@ -28,29 +28,29 @@
 }
 
 .edit-media-header button, .media-modal-icon:before{
-    color: var(--secondary_text_colour) !important;
-    border-color: var(--secondary_background_colour) !important;
+    color: var(--secondary_text_color) !important;
+    border-color: var(--secondary_background_color) !important;
 
     &.disabled {
-        color: var(--secondary_text_colour) !important;
+        color: var(--secondary_text_color) !important;
         opacity: 0.5;
     }
 }
 
 .edit-attachment-frame .attachment-info {
-    background: var(--secondary_background_colour);
+    background: var(--secondary_background_color);
 }
 
 .attachment-info {
-    color: var(--primary_text_colour);
+    color: var(--primary_text_color);
 }
 
 .attachment-info .filename{
-    color: var(--secondary_text_colour) !important;
+    color: var(--secondary_text_color) !important;
 }
 
 .attachment-details .setting span, .compat-item label span, .media-sidebar .setting span {
-    color: var(--secondary_text_colour);
+    color: var(--secondary_text_color);
 }
 
 
@@ -72,7 +72,7 @@
 
         .left:focus, .left:hover, .right:focus, .right:hover {
             background: rgba(0, 0, 0, 0.06);
-            color: var(--secondary_text_colour);
+            color: var(--secondary_text_color);
         }
 
     }
@@ -80,7 +80,7 @@
     .media-modal-close {
         &:focus, &:hover {
             background: rgba(0, 0, 0, 0.06);
-            color: var(--secondary_text_colour);
+            color: var(--secondary_text_color);
         }
     }
 

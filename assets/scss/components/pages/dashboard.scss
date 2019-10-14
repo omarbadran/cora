@@ -6,27 +6,27 @@
 .community-events ul {
     background: rgba(0, 0, 0, 0.08);
     li{
-        color: var(--secondary_text_colour);
+        color: var(--secondary_text_color);
 
     }
 }
 
 #dashboard_quick_press .drafts li time {
-    color: var(--secondary_text_colour);
+    color: var(--secondary_text_color);
 }
 
 #future-posts ul span, #published-posts ul span {
-    color: var(--secondary_text_colour);
+    color: var(--secondary_text_color);
 }
 
 .welcome-panel {
-    background: var(--secondary_background_colour);
+    background: var(--secondary_background_color);
     border: none;
-    border-radius: 5px;
+    border-radius: 4px;
 }
 
 .welcome-panel-column p, .welcome-panel p {
-    color: var(--secondary_text_colour);
+    color: var(--secondary_text_color);
 }
 
 

@@ -18,16 +18,16 @@ select,
 textarea {
     box-shadow: none;
     background-color: var(--primary_background_color);
-    border-color: var(--secondary_background_colour);
-    color: var(--secondary_text_colour);
+    border-color: var(--secondary_background_color);
+    color: var(--secondary_text_color);
 }
 ::placeholder, ::-webkit-input-placeholder, :-ms-input-placeholder {
-    color: var(--secondary_text_colour) !important;
+    color: var(--secondary_text_color) !important;
 }
 
 
 .form-wrap p, p.description {
-    color: var(--secondary_text_colour);
+    color: var(--secondary_text_color);
 }
 
 .form-table th, .form-wrap label {
