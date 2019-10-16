@@ -169,3 +169,28 @@ $this->options->add_field([
     'type'      =>  'color',
     'default'   =>  '#2c333e'
 ]);
+
+
+# Forms Colors
+
+$this->options->add_field([
+    'section'   =>  'appearance',
+    'type'      =>  'html',
+    'content'   =>  '<h3 class="cora-separator">' . esc_html__('Forms' , 'cora') . '</h3>'
+]);
+
+$this->options->add_field([
+    'id'        =>  'forms_field_background',
+    'section'   =>  'appearance',
+    'title'     =>  'Control field background',
+    'type'      =>  'color',
+    'default'   =>  '#383f4a'
+]);
+
+$this->options->add_field([
+    'id'        =>  'forms_field_border',
+    'section'   =>  'appearance',
+    'title'     =>  'Control field border',
+    'type'      =>  'color',
+    'default'   =>  '#383f4a'
+]);

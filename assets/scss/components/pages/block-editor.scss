@@ -6,7 +6,11 @@ body.block-editor-page {
     --secondary_background_color: #eaeef3;
     --primary_text_color: #555;
     --secondary_text_color: #777777;
-    --link_color: #5980bb;    
+    --link_color: #5980bb;
+    --toolbar_background: #e6e9ec;
+    --toolbar_item_text: rgba(0, 0, 0, 0.65);
+    --toolbar_highlight_text: rgba(255, 255, 255, 0.9);
+    --toolbar_highlight_background: rgb(107, 114, 125);
 }
 
 @media (min-width: 782px) {

@@ -1,4 +1,4 @@
-/* Media */
+/* Media Page */
 
 .media-frame {
     input[type=email]
@@ -53,6 +53,10 @@
     color: var(--secondary_text_color);
 }
 
+div.media-sidebar {
+    background: var(--secondary_background_color);
+    border-color: var(--secondary_background_color);
+}
 
 .edit-attachment-frame {
     .attachment-info {
@@ -84,4 +88,22 @@
         }
     }
 
+}
+
+.media-router .active, .media-router>a.active:last-child {
+    background: var(--primary_background_color) !important;
+    border-color: var(--secondary_background_color) !important;
+    color: var(--primary_text_color) !important;
+}
+
+.media-router .active, .media-router .active:hover {
+    color: var(--primary_text_color);
+}
+
+.media-frame a:focus {
+    color: var(--secondary_text_color);
+}
+
+.media-frame-toolbar .media-toolbar {
+    border-color: var(--secondary_background_color);
 }

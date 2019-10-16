@@ -1,4 +1,10 @@
-/* Dashboard */
+/* Dashboard Page */
+
+#update-nag, .update-nag {
+    margin: 5px 20px 30px 2px;
+    background-color: var(--secondary_background_color);
+}
+
 #activity-widget #the-comment-list li.comment-item {
     background: rgba(0, 0, 0, 0.1);
 }

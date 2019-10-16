@@ -13,26 +13,8 @@ $this->options->add_section([
     'icon'      =>  'sort',
 ]);
 
-# Layout
-$this->options->add_field([
-    'id'           =>  'layout',
-    'section'      =>  'menu',
-    'title'        =>   esc_html__('Layout' , 'cora'),
-    'type'         =>   'select',
-    'default'      =>   'vertical',
-    'options'      =>   [
-        [
-            'id'    => 'vertical',
-            'text'  =>  esc_html__('Vertical' , 'cora')
-        ],
-        [
-            'id'    => 'horizontal',
-            'text'  =>  esc_html__('Horizontal' , 'cora')
-        ],
-    ]
-]);
 
-# Layout
+# Collapse Button
 $this->options->add_field([
     'id'           =>  'collapse_button',
     'section'      =>  'menu',

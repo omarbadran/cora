@@ -36,6 +36,7 @@ class Cora_appearance {
         require_once dirname(__FILE__) . "/options.php";
 
         add_action( 'admin_head', array( $this  , "css_vars" ) );
+        add_action( 'login_head', array( $this  , "css_vars" ) );
 
         if( $this->options->in_view() ){
             add_action( 'admin_print_footer_scripts', array( $this  , "live_preview" ) );
