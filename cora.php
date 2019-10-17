@@ -94,7 +94,6 @@ class Cora {
         
         # Enqueue styles
         add_action( 'admin_enqueue_scripts', array( $this  , "styles" ) );
-        add_action( 'login_enqueue_scripts', array( $this  , "styles" ) );
 
         # Enqueue scripts
         add_action( 'admin_enqueue_scripts', array( $this  , "scripts" ) );
@@ -105,7 +104,7 @@ class Cora {
             require_once $this->dir . "modules/$module/class.$module.php";
 
             $module_class = "Cora_$module"; 
-            new $module_class($this->options);
+            new $module_class($this);
 
         }
     }

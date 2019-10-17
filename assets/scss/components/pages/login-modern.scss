@@ -1,0 +1,73 @@
+/* Login Page - Standard */
+
+body.login.cora-modern {
+
+    height: fit-content;
+
+    #login {
+        background: var(--secondary_background_color);
+        width: 450px;
+        margin: 0 !important;
+        float: right;
+        height: 100vh;
+        padding: 4% 30px;
+        box-sizing: border-box;
+        overflow: hidden;
+
+        h1 {
+            padding: 0px 25px 25px 25px;
+            width: 100%;
+            float: left;
+            box-sizing: border-box;
+            
+            a {
+                margin-bottom: 0;
+                float: left;
+            }
+        }
+
+        form {
+            padding: 25px;
+            margin: 0;
+        }
+
+        .message {
+            float: left;
+        }
+    }
+
+    #backtoblog, #nav {
+        font-size: 13px;
+        padding: 15px 25px;
+        width: 100%;
+        clear: both;
+        box-sizing: border-box;
+        display: inline-block;
+        margin: 0px !important;
+        text-align: center;
+    }
+
+    #backtoblog {
+        padding: 0;
+    }
+
+    #wp-submit {
+        width: 100%;
+        margin-top: 25px;
+        margin-bottom;: 10px;    
+    }
+}
+
+
+// Width Control
+@media screen and (max-width: 900px) {
+
+    body.login.cora-modern {
+    
+        #login {
+            width: 100%;
+        }    
+    
+    }
+
+}

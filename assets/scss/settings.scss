@@ -3,7 +3,7 @@
 html body #cf {
 
     .cf-body {
-        background: rgba(0, 0, 0, 0.1);
+        background: rgba(0, 0, 0, 0.065);
     }
     
     .cf-header {
@@ -15,7 +15,7 @@ html body #cf {
         }
 
         span {
-            background: rgba(0, 0, 0, 0.1);
+            background: rgba(0, 0, 0, 0.065);
             color: var(--secondary_text_color);
             margin: 18px 0 18px 20px;
             line-height: 26px;
@@ -32,7 +32,7 @@ html body #cf {
                     
             &.active {
                 color: var(--primary_text_color);
-                background: rgba(0, 0, 0, 0.1);
+                background: rgba(0, 0, 0, 0.065);
                 opacity: 1;
             }
         }
@@ -66,6 +66,21 @@ html body #cf {
 /* Fields */
 
 html body {
+    #cf {
+        input[type=number],
+        input[type=password],
+        input[type=text],
+        select,
+        textarea
+        {
+            background-color: rgba(26, 44, 99, 0.1);
+            
+            &:hover {
+                background-color: rgba(26, 44, 99, 0.15);
+            }
+        }        
+    }
+
 
     // Repeater field
     .cf-repeater-item {
@@ -86,7 +101,7 @@ html body {
         }
 
         .cf-repeater-item-fields {
-            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            border-top: 1px solid rgba(0, 0, 0, 0.065);
             
             .cf-repeater-item-field {
 
@@ -95,7 +110,7 @@ html body {
                 }
                 
                 .select2-selection {
-                    border: 1px solid rgba(0, 0, 0, 0.1) !important;
+                    border: 1px solid rgba(0, 0, 0, 0.065) !important;
                 }
             }
         }
@@ -121,4 +136,10 @@ html body {
     .pickr .pcr-button:before {
         display: none;
     }
+
+    // Switch
+    .cf-switch-inner span {
+        background-color: rgba(0, 0, 0, 0.065);
+    }
+
 }

@@ -28,14 +28,15 @@ class Cora_Menu {
      * @access      public
      * @return      void
      */
-    public function __construct( $options ) {
+    public function __construct( $parent ) {
         
         # Load Options
-        $this->options = $options;
+        $this->parent = $parent;
 
         require_once dirname(__FILE__) . "/options.php";
 
         # Build menu
+        
         add_action( 'admin_menu', array( $this  , "build_menu" ), PHP_INT_MAX );
         
         add_filter( 'gettext', array( $this  , "collapse_menu_text" ), 10, 3 );
@@ -56,7 +57,7 @@ class Cora_Menu {
 
         global $menu, $admin_page_hooks, $_registered_pages, $_parent_pages;
 
-        $items = $this->options->get_value('menu', 'items', []);
+        $items = $this->parent->options->get_value('menu', 'items', []);
         $before_edit = $this->get_menu_items();
         
 
@@ -82,7 +83,7 @@ class Cora_Menu {
 
         # Update the value if new items detected        
         if($should_update){
-            $this->options->update_value('menu', 'items', array_values($items));
+            $this->parent->options->update_value('menu', 'items', array_values($items));
         }
         
         # Build the menu

@@ -7,7 +7,7 @@
 */
 
 # Add Section
-$this->options->add_section([
+$this->parent->options->add_section([
     'id'        =>  'menu',
     'title'     =>  esc_html__('Admin Menu' , 'cora'),
     'icon'      =>  'sort',
@@ -15,7 +15,7 @@ $this->options->add_section([
 
 
 # Collapse Button
-$this->options->add_field([
+$this->parent->options->add_field([
     'id'           =>  'collapse_button',
     'section'      =>  'menu',
     'title'        =>   esc_html__('Collapse Button' , 'cora'),
@@ -28,7 +28,7 @@ $this->options->add_field([
 # Menu Items
 add_action('_admin_menu', function (){
     
-    $this->options->add_field([
+    $this->parent->options->add_field([
         'id'        =>  'items',
         'section'   =>  'menu',
         'title'     =>  esc_html__('Menu Items' , 'cora'),

@@ -7,7 +7,7 @@
 */
 
 # Add Section
-$this->options->add_section([
+$this->parent->options->add_section([
     'id'        =>  'appearance',
     'title'     =>  esc_html__('Appearance' , 'cora'),
     'icon'      =>  'invert_colors',
@@ -16,13 +16,13 @@ $this->options->add_section([
 
 # General
 
-$this->options->add_field([
+$this->parent->options->add_field([
     'section'   =>  'appearance',
     'type'      =>  'html',
     'content'   =>  '<h3 class="cora-separator">' . esc_html__('General' , 'cora') . '</h3>'
 ]);
 
-$this->options->add_field([
+$this->parent->options->add_field([
     'id'        =>  'primary_background_color',
     'section'   =>  'appearance',
     'title'     =>  'Primary background',
@@ -30,7 +30,7 @@ $this->options->add_field([
     'default'   =>  '#383f4a'
 ]);
 
-$this->options->add_field([
+$this->parent->options->add_field([
     'id'        =>  'secondary_background_color',
     'section'   =>  'appearance',
     'title'     =>  'Secondary background',
@@ -38,7 +38,7 @@ $this->options->add_field([
     'default'   =>  '#424b56'
 ]);
 
-$this->options->add_field([
+$this->parent->options->add_field([
     'id'        =>  'primary_text_color',
     'section'   =>  'appearance',
     'title'     =>  'Primary text',
@@ -46,7 +46,7 @@ $this->options->add_field([
     'default'   =>  '#ffffff'
 ]);
 
-$this->options->add_field([
+$this->parent->options->add_field([
     'id'        =>  'secondary_text_color',
     'section'   =>  'appearance',
     'title'     =>  'Secondary text',
@@ -54,7 +54,7 @@ $this->options->add_field([
     'default'   =>  '#f7f0f0'
 ]);
 
-$this->options->add_field([
+$this->parent->options->add_field([
     'id'        =>  'link_color',
     'section'   =>  'appearance',
     'title'     =>  'Links',
@@ -66,13 +66,13 @@ $this->options->add_field([
 
 # Menu Colors
 
-$this->options->add_field([
+$this->parent->options->add_field([
     'section'   =>  'appearance',
     'type'      =>  'html',
     'content'   =>  '<h3 class="cora-separator">' . esc_html__('Admin Menu' , 'cora') . '</h3>'
 ]);
 
-$this->options->add_field([
+$this->parent->options->add_field([
     'id'        =>  'menu_background',
     'section'   =>  'appearance',
     'title'     =>  'Background',
@@ -80,7 +80,7 @@ $this->options->add_field([
     'default'   =>  '#313742'
 ]);
 
-$this->options->add_field([
+$this->parent->options->add_field([
     'id'        =>  'menu_item_text',
     'section'   =>  'appearance',
     'title'     =>  'Item text',
@@ -88,7 +88,7 @@ $this->options->add_field([
     'default'   =>  'rgba(255, 255, 255, 0.2)'
 ]);
 
-$this->options->add_field([
+$this->parent->options->add_field([
     'id'        =>  'menu_highlight_text',
     'section'   =>  'appearance',
     'title'     =>  'Item text (Highlight)',
@@ -96,7 +96,7 @@ $this->options->add_field([
     'default'   =>  'rgba(255, 255, 255, 0.9)'
 ]);
 
-$this->options->add_field([
+$this->parent->options->add_field([
     'id'        =>  'menu_highlight_background',
     'section'   =>  'appearance',
     'title'     =>  'Item background (Highlight)',
@@ -104,7 +104,7 @@ $this->options->add_field([
     'default'   =>  '#02B875'
 ]);
 
-$this->options->add_field([
+$this->parent->options->add_field([
     'id'        =>  'menu_submenu_background',
     'section'   =>  'appearance',
     'title'     =>  'Submenu background',
@@ -112,7 +112,7 @@ $this->options->add_field([
     'default'   =>  'rgb(66, 74, 86)'
 ]);
 
-$this->options->add_field([
+$this->parent->options->add_field([
     'id'        =>  'menu_submenu_item_text',
     'section'   =>  'appearance',
     'title'     =>  'Submenu item text',
@@ -120,7 +120,7 @@ $this->options->add_field([
     'default'   =>  'rgba(255, 255, 255, 0.2)'
 ]);
 
-$this->options->add_field([
+$this->parent->options->add_field([
     'id'        =>  'menu_submenu_highlight_text',
     'section'   =>  'appearance',
     'title'     =>  'Submenu item text (Highlight)',
@@ -132,13 +132,13 @@ $this->options->add_field([
 
 # Toolbar Colors
 
-$this->options->add_field([
+$this->parent->options->add_field([
     'section'   =>  'appearance',
     'type'      =>  'html',
     'content'   =>  '<h3 class="cora-separator">' . esc_html__('Toolbar' , 'cora') . '</h3>'
 ]);
 
-$this->options->add_field([
+$this->parent->options->add_field([
     'id'        =>  'toolbar_background',
     'section'   =>  'appearance',
     'title'     =>  'Toolbar background',
@@ -146,7 +146,7 @@ $this->options->add_field([
     'default'   =>  '#383f4a'
 ]);
 
-$this->options->add_field([
+$this->parent->options->add_field([
     'id'        =>  'toolbar_item_text',
     'section'   =>  'appearance',
     'title'     =>  'Item text',
@@ -154,7 +154,7 @@ $this->options->add_field([
     'default'   =>  'rgba(255, 255, 255, 0.4)'
 ]);
 
-$this->options->add_field([
+$this->parent->options->add_field([
     'id'        =>  'toolbar_highlight_text',
     'section'   =>  'appearance',
     'title'     =>  'Item text (Highlight)',
@@ -162,7 +162,7 @@ $this->options->add_field([
     'default'   =>  'rgba(255, 255, 255, 0.9)'
 ]);
 
-$this->options->add_field([
+$this->parent->options->add_field([
     'id'        =>  'toolbar_highlight_background',
     'section'   =>  'appearance',
     'title'     =>  'Item background (Highlight)',
@@ -173,24 +173,24 @@ $this->options->add_field([
 
 # Forms Colors
 
-$this->options->add_field([
+$this->parent->options->add_field([
     'section'   =>  'appearance',
     'type'      =>  'html',
     'content'   =>  '<h3 class="cora-separator">' . esc_html__('Forms' , 'cora') . '</h3>'
 ]);
 
-$this->options->add_field([
+$this->parent->options->add_field([
     'id'        =>  'forms_field_background',
     'section'   =>  'appearance',
     'title'     =>  'Control field background',
     'type'      =>  'color',
-    'default'   =>  '#383f4a'
+    'default'   =>  'rgba(62, 68, 80, 1)'
 ]);
 
-$this->options->add_field([
+$this->parent->options->add_field([
     'id'        =>  'forms_field_border',
     'section'   =>  'appearance',
     'title'     =>  'Control field border',
     'type'      =>  'color',
-    'default'   =>  '#383f4a'
+    'default'   =>  'rgba(62, 68, 80, 1)'
 ]);

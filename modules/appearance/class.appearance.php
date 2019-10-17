@@ -28,17 +28,17 @@ class Cora_appearance {
      * @access      public
      * @return      void
      */
-    public function __construct( $options ) {
+    public function __construct( $parent ) {
         
         # Load Options
-        $this->options = $options;
+        $this->parent = $parent;
 
         require_once dirname(__FILE__) . "/options.php";
 
         add_action( 'admin_head', array( $this  , "css_vars" ) );
         add_action( 'login_head', array( $this  , "css_vars" ) );
 
-        if( $this->options->in_view() ){
+        if( $this->parent->options->in_view() ){
             add_action( 'admin_print_footer_scripts', array( $this  , "live_preview" ) );
         }
     }
@@ -54,13 +54,13 @@ class Cora_appearance {
 
         echo "<style>:root {";
 
-        foreach ($this->options->fields as $field) {
+        foreach ($this->parent->options->fields as $field) {
 
             if ($field['section'] == 'appearance' && $field['type'] == 'color') {
 
                 $id = $field['id'];
                 $section = $field['section'];
-                $value = $this->options->get_value($section, $id);
+                $value = $this->parent->options->get_value($section, $id);
                 
                 if( $value ){
                     echo "--$id: $value;";
@@ -84,7 +84,7 @@ class Cora_appearance {
         ?>
             <script>
                 jQuery(document).ready(function($) {
-                    <?php foreach ($this->options->fields as $field) { if($field['section'] == 'appearance') {?>
+                    <?php foreach ($this->parent->options->fields as $field) { if($field['section'] == 'appearance') {?>
                         CoraFramework.$watch( "values.appearance.<?php echo $field['id'] ?>", newVal => {
                             document.documentElement.style.setProperty("--<?php echo $field['id'] ?>", newVal);                            
                         })

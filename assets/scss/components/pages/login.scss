@@ -1,12 +1,10 @@
-/* Login Page  */
+/* Login Page */
 
 body.login {
+    background-image:var(--backgroud_image);
 
-    // Comman Style
-    form {
-        background: var(--secondary_background_color);
-        border-radius: 4px;
-        box-shadow: none;
+    h1 {
+        display: var(--hide_logo);
     }
 
     input[type=checkbox],
@@ -32,14 +30,22 @@ body.login {
         border-color: var(--forms_field_border) !important;
         color: var(--secondary_text_color) !important;
     }
+
+    label {
+        font-size: 13px;
+        color: var(--secondary_text_color);
+    }
     
     form {
+        background-color: transparent;
+        box-shadow: none;
+
         p {
-            margin-bottom: 5px;
+            margin-bottom: 0px !important;
         }
 
         .input, input[type=checkbox], input[type=text] {
-            padding: 2px 10px;
+            padding: 3px 10px;
             border-radius: 4px;
         }
 
@@ -58,7 +64,4 @@ body.login {
         background: var(--secondary_background_color);
     }
 
-    div#login h1 a {
-        background-image: var(--login_logo);  //Add your own logo image in this url 
-    }
 }

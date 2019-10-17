@@ -6,7 +6,7 @@
     background: var(--secondary_background_color);
     border-radius: 4px;
 
-    * {
+    div, li, ul, ol, p, span{
         border-color: transparent !important;
     }
 

@@ -7,14 +7,14 @@
 */
 
 # Add Section
-$this->options->add_section([
+$this->parent->options->add_section([
     'id'        =>  'dashboard',
     'title'     =>  esc_html__('Dashboard' , 'cora'),
     'icon'      =>  'dns',
 ]);
 
 # Add Section
-$this->options->add_field([
+$this->parent->options->add_field([
     'id'            =>  'widgets',
     'section'       =>  'dashboard',
     'title'         =>  esc_html__('Add Widgets' , 'cora'),

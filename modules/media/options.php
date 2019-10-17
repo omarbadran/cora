@@ -7,14 +7,14 @@
 */
 
 # Add Section
-$this->options->add_section([
+$this->parent->options->add_section([
     'id'        =>  'media',
     'title'     =>  esc_html__('Media' , 'cora'),
     'icon'      =>  'photo',
 ]);
 
 # SVG Support
-$this->options->add_field([
+$this->parent->options->add_field([
     'id'            =>  'svg_support',
     'section'       =>  'media',
     'title'         =>  esc_html__('SVG Support' , 'cora'),
@@ -23,7 +23,7 @@ $this->options->add_field([
 ]);
 
 # ICO Support
-$this->options->add_field([
+$this->parent->options->add_field([
     'id'            =>  'ico_support',
     'section'       =>  'media',
     'title'         =>  esc_html__('ICO Support' , 'cora'),

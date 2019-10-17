@@ -28,10 +28,10 @@ class Cora_Dashboard {
      * @access      public
      * @return      void
      */
-    public function __construct( $options ) {
+    public function __construct( $parent ) {
         
         # Load Options
-        $this->options = $options;
+        $this->parent = $parent;
 
         require_once dirname(__FILE__) . "/options.php";
 
