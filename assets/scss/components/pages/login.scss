@@ -1,10 +1,10 @@
 /* Login Page */
 
 body.login {
-    background-image:var(--backgroud_image);
+    background-image:var(--background_image);
 
     h1 {
-        display: var(--hide_logo);
+        display: none;
     }
 
     input[type=checkbox],

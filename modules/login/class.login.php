@@ -53,7 +53,7 @@ class Cora_Login {
 
         # Cora
         wp_enqueue_script( 
-            'cora',
+            'cora-login',
             $this->url."/assets/js/login.js"
         );
         
@@ -66,7 +66,7 @@ class Cora_Login {
      * @access      public
      * @return      array
      */
-    public function body_class ($classes) {
+    public function body_class ( $classes ) {
         
         $layout = $this->parent->options->get_value('login', 'layout', 'standard');
         $classes[] = 'cora-' . $layout;
@@ -76,7 +76,7 @@ class Cora_Login {
     }
 
     /**
-     * Inject css vars.
+     * Localize vars.
      *
      * @since       1.0.0
      * @access      public
@@ -84,20 +84,11 @@ class Cora_Login {
      */
     public function vars () {
 
-        extract($this->parent->options->get_values()['login']);
-
-        $hide_logo = $hide_logo == 'true' ? 'none' : 'block';        
-        $backgroud_image = $backgroud_type == 'image' ? $backgroud_image : '';
-        
-        echo "
-            <style type='text/css'> 
-                :root { 
-                    --login_logo: $logo;
-                    --hide_logo: $hide_logo;
-                    --backgroud_image: url($backgroud_image);
-                }
-            </style>
-        ";
+        wp_localize_script(
+            'cora-login',
+            'CoraLogin',
+            $this->parent->options->get_values()['login']
+        );
 
     }
 

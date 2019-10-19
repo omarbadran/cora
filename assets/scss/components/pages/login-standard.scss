@@ -14,7 +14,10 @@ body.login.cora-standard {
         h1 {
             padding: 22px 0px;
             border-bottom: 1px solid rgba(0, 0, 0, 0.065);
-            
+            width: 100%;
+            float: left;
+            box-sizing: border-box;
+        
             a {
                 margin-bottom: 0;
             }

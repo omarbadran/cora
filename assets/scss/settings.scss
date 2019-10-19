@@ -73,10 +73,10 @@ html body {
         select,
         textarea
         {
-            background-color: rgba(26, 44, 99, 0.1);
+            background-color: rgba(0, 0, 0, 0.08);
             
             &:hover {
-                background-color: rgba(26, 44, 99, 0.15);
+                background-color: rgba(0, 0, 0, 0.15);
             }
         }        
     }
