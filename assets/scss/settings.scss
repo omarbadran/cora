@@ -131,6 +131,16 @@ html body {
         }
     }
     
+    .select2-container--default .select2-selection--multiple .select2-selection__choice {
+        background: rgba(0, 0, 0, 0.1);
+        border-color: rgba(0, 0, 0, 0.1);
+        margin-bottom: 0;
+    }
+    
+    .select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
+        margin-right: 3px;
+    }
+    
     // Color field
     
     .pickr .pcr-button:before {

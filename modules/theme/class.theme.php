@@ -4,13 +4,13 @@
 defined( 'ABSPATH' ) || exit;
 
 /**
- * appearance Class
+ * theme Class
  * 
  * 
  * @since 1.0.0
  * @author Omar Badran
  */
-class Cora_appearance {
+class Cora_theme {
     
     /**
      * Options framework class.
@@ -44,7 +44,7 @@ class Cora_appearance {
     }
 
     /**
-     * Add CSS variables.
+     * Inject CSS variables.
      *
      * @since       1.0.0
      * @access      public
@@ -56,7 +56,7 @@ class Cora_appearance {
 
         foreach ($this->parent->options->fields as $field) {
 
-            if ($field['section'] == 'appearance' && $field['type'] == 'color') {
+            if ($field['section'] == 'theme' && $field['type'] == 'color') {
 
                 $id = $field['id'];
                 $section = $field['section'];
@@ -81,17 +81,25 @@ class Cora_appearance {
      * @return      void
      */
     public function live_preview() {
-        ?>
-            <script>
-                jQuery(document).ready(function($) {
-                    <?php foreach ($this->parent->options->fields as $field) { if($field['section'] == 'appearance') {?>
-                        CoraFramework.$watch( "values.appearance.<?php echo $field['id'] ?>", newVal => {
-                            document.documentElement.style.setProperty("--<?php echo $field['id'] ?>", newVal);                            
-                        })
-                    <?php }} ?>
-                });
-            </script>
-        <?php
+
+        echo "<script>jQuery(document).ready(function($) {";
+
+        foreach ($this->parent->options->fields as $field) {
+            
+            extract($field);
+            
+            $watch = '$watch';
+
+            if( $section == 'theme' && $type == 'color' ) {
+
+                echo "CoraFramework.$watch( 'values.theme.$id', newVal => {
+                        document.documentElement.style.setProperty('--$id', newVal);
+                    }); \n";
+
+            }
+        }
+
+        echo "}); </script>";
     }
 
 }

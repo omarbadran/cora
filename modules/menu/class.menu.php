@@ -59,7 +59,7 @@ class Cora_Menu {
 
         $items = $this->parent->options->get_value('menu', 'items', []);
         $before_edit = $this->get_menu_items();
-        
+        $should_update = false;
 
         # Detect if new items were added, maybe the user installed a new plugin?
         if($before_edit !== $items){

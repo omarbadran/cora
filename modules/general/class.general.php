@@ -4,13 +4,13 @@
 defined( 'ABSPATH' ) || exit;
 
 /**
- * Dashboard Class
+ * General Class
  * 
  * 
  * @since 1.0.0
  * @author Omar Badran
  */
-class Cora_Dashboard {
+class Cora_General {
     
     /**
      * Options framework class.
