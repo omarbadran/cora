@@ -84,10 +84,14 @@ class Cora_Login {
      */
     public function vars () {
 
+        $data = $this->parent->options->get_values()['login'];
+        $data['logo'] = $this->parent->options->get_value('general', 'logo');
+        $data['site_name'] = get_bloginfo();
+
         wp_localize_script(
             'cora-login',
             'CoraLogin',
-            $this->parent->options->get_values()['login']
+            $data
         );
 
     }

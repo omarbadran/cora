@@ -13,17 +13,34 @@ $this->parent->options->add_section([
     'icon'      =>  'sort',
 ]);
 
-
-# Collapse Button
+# Show Logo
 $this->parent->options->add_field([
-    'id'           =>  'collapse_button',
+    'id'           =>  'show_logo',
     'section'      =>  'menu',
-    'title'        =>   esc_html__('Collapse Button' , 'cora'),
+    'title'        =>   esc_html__('Show Logo' , 'cora'),
     'type'         =>   'switch',
     'default'      =>   true,
-    'condition'    =>   ['layout', '===', 'vertical']
 ]);
 
+# logo Type
+$this->parent->options->add_field([
+    'id'           =>  'logo_type',
+    'section'      =>  'menu',
+    'title'        =>   esc_html__('Logo Type' , 'cora'),
+    'type'         =>   'select',
+    'default'      =>   'site_name',
+    'options'      =>   [
+        [
+            'id'    =>  'logo',
+            'text'  =>  'Logo'
+        ],
+        [
+            'id'    =>  'site_name',
+            'text'  =>  'Site Name'
+        ]
+    ],
+    'condition'    =>   ['show_logo', '===', true]
+]);
 
 # Menu Items
 add_action('_admin_menu', function (){

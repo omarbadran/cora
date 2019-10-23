@@ -7,7 +7,7 @@ body {
 
 #wpcontent, #wpfooter {
     margin-left: var(--menu_width);
-    padding: 85px 50px 50px;
+    padding: 90px 60px;
 }
 
 .folded {
@@ -24,7 +24,7 @@ body {
     background: rgba(0, 0, 0, 0.15) !important;
     color: var(--secondary_text_color) !important;
     border: none !important;
-    border-radius: 4px;
+    border-radius: 3px;
 
     &:hover {
         background: rgba(0, 0, 0, 0.3) !important;

@@ -7,7 +7,7 @@ html.wp-toolbar {
 // Toolbar wrapper
 
 #wpadminbar {    
-    padding: 10px 40px;
+    padding: 10px 50px;
     height: 53px;
     box-sizing: border-box;
     background: var(--toolbar_background) !important;
@@ -19,7 +19,7 @@ html.wp-toolbar {
             
             // Top links
             > a.ab-item {
-                border-radius: 4px;
+                border-radius: 3px;
                 padding: 0px 8px !important;
 
                 &, &::before, span, span::before {

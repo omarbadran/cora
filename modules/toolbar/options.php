@@ -22,7 +22,7 @@ $this->parent->options->add_field([
     'fields'        =>  [
         [
             'id'        =>  'title',
-            'title'     =>  esc_html__('title' , 'cora'),
+            'title'     =>  esc_html__('Title' , 'cora'),
             'type'      =>  'text',
         ],
         [
@@ -33,14 +33,15 @@ $this->parent->options->add_field([
         [
             'id'        =>  'new_tab',
             'section'   =>  'toolbar',
-            'title'     =>  esc_html__('Open link in new tab ?' , 'cora'),
+            'title'     =>  esc_html__('Open In New Tab ?' , 'cora'),
             'type'      =>  'switch',
             'default'   =>  false
         ],
     ],
     'new_item_default'  => [
         'title'         =>  esc_html__('New Item', 'cora'),
-        'href'           =>  'http://'
+        'href'          =>  'http://',
+        'new_tab'       =>  true,
     ],
 ]);
 

@@ -27,13 +27,13 @@ jQuery(document).ready(function($) {
         
         $('body.login h1').show();
         
-        if ( CoraLogin.logo_type == 'image' ) {
+        if ( CoraLogin.logo_type == 'logo' ) {
         
-            $('body.login h1').append('<img src="' + CoraLogin.logo_url + '"/>');
+            $('body.login h1').append('<img src="' + CoraLogin.logo + '"/>');
         
         } else {
 
-            $('body.login h1').append(CoraLogin.logo_text);
+            $('body.login h1').append(CoraLogin.site_name);
         
         }
     

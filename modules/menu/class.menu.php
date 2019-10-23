@@ -225,9 +225,21 @@ class Cora_Menu {
      */
     public function branding() {
 
+        $show_logo = $this->parent->options->get_value('menu', 'show_logo');
+        $logo_type = $this->parent->options->get_value('menu', 'logo_type');
+        $logo = $this->parent->options->get_value('general', 'logo');
+
         $name = get_bloginfo();
 
-        echo "<li class='cora-branding'>$name</li>";
+        if ( ! filter_var( $show_logo, FILTER_VALIDATE_BOOLEAN ) ) {
+            return;
+        }
+
+        if ( $logo_type == 'logo' ) {
+            echo "<li class='cora-branding'> <img src='$logo' /> </li>";
+        } else {
+            echo "<li class='cora-branding'>$name</li>";
+        }
 
     }
 

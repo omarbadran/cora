@@ -2,15 +2,28 @@
 
 // Styles wont be used for editor page.
 body.block-editor-page {
-    --primary_background_color: #ffffff;
+    --primary_background_color: #fff;
     --secondary_background_color: #eaeef3;
     --primary_text_color: #555;
-    --secondary_text_color: #777777;
+    --secondary_text_color: #777;
     --link_color: #5980bb;
-    --toolbar_background: #e6e9ec;
-    --toolbar_item_text: rgba(0, 0, 0, 0.65);
-    --toolbar_highlight_text: rgba(255, 255, 255, 0.9);
-    --toolbar_highlight_background: rgb(107, 114, 125);
+    --toolbar_background: #f4f4f7;
+    --toolbar_item_text: rgba(0,0,0,0.65);
+    --toolbar_highlight_text: hsla(0,0%,100%,0.9);
+    --toolbar_highlight_background: #6b727d;
+    --forms_field_background: rgb(255, 255, 255);
+    --forms_field_border: rgba(0, 0, 0, 0.1);
+    --primary_button_color: #02B875;
+    --primary_button_text: #ffffff;
+    --secondary_button_color: #e1e4ea;
+    --secondary_button_text: #666;
+    
+    #wpadminbar {
+        padding: 5px 20px;
+        height: 43px;
+        box-sizing: border-box;
+        background: var(--toolbar_background)!important;
+    }    
 }
 
 @media (min-width: 782px) {

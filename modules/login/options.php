@@ -88,7 +88,6 @@ $this->parent->options->add_field([
     'condition'    =>   ['background_type', '==', 'image']
 ]);
 
-
 # Show Logo
 $this->parent->options->add_field([
     'id'           =>  'show_logo',
@@ -98,51 +97,22 @@ $this->parent->options->add_field([
     'default'      =>   false,
 ]);
 
-
 # logo Type
 $this->parent->options->add_field([
     'id'           =>  'logo_type',
     'section'      =>  'login',
     'title'        =>   esc_html__('Logo Type' , 'cora'),
     'type'         =>   'select',
-    'default'      =>   'image',
+    'default'      =>   'site_name',
     'options'      =>   [
         [
-            'id'    =>  'image',
-            'text'  =>  'Image'
+            'id'    =>  'logo',
+            'text'  =>  'Logo'
         ],
         [
-            'id'    =>  'text',
-            'text'  =>  'Text'
+            'id'    =>  'site_name',
+            'text'  =>  'Site Name'
         ]
     ],
     'condition'    =>   ['show_logo', '===', true]
-]);
-
-
-# Logo URL
-$this->parent->options->add_field([
-    'id'           =>  'logo_url',
-    'section'      =>  'login',
-    'title'        =>   esc_html__('Logo URL' , 'cora'),
-    'type'         =>   'image',
-    'default'      =>   $this->url . 'assets/images/wordpress-logo.svg',
-    'condition'    =>   [
-        ['show_logo', '===', true],
-        ['logo_type', '==', 'image']
-    ]
-]);
-
-
-# Logo text
-$this->parent->options->add_field([
-    'id'           =>  'logo_text',
-    'section'      =>  'login',
-    'title'        =>   esc_html__('Logo Text' , 'cora'),
-    'type'         =>   'text',
-    'default'      =>   get_bloginfo('name'),
-    'condition'    =>   [
-        ['show_logo', '===', true],
-        ['logo_type', '==', 'text']
-    ]
 ]);

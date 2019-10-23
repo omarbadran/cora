@@ -13,12 +13,24 @@ $this->parent->options->add_section([
     'icon'      =>  'dns',
 ]);
 
-# Add Section
+# Logo
 $this->parent->options->add_field([
-    'id'            =>  'widgets',
+    'id'            =>  'logo',
+    'section'       =>  'general',
+    'title'         =>  esc_html__('Logo' , 'cora'),
+    'type'          =>  'image',
+    'description'   =>  'Upload your logo here, will be used in the admin area & login page.',
+    'default'       =>  'https://s.w.org/style/images/about/WordPress-logotype-wmark.png'
+]);
+
+
+# Add Dashboard Widgets
+$this->parent->options->add_field([
+    'id'            =>  'add_widgets',
     'section'       =>  'general',
     'title'         =>  esc_html__('Dashboard Widgets' , 'cora'),
     'type'          =>  'repeater',
+    'description'   =>  'Easily add custom dashboard widgets.',
     'fields'        =>  [
         [
             'id'        =>  'title',

@@ -111,3 +111,21 @@ $this->parent->options->add_field([
     'type'          =>  'switch',
     'default'       =>  true,
 ]);
+
+# Media SVG Support
+$this->parent->options->add_field([
+    'id'            =>  'svg_support',
+    'section'       =>  'optimization',
+    'title'         =>  esc_html__('Media SVG Support' , 'cora'),
+    'type'          =>  'switch',
+    'default'       =>  true,
+]);
+
+# Media ICO Support
+$this->parent->options->add_field([
+    'id'            =>  'ico_support',
+    'section'       =>  'optimization',
+    'title'         =>  esc_html__('Media ICO Support' , 'cora'),
+    'type'          =>  'switch',
+    'default'       =>  true,
+]);

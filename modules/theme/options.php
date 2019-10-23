@@ -77,7 +77,7 @@ $this->parent->options->add_field([
     'section'   =>  'theme',
     'title'     =>  'Background',
     'type'      =>  'color',
-    'default'   =>  '#313742'
+    'default'   =>  '#333b46'
 ]);
 
 $this->parent->options->add_field([
@@ -85,7 +85,7 @@ $this->parent->options->add_field([
     'section'   =>  'theme',
     'title'     =>  'Item text',
     'type'      =>  'color',
-    'default'   =>  'rgba(255, 255, 255, 0.2)'
+    'default'   =>  'rgba(255, 255, 255, 0.15)'
 ]);
 
 $this->parent->options->add_field([
@@ -109,7 +109,7 @@ $this->parent->options->add_field([
     'section'   =>  'theme',
     'title'     =>  'Submenu background',
     'type'      =>  'color',
-    'default'   =>  'rgb(66, 74, 86)'
+    'default'   =>  'rgb(56, 63, 74)'
 ]);
 
 $this->parent->options->add_field([
@@ -128,7 +128,13 @@ $this->parent->options->add_field([
     'default'   =>  'rgba(255, 255, 255, 0.9)'
 ]);
 
-
+$this->parent->options->add_field([
+    'id'        =>  'menu_logo_text',
+    'section'   =>  'theme',
+    'title'     =>  'Logo Text',
+    'type'      =>  'color',
+    'default'   =>  'rgba(255, 255, 255, 0.9)'
+]);
 
 # Toolbar Colors
 
@@ -170,8 +176,48 @@ $this->parent->options->add_field([
     'default'   =>  '#2c333e'
 ]);
 
+# Buttons
 
-# Forms Colors
+$this->parent->options->add_field([
+    'section'   =>  'theme',
+    'type'      =>  'html',
+    'content'   =>  '<h3 class="cora-separator">' . esc_html__('Buttons' , 'cora') . '</h3>'
+]);
+
+$this->parent->options->add_field([
+    'id'        =>  'primary_button_color',
+    'section'   =>  'theme',
+    'title'     =>  'Primary Button Color',
+    'type'      =>  'color',
+    'default'   =>  '#02B875'
+]);
+
+$this->parent->options->add_field([
+    'id'        =>  'primary_button_text',
+    'section'   =>  'theme',
+    'title'     =>  'Primary Button Text',
+    'type'      =>  'color',
+    'default'   =>  '#ffffff'
+]);
+
+$this->parent->options->add_field([
+    'id'        =>  'secondary_button_color',
+    'section'   =>  'theme',
+    'title'     =>  'Secondary Button Color',
+    'type'      =>  'color',
+    'default'   =>  '#434d5d'
+]);
+
+$this->parent->options->add_field([
+    'id'        =>  'secondary_button_text',
+    'section'   =>  'theme',
+    'title'     =>  'Secondary Button Text',
+    'type'      =>  'color',
+    'default'   =>  '#f1ecec'
+]);
+
+
+# Forms
 
 $this->parent->options->add_field([
     'section'   =>  'theme',

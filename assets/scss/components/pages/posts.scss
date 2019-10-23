@@ -13,8 +13,8 @@ table.widefat {
     float: left;
     width: 100%;
     background: var(--secondary_background_color);
-    border: 0px solid rgba(0, 0, 0, 0.1);
-    border-radius: 4px;
+    border: 0px solid rgba(0, 0, 0, 0.06);
+    border-radius: 5px;
 }
 
 .alternate, .striped>tbody>:nth-child(odd), ul.striped>:nth-child(odd){
@@ -22,18 +22,14 @@ table.widefat {
 }
 
 .widefat thead td, .widefat thead th {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
 }
 .widefat tfoot td, .widefat tfoot th{
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 .row-actions {
     color: var(--secondary_background_color);
-}
-
-.subsubsub {
-    margin: 15px 0 0;
 }
 
 .ac_match, .subsubsub a.current {

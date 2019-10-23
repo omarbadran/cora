@@ -4,13 +4,13 @@
 defined( 'ABSPATH' ) || exit;
 
 /**
- * Media Class
+ * Backup Class
  * 
  * 
  * @since 1.0.0
  * @author Omar Badran
  */
-class Cora_Media {
+class Cora_Backup {
     
     /**
      * Options framework class.
