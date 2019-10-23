@@ -70,3 +70,16 @@ hr {
     border-top: 1px solid rgba(150, 140, 140, 0.2);
     border-bottom: 1px solid rgba(150, 140, 140, 0.2);
 }
+
+.cora_footer_info {
+    margin-left: 10px;
+    float: left;
+
+    span {
+        margin-left: 5px;
+        padding: 4px 10px;
+        border-radius: 3px;
+        background: rgba(0, 0, 0, 0.1);
+    }
+
+}

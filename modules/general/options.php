@@ -47,3 +47,21 @@ $this->parent->options->add_field([
         'title'         =>  esc_html__('Custom Widget', 'cora'),
     ],
 ]);
+
+# Footer Text
+$this->parent->options->add_field([
+    'id'            =>  'footer_text',
+    'section'       =>  'general',
+    'title'         =>  esc_html__('Footer Text' , 'cora'),
+    'type'          =>  'textarea',
+    'default'       =>  'Thank you for creating with WordPress.'
+]);
+
+$this->parent->options->add_field([
+    'id'            =>  'footer_info',
+    'section'       =>  'general',
+    'title'         =>  esc_html__('Footer Extra Informations' , 'cora'),
+    'type'          =>  'switch',
+    'default'       =>  true,
+    'description'   =>  'Show useful informations about your WordPress Installation in footer.'
+]);
