@@ -46,11 +46,12 @@ $this->parent->options->add_field([
 add_action('_admin_menu', function (){
     
     $this->parent->options->add_field([
-        'id'        =>  'items',
-        'section'   =>  'menu',
-        'title'     =>  esc_html__('Menu Items' , 'cora'),
-        'type'      =>  'repeater',
-        'fields'    =>  [
+        'id'            =>  'items',
+        'section'       =>  'menu',
+        'title'         =>  esc_html__('Menu Items' , 'cora'),
+        'type'          =>  'repeater',
+        'description'   =>  'This option allows you to edit the admin menu items, You can set user roles, change the title, icon, reorder, and add new links & pages.',
+        'fields'        =>  [
             [
                 'id'    =>  'title',
                 'title' =>  esc_html__('Title' , 'cora'),
@@ -106,4 +107,5 @@ add_action('_admin_menu', function (){
         'remove_condition' => ['type' , '!==' , 'default'],
         'remove_disabled_title' =>  esc_html__('Default items cannot be removed.', 'cora')
     ]);
+
 }, PHP_INT_MAX);

@@ -35,16 +35,12 @@ class Cora_Menu {
 
         require_once dirname(__FILE__) . "/options.php";
 
-        # Build menu
         
-        add_action( 'admin_menu', array( $this  , "build_menu" ), PHP_INT_MAX );
-        
-        add_filter( 'gettext', array( $this  , "collapse_menu_text" ), 10, 3 );
-
-        add_filter( 'adminmenu', array( $this  , "branding" ) );
+        add_action('admin_menu', [$this, "build_menu"], PHP_INT_MAX);
+        add_filter('adminmenu', [$this, "branding"]);
+        add_filter('gettext', [$this, "collapse_menu_text"], 10, 3);
 
     }
-
 
     /**
      * Build Menu.
@@ -53,42 +49,18 @@ class Cora_Menu {
      * @access      public
      * @return      void
      */
-    public function build_menu() {
+    public function build_menu () {
 
         global $menu, $admin_page_hooks, $_registered_pages, $_parent_pages;
+        
+        $this->update_if_necessary();
 
         $items = $this->parent->options->get_value('menu', 'items', []);
-        $before_edit = $this->get_menu_items();
-        $should_update = false;
 
-        # Detect if new items were added, maybe the user installed a new plugin?
-        if($before_edit !== $items){
-            $should_update = true;
-
-            # Add new items
-            foreach ($before_edit as $key => $item) {
-                if (! in_array( $item['info'], array_column($items, 'info') ) ) {
-                    $items[] = $item;
-                }
-            }
-        }
-
-        
-        # Removed items missing items    
-        foreach ($items as $item) {
-            if ( $item['type'] == 'default' && ! in_array($item['info'], array_column($before_edit, 'info') ) ) {
-                unset($item);
-            }
-        }
-
-        # Update the value if new items detected        
-        if($should_update){
-            $this->parent->options->update_value('menu', 'items', array_values($items));
-        }
-        
         # Build the menu
-        foreach ( $items as $value ) {
-            extract( $value );
+
+        foreach ( $items as $v ) {
+            extract( $v );
 
             # Check user role first
             if ( isset($hide_for) && in_array( wp_get_current_user()->roles[0], (array) $hide_for)) {
@@ -97,7 +69,7 @@ class Cora_Menu {
 
             # Default item
             if ( $type == 'default' ){
-                $item = $value['info'];
+                $item = $v['info'];
                 $item[0] = $title;
             }
             
@@ -128,8 +100,8 @@ class Cora_Menu {
             }
             
             # Custom Icon
-            if ( isset($value['custom_icon']) ) {
-                $item[6] = 'dashicons-cora-' . $value['custom_icon'];
+            if ( isset($v['custom_icon']) ) {
+                $item[6] = 'dashicons-cora-' . $v['custom_icon'];
             }
 
             # Add the item
@@ -141,24 +113,34 @@ class Cora_Menu {
     }
 
     /**
-     * Get an array current menu items to be used in the repeater field.
+     * Get Menu Items
+     * 
+     * Get an array of current menu items to be used in the repeater field.
      *
      * @since       1.0.0
      * @access      public
      * @return      array
      */
-    public function get_menu_items() {
+    public function get_menu_items () {
 
         global $menu;
 
+        # Remove separators
         $menu = array_filter($menu, function($v){
             return strpos( $v[4], 'wp-menu-separator' ) === false;
         });
 
+        # Remove link Manager
+        $menu = array_filter($menu, function($v){
+            return $v[1] !== 'manage_links';
+        });
+        
+        # Remove
         array_walk($menu, function(&$item){
             $item[0] = preg_replace('@<(\w+)\b.*?>.*?</\1>@si', '', $item[0]);
         });
 
+        # Create The Array
         $res = array_map(function($item) {
             return [
                 'type'      =>   'default',
@@ -167,20 +149,66 @@ class Cora_Menu {
             ];
         }, $menu);
 
+        # Sort By Key
         ksort($res);
-
+        
         return array_values($res);
 
     }
 
     /**
+     * Update if necessary.
+     * 
+     * Compare saved menu items with the current ones before modifying to see if new
+     * items were added or removed. In case the user has enabled/disabled some plugins.
+     *
+     * @since       1.0.0
+     * @access      public
+     * @return      array
+     */
+    public function update_if_necessary () {
+
+        $should_update  =   false;
+        $original       =   $this->get_menu_items();
+        $saved          =   $this->parent->options->get_value('menu', 'items', []);
+        
+        # Detect New Items
+        if( $original !== $saved ){
+            foreach ( $original as $k => $v ) {
+                if ( !in_array( $v['info'], array_column($saved, 'info') ) ) {
+                    $saved[] = $v;
+                    $should_update = true;
+                }
+            }
+        }
+
+        # Removed missing items
+        foreach ( $saved as $k => $v ) {
+            $missing = $v['type'] == 'default' && !in_array($v['info'], array_column($original, 'info') );
+            
+            if ($missing) {
+                $should_update = true;
+                unset($saved[$k]);
+            }
+        }
+
+        # Update
+        if( $should_update ){
+            $this->parent->options->update_value('menu', 'items', array_values($saved));
+        }
+
+    }
+
+    /**
+     * Get Roles.
+     * 
      * Get an array current menu items to be used in the repeater field.
      *
      * @since       1.0.0
      * @access      public
      * @return      array
      */
-    public function get_roles() {
+    public function get_roles () {
 
         if ( ! function_exists( 'get_editable_roles' ) ) {
             require_once ABSPATH . 'wp-admin/includes/user.php';
@@ -206,7 +234,7 @@ class Cora_Menu {
      * @access      public
      * @return      array
      */
-    public function collapse_menu_text($translated, $original, $domain) {
+    public function collapse_menu_text ( $translated, $original, $domain ) {
 
         if ($original == 'Collapse menu'){
             return 'Hide navigation'; 
@@ -223,10 +251,12 @@ class Cora_Menu {
      * @access      public
      * @return      array
      */
-    public function branding() {
+    public function branding () {
 
         $show_logo = $this->parent->options->get_value('menu', 'show_logo');
+
         $logo_type = $this->parent->options->get_value('menu', 'logo_type');
+        
         $logo = $this->parent->options->get_value('general', 'logo');
 
         $name = get_bloginfo();
@@ -242,6 +272,5 @@ class Cora_Menu {
         }
 
     }
-
 
 }
