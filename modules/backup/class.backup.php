@@ -13,15 +13,6 @@ defined( 'ABSPATH' ) || exit;
 class Cora_Backup {
     
     /**
-     * Options framework class.
-     *
-     * @since       1.0.0
-     * @access      public
-     * @var         object
-     */
-    public $options;
-
-    /**
      * Class constructor.
      *
      * @since       1.0.0

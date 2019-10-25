@@ -67,15 +67,6 @@ $this->parent->options->add_field([
     'default'       =>  true,
 ]);
 
-# WP REST API
-$this->parent->options->add_field([
-    'id'            =>  'wp_rest_api',
-    'section'       =>  'optimization',
-    'title'         =>  esc_html__('WP REST API' , 'cora'),
-    'type'          =>  'switch',
-    'default'       =>  true,
-]);
-
 # WP oEmbed
 $this->parent->options->add_field([
     'id'            =>  'wp_oEmbed',
@@ -103,22 +94,13 @@ $this->parent->options->add_field([
     'default'       =>  true,
 ]);
 
-# WP Rel Links
-$this->parent->options->add_field([
-    'id'            =>  'wp_rel_links',
-    'section'       =>  'optimization',
-    'title'         =>  esc_html__('WP Rel Links' , 'cora'),
-    'type'          =>  'switch',
-    'default'       =>  true,
-]);
-
 # Media SVG Support
 $this->parent->options->add_field([
     'id'            =>  'svg_support',
     'section'       =>  'optimization',
     'title'         =>  esc_html__('Media SVG Support' , 'cora'),
     'type'          =>  'switch',
-    'default'       =>  true,
+    'default'       =>  false,
 ]);
 
 # Media ICO Support
@@ -127,5 +109,5 @@ $this->parent->options->add_field([
     'section'       =>  'optimization',
     'title'         =>  esc_html__('Media ICO Support' , 'cora'),
     'type'          =>  'switch',
-    'default'       =>  true,
+    'default'       =>  false,
 ]);

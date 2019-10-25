@@ -11,15 +11,6 @@ defined( 'ABSPATH' ) || exit;
  * @author Omar Badran
  */
 class Cora_Toolbar {
-    
-    /**
-     * Options framework class.
-     *
-     * @since       1.0.0
-     * @access      public
-     * @var         object
-     */
-    public $options;
 
     /**
      * Class constructor.
