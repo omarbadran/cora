@@ -45,6 +45,7 @@ $this->parent->options->add_field([
     ],
     'new_item_default'  => [
         'title'         =>  esc_html__('Custom Widget', 'cora'),
+        'content'       =>  ''
     ],
 ]);
 

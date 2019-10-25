@@ -26,7 +26,36 @@ class Cora_General {
 
         require_once dirname(__FILE__) . "/options.php";
 
-        add_filter( 'admin_footer_text',  [ $this, 'footer' ], PHP_INT_MAX);            
+        add_filter( 'admin_footer_text',  [ $this, 'footer' ], PHP_INT_MAX);
+        
+        add_action('wp_dashboard_setup', [ $this, 'add_dashboard_widgets' ]);
+
+    }
+
+    /**
+     * Add Dashboard widgets.
+     *
+     * @since       1.0.0
+     * @access      public
+     * @return      void
+     */
+    public function add_dashboard_widgets() {
+        global $wp_meta_boxes;
+        $widgets = $this->parent->options->get_value('general', 'add_widgets');
+        
+        if ( is_array($widgets) ) {
+
+            foreach ($widgets as $widget) {
+                extract($widget);
+                var_dump($widget);
+                $id = str_replace('_', '-', plugin_basename( sanitize_title( $title ) ) );
+
+                wp_add_dashboard_widget($id, $title, function () use($content) {
+                    echo $content;
+                });            
+            }
+
+        }
 
     }
 
