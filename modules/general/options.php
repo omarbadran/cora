@@ -58,6 +58,7 @@ $this->parent->options->add_field([
     'default'       =>  'Thank you for creating with WordPress.'
 ]);
 
+# Footer info
 $this->parent->options->add_field([
     'id'            =>  'footer_info',
     'section'       =>  'general',
@@ -65,4 +66,130 @@ $this->parent->options->add_field([
     'type'          =>  'switch',
     'default'       =>  true,
     'description'   =>  'Show useful informations about your WordPress Installation in footer.'
+]);
+
+# Admin Scripts
+$this->parent->options->add_field([
+    'id'            =>  'admin_scripts',
+    'section'       =>  'general',
+    'title'         =>  esc_html__('Admin Scripts' , 'cora'),
+    'description'   =>  'This option allows you to add custom CSS & JS to the admin area.',
+    'type'          =>  'repeater',
+    'fields'        =>  [
+        [
+            'id'        =>  'title',
+            'title'     =>  esc_html__('Title' , 'cora'),
+            'type'      =>  'text',
+        ],
+        [
+            'id'        =>  'type',
+            'title'     =>  esc_html__('Type' , 'cora'),
+            'type'      =>  'select',
+            'options'   =>  [
+                [
+                    'text'  =>  'CSS',
+                    'id'    =>  'css'
+                ],
+                [
+                    'text'  =>  'JS',
+                    'id'    =>  'js'
+                ]
+            ]
+        ],
+        [
+            'id'    =>  'content',
+            'title' =>  esc_html__('Code' , 'cora'),
+            'type'  =>  'textarea',
+            'placeholder' => 'Paste your code here.'
+        ],
+    ],
+    'new_item_default'  => [
+        'title'         =>  esc_html__('Custom Script', 'cora'),
+        'type'          =>  'css',
+        'content'       =>  ''
+    ],
+]);
+
+# frontend Scripts
+$this->parent->options->add_field([
+    'id'            =>  'frontend_scripts',
+    'section'       =>  'general',
+    'title'         =>  esc_html__('Front-end Scripts' , 'cora'),
+    'description'   =>  'This option allows you to add custom CSS & JS on the front-end.',
+    'type'          =>  'repeater',
+    'fields'        =>  [
+        [
+            'id'        =>  'title',
+            'title'     =>  esc_html__('Title' , 'cora'),
+            'type'      =>  'text',
+        ],
+        [
+            'id'        =>  'type',
+            'title'     =>  esc_html__('Type' , 'cora'),
+            'type'      =>  'select',
+            'options'   =>  [
+                [
+                    'text'  =>  'CSS',
+                    'id'    =>  'css'
+                ],
+                [
+                    'text'  =>  'JS',
+                    'id'    =>  'js'
+                ]
+            ]
+        ],
+        [
+            'id'    =>  'content',
+            'title' =>  esc_html__('Code' , 'cora'),
+            'type'  =>  'textarea',
+            'placeholder' => 'Paste your code here.'
+        ],
+    ],
+    'new_item_default'  => [
+        'title'         =>  esc_html__('Custom Script', 'cora'),
+        'type'          =>  'css',
+        'content'       =>  ''
+    ],
+]);
+
+# login Scripts
+$this->parent->options->add_field([
+    'id'            =>  'login_scripts',
+    'section'       =>  'general',
+    'title'         =>  esc_html__('Login Scripts' , 'cora'),
+    'description'   =>  'This option allows you to add custom CSS & JS to the login area.',
+    'type'          =>  'repeater',
+    'fields'        =>  [
+        [
+            'id'        =>  'title',
+            'title'     =>  esc_html__('Title' , 'cora'),
+            'type'      =>  'text',
+        ],
+        [
+            'id'        =>  'type',
+            'title'     =>  esc_html__('Type' , 'cora'),
+            'type'      =>  'select',
+            'options'   =>  [
+                [
+                    'text'  =>  'CSS',
+                    'id'    =>  'css'
+                ],
+                [
+                    'text'  =>  'JS',
+                    'id'    =>  'js'
+                ]
+            ]
+        ],
+        [
+            'id'    =>  'content',
+            'title' =>  esc_html__('Code' , 'cora'),
+            'type'  =>  'textarea',
+            'placeholder' => 'Paste your code here.'
+        ],
+    ],
+    'new_item_default'  => [
+        'title'         =>  esc_html__('Custom Script', 'cora'),
+        'type'          =>  'css',
+        'content'       =>  ''
+    ],
 ]);
