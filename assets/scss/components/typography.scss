@@ -1,6 +1,6 @@
 /* Typography: Load Josefin Sans */
 
-@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:400,400i,600,600i,700,700i&display=swap');
 
 /* Typography: Links */
 
@@ -15,12 +15,14 @@ h1{
 }
 
 .wrap h1{
-    margin-bottom: 35px;
+    margin-bottom: 30px;
     font-weight: 700;
     font-size: 25px;
+    letter-spacing: -0.5px;
     padding: 0;
     font-family: Josefin Sans,sans-serif;
     margin-left: -1px;
+    line-height: 35px;
 }
 
 #dashboard-widgets h3, #dashboard-widgets h4, #dashboard_quick_press .drafts h2, h2, h3 {

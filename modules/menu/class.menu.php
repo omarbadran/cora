@@ -29,7 +29,6 @@ class Cora_Menu {
         
         add_action('admin_menu', [$this, "build_menu"], PHP_INT_MAX);
         add_filter('adminmenu', [$this, "branding"]);
-        add_filter('gettext', [$this, "collapse_menu_text"], 10, 3);
 
     }
 
@@ -215,23 +214,6 @@ class Cora_Menu {
         }
 
         return $roles;
-
-    }
-
-    /**
-     * Change 'Collapse menu' text.
-     *
-     * @since       1.0.0
-     * @access      public
-     * @return      array
-     */
-    public function collapse_menu_text ( $translated, $original, $domain ) {
-
-        if ($original == 'Collapse menu'){
-            return 'Hide navigation'; 
-        }
-
-        return $translated;
 
     }
 

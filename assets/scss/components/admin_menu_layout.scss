@@ -37,6 +37,11 @@
 #collapse-button {
     margin-top: 20px;
     float: left;
+    font-family: Josefin Sans,sans-serif;
+
+    .collapse-button-label {
+        top: 12px;
+    }
 }
 
 
@@ -52,6 +57,8 @@
     margin-top: 0px!important;
     float: left;
     width: 100%;
+    opacity: 0;
+    transition: all 0.15s;
     
     img {
         width: 100%;
@@ -79,7 +86,7 @@
         }
 
         #adminmenu {
-            padding: 0 25px;
+            padding: 0 20px;
             box-sizing: border-box;
             float: left;
             margin-top: 30px;
@@ -108,6 +115,7 @@
             position: relative!important;
             left: 0!important;
             font-family: 'Josefin Sans', sans-serif;
+            letter-spacing: 0.2px;
         }
 
         .wp-menu-image::before {
@@ -120,6 +128,7 @@
             min-height: 30px;
             float: left;
             width: 100%;
+            margin-bottom: 1px;
         }
 
         .wp-menu-image {

@@ -1,0 +1,25 @@
+/* Shadows */
+
+$shadow: 0 0 25px rgba(0,0,0,.06);
+
+body.cora-shadows {
+
+    .postbox,
+    .stuffbox,
+    #welcome-panel,
+    #screen-meta-links button,
+    #login,
+    .wp-list-table,
+    .media-frame.mode-grid .media-toolbar
+    {
+        box-shadow: $shadow !important;
+        border: 1px solid rgba(0,0,0,.06)  !important;
+    }
+
+
+    .metabox-holder {
+        .postbox>h3, .stuffbox>h3, h2.hndle, h3.hndle {
+            border-bottom-color: var(--primary_background_color) !important;
+        }
+    }
+}

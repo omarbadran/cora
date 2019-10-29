@@ -29,9 +29,33 @@ class Cora_theme {
         add_action( 'admin_head', array( $this  , "css_vars" ) );
         add_action( 'login_head', array( $this  , "css_vars" ) );
 
+        add_filter( 'admin_body_class', [$this  , "shadows"]);
+        add_filter( 'login_body_class', [$this  , "shadows"]);
+
         if( $this->parent->options->in_view() ){
             add_action( 'admin_print_footer_scripts', array( $this  , "live_preview" ) );
         }
+    }
+
+    /**
+     * Shadows.
+     *
+     * @since       1.0.0
+     * @access      public
+     * @return      void
+     */
+    public function shadows( $classes ) {
+        $use_shadows = $this->parent->options->get_value('theme', 'shadows');
+
+        if ( filter_var($use_shadows, FILTER_VALIDATE_BOOLEAN) ) {
+            if ( is_array($classes) ) {
+                $classes[] = 'cora-shadows';
+            } else {
+                $classes .= 'cora-shadows';
+            }
+        }
+
+        return $classes;
     }
 
     /**
@@ -50,8 +74,7 @@ class Cora_theme {
             if ($field['section'] == 'theme' && $field['type'] == 'color') {
 
                 $id = $field['id'];
-                $section = $field['section'];
-                $value = $this->parent->options->get_value($section, $id);
+                $value = $this->parent->options->get_value('theme', $id);
                 
                 if( $value ){
                     echo "--$id: $value;";

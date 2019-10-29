@@ -12,13 +12,14 @@ html body #cf {
             color: var(--primary_text_color);
             line-height: 26px;
             font-weight: 700;
+            font-family: Josefin Sans,sans-serif;
         }
 
         span {
-            background: rgba(0, 0, 0, 0.065);
+            background: rgba(0,0,0,.065);
             color: var(--secondary_text_color);
-            margin: 18px 0 18px 20px;
-            line-height: 26px;
+            margin: 16px 0 18px 20px;
+            line-height: 24px;
         }
 
     }

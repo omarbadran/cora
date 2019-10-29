@@ -31,6 +31,7 @@ class Cora_General {
         add_action( 'admin_head', [ $this, 'admin_scripts' ]);
         add_action( 'wp_head', [ $this, 'frontend_scripts' ]);
         add_action( 'login_head', [ $this, 'login_scripts' ]);
+
     }
 
     /**
@@ -43,11 +44,13 @@ class Cora_General {
     public function admin_scripts() {
         $scripts = $this->parent->options->get_value('general', 'admin_scripts');
 
-        foreach ($scripts as $script) {
-            extract( $script );
-            $tag = ($type == 'css') ? 'style' : 'script';
+        if ( is_array($scripts) ) {
+            foreach ($scripts as $script) {
+                extract( $script );
+                $tag = ($type == 'css') ? 'style' : 'script';
 
-            echo "<$tag>$content</$tag>";
+                echo "<$tag>$content</$tag>";
+            }
         }
     }
 
@@ -61,14 +64,15 @@ class Cora_General {
     public function frontend_scripts() {
         $scripts = $this->parent->options->get_value('general', 'frontend_scripts');
 
-        foreach ($scripts as $script) {
-            extract( $script );
-            $tag = ($type == 'css') ? 'style' : 'script';
+        if ( is_array($scripts) ) {
+            foreach ($scripts as $script) {
+                extract( $script );
+                $tag = ($type == 'css') ? 'style' : 'script';
 
-            echo "<$tag>$content</$tag>";
+                echo "<$tag>$content</$tag>";
+            }
         }
     }
-
 
     /**
      * Login Scripts.
@@ -80,11 +84,13 @@ class Cora_General {
     public function login_scripts() {
         $scripts = $this->parent->options->get_value('general', 'login_scripts');
 
-        foreach ($scripts as $script) {
-            extract( $script );
-            $tag = ($type == 'css') ? 'style' : 'script';
+        if ( is_array($scripts) ) {
+            foreach ($scripts as $script) {
+                extract( $script );
+                $tag = ($type == 'css') ? 'style' : 'script';
 
-            echo "<$tag>$content</$tag>";
+                echo "<$tag>$content</$tag>";
+            }
         }
     }
 

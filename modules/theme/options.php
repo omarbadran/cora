@@ -13,6 +13,15 @@ $this->parent->options->add_section([
     'icon'      =>  'invert_colors',
 ]);
 
+# Shadows
+$this->parent->options->add_field([
+    'id'        =>  'shadows',
+    'section'   =>  'theme',
+    'title'     =>  'Box Shadows',
+    'type'      =>  'switch',
+    'default'   =>  true
+]);
+
 
 # General
 
@@ -27,7 +36,7 @@ $this->parent->options->add_field([
     'section'   =>  'theme',
     'title'     =>  'Primary background',
     'type'      =>  'color',
-    'default'   =>  '#383f4a'
+    'default'   =>  '#F8F7FA'
 ]);
 
 $this->parent->options->add_field([
@@ -35,7 +44,7 @@ $this->parent->options->add_field([
     'section'   =>  'theme',
     'title'     =>  'Secondary background',
     'type'      =>  'color',
-    'default'   =>  '#424b56'
+    'default'   =>  '#ffffff'
 ]);
 
 $this->parent->options->add_field([
@@ -43,7 +52,7 @@ $this->parent->options->add_field([
     'section'   =>  'theme',
     'title'     =>  'Primary text',
     'type'      =>  'color',
-    'default'   =>  '#ffffff'
+    'default'   =>  '#5a5a61'
 ]);
 
 $this->parent->options->add_field([
@@ -51,7 +60,7 @@ $this->parent->options->add_field([
     'section'   =>  'theme',
     'title'     =>  'Secondary text',
     'type'      =>  'color',
-    'default'   =>  '#f7f0f0'
+    'default'   =>  '#71717f'
 ]);
 
 $this->parent->options->add_field([
@@ -59,7 +68,7 @@ $this->parent->options->add_field([
     'section'   =>  'theme',
     'title'     =>  'Links',
     'type'      =>  'color',
-    'default'   =>  '#6c8fc3'
+    'default'   =>  '#0073aa'
 ]);
 
 
@@ -77,7 +86,7 @@ $this->parent->options->add_field([
     'section'   =>  'theme',
     'title'     =>  'Background',
     'type'      =>  'color',
-    'default'   =>  '#333b46'
+    'default'   =>  'rgb(25, 38, 62)'
 ]);
 
 $this->parent->options->add_field([
@@ -109,7 +118,7 @@ $this->parent->options->add_field([
     'section'   =>  'theme',
     'title'     =>  'Submenu background',
     'type'      =>  'color',
-    'default'   =>  'rgb(56, 63, 74)'
+    'default'   =>  '#192b4a'
 ]);
 
 $this->parent->options->add_field([
@@ -117,7 +126,7 @@ $this->parent->options->add_field([
     'section'   =>  'theme',
     'title'     =>  'Submenu item text',
     'type'      =>  'color',
-    'default'   =>  'rgba(255, 255, 255, 0.2)'
+    'default'   =>  'rgba(255, 255, 255, 0.15)'
 ]);
 
 $this->parent->options->add_field([
@@ -149,7 +158,7 @@ $this->parent->options->add_field([
     'section'   =>  'theme',
     'title'     =>  'Toolbar background',
     'type'      =>  'color',
-    'default'   =>  '#383f4a'
+    'default'   =>  'rgba(255, 255, 255, 0)'
 ]);
 
 $this->parent->options->add_field([
@@ -157,7 +166,7 @@ $this->parent->options->add_field([
     'section'   =>  'theme',
     'title'     =>  'Item text',
     'type'      =>  'color',
-    'default'   =>  'rgba(255, 255, 255, 0.4)'
+    'default'   =>  '#707386'
 ]);
 
 $this->parent->options->add_field([
@@ -165,7 +174,7 @@ $this->parent->options->add_field([
     'section'   =>  'theme',
     'title'     =>  'Item text (Highlight)',
     'type'      =>  'color',
-    'default'   =>  'rgba(255, 255, 255, 0.9)'
+    'default'   =>  'rgba(255, 255, 255, 1)'
 ]);
 
 $this->parent->options->add_field([
@@ -173,7 +182,7 @@ $this->parent->options->add_field([
     'section'   =>  'theme',
     'title'     =>  'Item background (Highlight)',
     'type'      =>  'color',
-    'default'   =>  '#2c333e'
+    'default'   =>  'rgb(91, 96, 107)'
 ]);
 
 # Buttons
@@ -205,7 +214,7 @@ $this->parent->options->add_field([
     'section'   =>  'theme',
     'title'     =>  'Secondary Button Color',
     'type'      =>  'color',
-    'default'   =>  '#434d5d'
+    'default'   =>  '#e2e2e2'
 ]);
 
 $this->parent->options->add_field([
@@ -213,7 +222,7 @@ $this->parent->options->add_field([
     'section'   =>  'theme',
     'title'     =>  'Secondary Button Text',
     'type'      =>  'color',
-    'default'   =>  '#f1ecec'
+    'default'   =>  '#666'
 ]);
 
 
@@ -230,7 +239,7 @@ $this->parent->options->add_field([
     'section'   =>  'theme',
     'title'     =>  'Control field background',
     'type'      =>  'color',
-    'default'   =>  'rgba(62, 68, 80, 1)'
+    'default'   =>  'rgba(255, 255, 255, 0)'
 ]);
 
 $this->parent->options->add_field([
@@ -238,5 +247,5 @@ $this->parent->options->add_field([
     'section'   =>  'theme',
     'title'     =>  'Control field border',
     'type'      =>  'color',
-    'default'   =>  'rgba(62, 68, 80, 1)'
+    'default'   =>  'rgba(0, 0, 0, 0.08)'
 ]);

@@ -62,10 +62,10 @@ $this->parent->options->add_field([
 $this->parent->options->add_field([
     'id'            =>  'footer_info',
     'section'       =>  'general',
-    'title'         =>  esc_html__('Footer Extra Informations' , 'cora'),
+    'title'         =>  esc_html__('Footer Informations' , 'cora'),
     'type'          =>  'switch',
-    'default'       =>  true,
-    'description'   =>  'Show useful informations about your WordPress Installation in footer.'
+    'description'   =>  'Show useful informations about your WordPress Installation in footer.',
+    'default'       =>  true
 ]);
 
 # Admin Scripts

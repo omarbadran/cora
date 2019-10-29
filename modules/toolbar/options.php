@@ -51,7 +51,7 @@ $this->parent->options->add_field([
     'section'   =>  'toolbar',
     'title'     =>  'WP Logo',
     'type'      =>  'switch',
-    'default'   =>  true,
+    'default'   =>  false,
 ]);
 
 # Site Name

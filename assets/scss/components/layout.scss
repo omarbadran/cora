@@ -7,7 +7,11 @@ body {
 
 #wpcontent, #wpfooter {
     margin-left: var(--menu_width);
-    padding: 90px 60px;
+    padding: 80px 75px;
+}
+
+#dashboard-widgets-wrap {
+    overflow: visible;
 }
 
 .folded {
@@ -21,13 +25,14 @@ body {
 }
 
 .page-title-action {
-    background: rgba(0, 0, 0, 0.15) !important;
-    color: var(--secondary_text_color) !important;
-    border: none !important;
+    background: rgba(0,0,0,.1)!important;
+    color: var(--secondary_text_color)!important;
+    border: none!important;
     border-radius: 3px;
+    font-weight: 400 !important;
 
     &:hover {
-        background: rgba(0, 0, 0, 0.3) !important;
+        background: rgba(0, 0, 0, 0.2) !important;
     }
 }
 
