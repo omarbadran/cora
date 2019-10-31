@@ -5,9 +5,9 @@ body {
     color: var(--primary_text_color);
 }
 
-#wpcontent, #wpfooter {
+#wpcontent {
     margin-left: var(--menu_width);
-    padding: 80px 75px;
+    padding: 75px 75px 40px 75px;
 }
 
 #dashboard-widgets-wrap {
@@ -41,15 +41,15 @@ body {
 }
 
 #major-publishing-actions{
-    background: transparent;
+    background: var(--primary_background_color);
     border: 0;
 }
 
 .wp-editor-container {
-    border-color: var(--secondary_background_color) !important;
+    border-color: rgba(0, 0, 0, 0.1)!important;
 
     .quicktags-toolbar {
-        background: var(--secondary_background_color) !important;
+        background: var(--primary_background_color) !important;
         border: none;
     }
 }

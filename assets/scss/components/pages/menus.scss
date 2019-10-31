@@ -1,8 +1,8 @@
 /* Menu Editor Page */
 
-.nav-tab-active, .nav-tab-active:focus, .nav-tab-active:focus:active, .nav-tab-active:hover {
-    border-bottom: 1px solid transparent!important;
-    background: var(--primary_background_color) !important;
+a.nav-tab-active, a.nav-tab-active:focus, a.nav-tab-active:focus:active, a.nav-tab-active:hover {
+    background-color: var(--primary_background_color);
+    border-bottom: 1px solid var(--primary_background_color) !important;
     color: var(--primary_text_color) !important;
 }
 
@@ -46,12 +46,12 @@
 }
 
 .categorydiv div.tabs-panel, .customlinkdiv div.tabs-panel, .posttypediv div.tabs-panel, .taxonomydiv div.tabs-panel, .wp-tab-panel {
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: var(--primary_background_color);
     border-color: rgba(0, 0, 0, 0.1);
 }
 
 .wp-tab-active, ul.add-menu-item-tabs li.tabs, ul.category-tabs li.tabs {
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: var(--primary_background_color);
     border-color: rgba(0, 0, 0, 0.1);
 }
 
@@ -64,8 +64,12 @@
 }
 
 #nav-menu-footer, #nav-menu-header {
-    background: rgba(0, 0, 0, 0.1);
-    border-color: rgba(0, 0, 0, 0.1) !important;
+    background: var(--primary_background_color);
+    border-color: rgba(0,0,0,.075) !important;
+}
+
+#nav-menu-footer {
+    border-top: 1px solid;
 }
 
 .nav-menus-php #post-body {
@@ -74,7 +78,7 @@
 }
 
 .menu-settings {
-    border-color: rgba(0, 0, 0, 0.1);
+    border-color: transparent;
 }
 
 .howto {
@@ -92,4 +96,19 @@
 .link-to-original {
     color: var(--secondary_text_color);
     border-color: rgba(0, 0, 0, 0.1);
+}
+
+.outer-border {
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.menu-edit {
+    border-radius: 5px;
+    overflow: hidden;
+    border: 1px solid rgba(0,0,0,.075) !important;
+}
+
+.nav-menus-php #post-body {
+    padding: 15px 30px;
 }

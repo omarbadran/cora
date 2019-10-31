@@ -1,6 +1,6 @@
 /* Shadows */
 
-$shadow: 0 0 25px rgba(0,0,0,.06);
+$shadow: 0 0 20px rgba(0,0,0,.05);
 
 body.cora-shadows {
 
@@ -10,16 +10,24 @@ body.cora-shadows {
     #screen-meta-links button,
     #login,
     .wp-list-table,
-    .media-frame.mode-grid .media-toolbar
+    .media-frame.mode-grid .media-toolbar,
+    .manage-menus,
+    .outer-border,
+    .menu-edit,
+    .comment-ays,
+    .feature-filter,
+    .imgedit-group,
+    .popular-tags,
+    .stuffbox,
+    .widgets-holder-wrap,
+    .wp-editor-container,
+    p.popular-tags,
+    table.widefat,
+    .notice,
+    div.error,
+    div.updated
     {
         box-shadow: $shadow !important;
-        border: 1px solid rgba(0,0,0,.06)  !important;
     }
 
-
-    .metabox-holder {
-        .postbox>h3, .stuffbox>h3, h2.hndle, h3.hndle {
-            border-bottom-color: var(--primary_background_color) !important;
-        }
-    }
 }

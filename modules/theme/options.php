@@ -13,7 +13,43 @@ $this->parent->options->add_section([
     'icon'      =>  'invert_colors',
 ]);
 
+
+# Themes
+
+$this->parent->options->add_field([
+    'section'   =>  'theme',
+    'type'      =>  'html',
+    'content'   =>  '<h3 class="cora-separator">' . esc_html__('Themes' , 'cora') . '</h3>'
+]);
+
+$this->parent->options->add_field([
+    'id'        =>  'themes',
+    'section'   =>  'theme',
+    'type'      =>  'demo',
+    'title'     =>  false,
+    'options'   =>  [
+        [
+            'img'   =>  $this->url . 'themes/light/screenshot.png',
+            'title' =>  'Light',
+            'data'  =>  json_decode( file_get_contents($this->dir . 'themes/light/light.json'), true )
+        ],
+        [
+            'img'   =>  $this->url . 'themes/dark/screenshot.png',
+            'title' =>  'Dark',
+            'data'  =>  json_decode( file_get_contents($this->dir . 'themes/dark/dark.json'), true )
+        ]
+    ]
+]);
+
+
 # Shadows
+
+$this->parent->options->add_field([
+    'section'   =>  'theme',
+    'type'      =>  'html',
+    'content'   =>  '<h3 class="cora-separator">' . esc_html__('Shadows' , 'cora') . '</h3>'
+]);
+
 $this->parent->options->add_field([
     'id'        =>  'shadows',
     'section'   =>  'theme',
@@ -36,7 +72,7 @@ $this->parent->options->add_field([
     'section'   =>  'theme',
     'title'     =>  'Primary background',
     'type'      =>  'color',
-    'default'   =>  '#F8F7FA'
+    'default'   =>  '#f3f4f9'
 ]);
 
 $this->parent->options->add_field([
@@ -60,7 +96,7 @@ $this->parent->options->add_field([
     'section'   =>  'theme',
     'title'     =>  'Secondary text',
     'type'      =>  'color',
-    'default'   =>  '#71717f'
+    'default'   =>  '#737379'
 ]);
 
 $this->parent->options->add_field([
@@ -86,7 +122,7 @@ $this->parent->options->add_field([
     'section'   =>  'theme',
     'title'     =>  'Background',
     'type'      =>  'color',
-    'default'   =>  'rgb(25, 38, 62)'
+    'default'   =>  'rgb(41, 49, 66)'
 ]);
 
 $this->parent->options->add_field([
@@ -118,7 +154,7 @@ $this->parent->options->add_field([
     'section'   =>  'theme',
     'title'     =>  'Submenu background',
     'type'      =>  'color',
-    'default'   =>  '#192b4a'
+    'default'   =>  'rgb(41, 49, 66)'
 ]);
 
 $this->parent->options->add_field([
@@ -158,7 +194,7 @@ $this->parent->options->add_field([
     'section'   =>  'theme',
     'title'     =>  'Toolbar background',
     'type'      =>  'color',
-    'default'   =>  'rgba(255, 255, 255, 0)'
+    'default'   =>  '#f3f4f9'
 ]);
 
 $this->parent->options->add_field([
@@ -166,7 +202,7 @@ $this->parent->options->add_field([
     'section'   =>  'theme',
     'title'     =>  'Item text',
     'type'      =>  'color',
-    'default'   =>  '#707386'
+    'default'   =>  '#7c7e8c'
 ]);
 
 $this->parent->options->add_field([
@@ -214,7 +250,7 @@ $this->parent->options->add_field([
     'section'   =>  'theme',
     'title'     =>  'Secondary Button Color',
     'type'      =>  'color',
-    'default'   =>  '#e2e2e2'
+    'default'   =>  '#dadbe0'
 ]);
 
 $this->parent->options->add_field([
@@ -247,5 +283,5 @@ $this->parent->options->add_field([
     'section'   =>  'theme',
     'title'     =>  'Control field border',
     'type'      =>  'color',
-    'default'   =>  'rgba(0, 0, 0, 0.08)'
+    'default'   =>  'rgba(0, 0, 0, 0.1)'
 ]);

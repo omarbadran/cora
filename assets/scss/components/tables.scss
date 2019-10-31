@@ -7,14 +7,14 @@ table {
     thead tr td,
     thead tr th,
     .comment-grey-bubble:before,
-    .sorting-indicator:before
-    {
+    .sorting-indicator:before {
         color: var(--secondary_text_color)  !important;
     }
 
     td, th {
-        color: var(--primary_text_color)  !important;
-        border-color: var(--primary_background_color) !important;
+        color: var(--primary_text_color) !important;
+        border-top-color: var(--primary_background_color) !important;
+        border-bottom-color: var(--primary_background_color) !important;
     }
     
 }

@@ -6,10 +6,9 @@
 .popular-tags,
 .stuffbox,
 .widgets-holder-wrap,
-.wp-editor-container,
 p.popular-tags,
 table.widefat {
-    margin: 20px 0px;
+    margin: 15px 0px;
     float: left;
     width: 100%;
     background: var(--secondary_background_color);
@@ -32,6 +31,36 @@ table.widefat {
     color: var(--secondary_background_color);
 }
 
+.wrap > .subsubsub {
+    margin-bottom: 15px;
+
+    li {
+        float: left;
+        font-size: 0px;
+        margin-right: 8px;
+        
+        a {
+            padding: 3px 10px 4px 10px;
+            background: transparent;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            line-height: inherit;
+            border-radius: 5px;
+            font-size: 12px;
+            padding: 4px 12px 5px;
+
+            &.current {
+                color: var(--primary_text_color);
+                background: rgba(0, 0, 0, 0.1);
+                padding: 5px 12px 5px;
+                border: none;
+            }
+        }
+    }    
+}
 .ac_match, .subsubsub a.current {
     color: var(--primary_text_color);
+}
+
+.tablenav.top .bulkactions{
+    display: none;
 }

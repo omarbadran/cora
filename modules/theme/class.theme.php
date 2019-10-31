@@ -23,6 +23,10 @@ class Cora_theme {
         
         # Load Options
         $this->parent = $parent;
+        
+        # Define paths
+        $this->dir = trailingslashit( str_replace( '\\', '/', dirname( __FILE__ ) ) );
+        $this->url = site_url( str_replace( str_replace( '\\', '/', ABSPATH ), '', $this->dir ) );
 
         require_once dirname(__FILE__) . "/options.php";
 

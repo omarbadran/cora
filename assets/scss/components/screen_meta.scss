@@ -32,6 +32,9 @@
     }
 
 }
+#screen-meta-links .show-settings:after {
+    display: none;
+}
 
 #screen-meta-links {
     button {
@@ -39,6 +42,7 @@
         color: var(--secondary_text_color)  !important;
         border-radius: 3px  !important;
         border: transparent  !important;
+        padding: 3px 15px !important;
 
         &:active, &:focus, &:hover {
             color: #32373c;

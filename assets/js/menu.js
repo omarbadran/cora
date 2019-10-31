@@ -13,13 +13,6 @@ jQuery(document).ready(function($) {
     // Prepend to menu.
     $('#adminmenu').prepend(logoClone);
 
-    /**
-     * Hide current submenu
-    */
-    $('.wp-has-current-submenu')
-        .removeClass('wp-has-current-submenu wp-menu-open')
-            .addClass('wp-not-current-submenu current open-if-no-js');
-            
 });
 
 jQuery(window).on('load', function () {

@@ -76,10 +76,10 @@ class Cora_Menu {
                 $admin_page_hooks[ $menu_slug ] = sanitize_title( $title );
                 $hookname = get_plugin_page_hookname( $menu_slug, '' );
 
-                add_action( $hookname, function() use($page_content) {
+                add_action( $hookname, function() use($title, $page_content) {
                     echo
                         "<div class='wrap'>
-                            <h1>Dashboard</h1>
+                            <h1>$title</h1>
                             $page_content
                         </div>";
                 });

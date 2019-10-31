@@ -4,6 +4,7 @@ html body #cf {
 
     .cf-body {
         background: rgba(0, 0, 0, 0.065);
+        margin-top: 25px;
     }
     
     .cf-header {
@@ -29,7 +30,7 @@ html body #cf {
 
         li {
             color: var(--secondary_text_color);
-            opacity: 0.3;
+            opacity: 0.35;
                     
             &.active {
                 color: var(--primary_text_color);
@@ -59,7 +60,6 @@ html body #cf {
         border-radius: 3px;
         width: fit-content;
         margin: 0;
-        margin-top: 15px;    
     }
 
 }
@@ -153,4 +153,19 @@ html body {
         background-color: rgba(0, 0, 0, 0.065);
     }
 
+    // Demo
+    .cf-demo-field {
+        margin-top: -5px;
+
+        .cf-demo {
+            border: none;
+            border-radius: 5px;
+            background: var(--secondary_background_color);
+
+            .cf-demo-bottom span {
+                color: var(--secondary_text_color);
+            }            
+        }
+    }
+    
 }
