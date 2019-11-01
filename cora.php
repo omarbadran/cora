@@ -136,6 +136,17 @@ class Cora {
             $this->url."/assets/css/settings.css"
         );
         
+        # Woocommerce Style
+        
+        include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+
+        if ( is_plugin_active( 'woocommerce/woocommerce.php' ) ) {
+            wp_enqueue_style( 
+                'cora-woocommerce',
+                $this->url."/assets/css/woocommerce.css"
+            );
+        } 
+        
         # Cora
         wp_enqueue_style( 
             'cora',
