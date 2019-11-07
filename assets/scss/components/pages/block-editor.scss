@@ -13,10 +13,6 @@ body.block-editor-page {
     --toolbar_highlight_background: #6b727d;
     --forms_field_background: #fff;
     --forms_field_border: rgba(0,0,0,0.1);
-    --primary_button_color: #02b875;
-    --primary_button_text: #fff;
-    --secondary_button_color: #e1e4ea;
-    --secondary_button_text: #666;
         
     #wpadminbar {
         padding: 5px 20px;
@@ -35,6 +31,9 @@ body.block-editor-page {
     }
     .has-fixed-toolbar .edit-post-layout__content {
         top: 135px;
+    }
+    .edit-post-layout__content {
+        margin-left: var(--menu_width);
     }
 }
 

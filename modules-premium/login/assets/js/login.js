@@ -56,5 +56,14 @@ jQuery(document).ready(function($) {
         `);
         
     }
+   
+    /**
+     * User & Password placeholder
+    */
+   
+    $("[for=user_login] input").attr('placeholder', $("[for=user_login]").text());
+    $("[for=user_pass] input").attr('placeholder', $("[for=user_pass]").text());
+
+    $("[for=user_login] br, [for=user_pass] br").remove();
 
 });

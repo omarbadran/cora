@@ -47,10 +47,10 @@ class Cora_Login {
         
         wp_enqueue_script('jquery');
 
-        # Cora
+        # Login
         wp_enqueue_script( 
             'cora-login',
-            $this->url."/assets/js/login.js"
+            $this->parent->url( "modules-premium/login/assets/js/login.js" )
         );
         
     }

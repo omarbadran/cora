@@ -6,7 +6,7 @@ body.login {
     h1 {
         display: none;
         font-family: 'Josefin Sans', sans-serif;
-        color: var(--secondary_text_color);
+        color: var(--primary_text_color);
 
         img {
             max-width: 100%;
@@ -40,6 +40,8 @@ body.login {
 
     label {
         color: var(--secondary_text_color);
+        float: left;
+        width: 100%;    
     }
     
     form {
@@ -47,7 +49,8 @@ body.login {
         box-shadow: none;
 
         p {
-            margin-bottom: 3px !important;
+            float: left;
+            width: 100%;
         }
 
         .input, input[type=checkbox], input[type=text] {
@@ -55,10 +58,28 @@ body.login {
             border-radius: 4px;
         }
 
-        .input, input[type=text]  {
-            margin-top: 8px;
+        [for=user_login], [for=user_pass] {
+            font-size: 0px;
+            color: transparent;
+
+            input  {
+                margin-bottom: 5px;
+                font-size: 13px;
+                padding: 12px;
+                color: var(--secondary_text_color)!important;
+                float: left;
+                width: 100%;
+                                
+                &::placeholder{
+                    color: var(--secondary_text_color) !important;
+                }
+            }
         }
 
+    }
+
+    p.forgetmenot {
+        margin: 15px 0px;
     }
     
     #backtoblog a, #nav a {
@@ -68,6 +89,10 @@ body.login {
 
     #login_error, .message, .success {
         background: var(--secondary_background_color);
+        background: var(--secondary_background_color);
+        float: left;
+        width: 100%;
+        box-sizing: border-box;
     }
 
 }
