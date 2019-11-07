@@ -38,9 +38,18 @@ body.block-editor-page {
 }
 
 @media screen and (max-width: 782px){
-    .auto-fold #wpcontent {
-        position: relative;
-        margin-left: 0;
-        padding: 0!important;
-    }    
+    body.block-editor-page.auto-fold {
+        #wpadminbar {
+            height: 53px;
+        }    
+        #wpcontent {
+            position: relative;
+            margin-left: 0;
+            padding: 0!important;
+        }
+    }
+}
+
+body.js.is-fullscreen-mode .edit-post-header {
+    left: 0 !important;
 }

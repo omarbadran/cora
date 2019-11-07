@@ -20,6 +20,14 @@ body {
     }    
 }
 
+@media screen and (max-width: 782px){
+    .auto-fold #wpcontent {
+        position: relative;
+        margin-left: 0;
+        padding: 80px 40px !important;
+    }    
+}
+
 .wrap {
     margin: 0;
 }
