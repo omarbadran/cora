@@ -1,6 +1,6 @@
 <?php
 /**
- * Login options
+ * login options
  * 
  * @since 1.0.0
  * @author Omar Badran
@@ -9,110 +9,29 @@
 # Add Section
 $this->parent->options->add_section([
     'id'        =>  'login',
-    'title'     =>  esc_html__('Login Page' , 'cora'),
-    'icon'      =>  'lock',
+    'title'     =>  __('Login Page' , 'cora'),
+    'icon'      =>  'vpn_key',
 ]);
 
-
-# Layout
+# Placeholder image
 $this->parent->options->add_field([
-    'id'           =>  'layout',
-    'section'      =>  'login',
-    'title'        =>   esc_html__('Layout' , 'cora'),
-    'type'         =>   'image-select',
-    'default'      =>   'standard',
-    'options'      =>   [
-        [
-            'text'  =>  'Standard',
-            'id'    =>  'standard',
-            'url'   =>  $this->url . 'assets/images/standard.png'
-        ],
-        [
-            'text'  =>  'Modern',
-            'id'    =>  'modern',
-            'url'   =>  $this->url . 'assets/images/modern.png'
-        ]
-    ]
+    'section'   =>  'login',
+    'type'      =>  'html',
+    'content'   =>  '<div class="cora-section-placeholder" style="background:url('. $this->parent->url("modules/login") .'/screenshot.png);"></div>'
 ]);
 
-
-# Title
+# Upgrade message
 $this->parent->options->add_field([
-    'id'           =>  'title',
-    'section'      =>  'login',
-    'title'        =>   esc_html__('Title' , 'cora'),
-    'type'         =>   'text',
-    'default'      =>   '',
-    'condition'    =>   ['layout', '===', 'modern'],
+    'section'   =>  'login',
+    'type'      =>  'html',
+    'content'   =>  '
+        <div class="cora-section-go-premium">
+            <h2>'.__('Login Page', 'cora').'</h2>
+            <p>' .__('This section allows you to customize every aspect of the admin area. Easily change the design to represent your brand or personal taste. you can choose a pre-designed login or make your own.', 'cora' ).'</p>
+            <div class="cora-actions">
+                <a href="#" class="button button-primary">'. __('Upgrade', 'cora'). '</a>
+                <a href="#" class="button">'. __('Free Trial', 'cora'). '</a>
+            </div>
+        </div>'
 ]);
 
-
-# Description
-$this->parent->options->add_field([
-    'id'           =>  'description',
-    'section'      =>  'login',
-    'title'        =>   esc_html__('Description' , 'cora'),
-    'type'         =>   'editor',
-    'default'      =>   '',
-    'condition'    =>   ['layout', '===', 'modern'],
-]);
-
-
-# Background Type
-$this->parent->options->add_field([
-    'id'           =>  'background_type',
-    'section'      =>  'login',
-    'title'        =>   esc_html__('Background Type' , 'cora'),
-    'type'         =>   'select',
-    'default'      =>   'default',
-    'options'      =>   [
-        [
-            'id'    =>  'default',
-            'text'  =>  'Default'
-        ],
-        [
-            'id'    =>  'image',
-            'text'  =>  'Image'
-        ]
-    ]
-]);
-
-
-# Background Image
-$this->parent->options->add_field([
-    'id'           =>  'background_image',
-    'section'      =>  'login',
-    'title'        =>   esc_html__('Background Image' , 'cora'),
-    'type'         =>   'image',
-    'default'      =>   'https://images.unsplash.com/photo-1541253768886-47a2cef5e09e?w=1567',
-    'condition'    =>   ['background_type', '==', 'image']
-]);
-
-# Show Logo
-$this->parent->options->add_field([
-    'id'           =>  'show_logo',
-    'section'      =>  'login',
-    'title'        =>   esc_html__('Show Logo' , 'cora'),
-    'type'         =>   'switch',
-    'default'      =>   false,
-]);
-
-# logo Type
-$this->parent->options->add_field([
-    'id'           =>  'logo_type',
-    'section'      =>  'login',
-    'title'        =>   esc_html__('Logo Type' , 'cora'),
-    'type'         =>   'select',
-    'default'      =>   'site_name',
-    'options'      =>   [
-        [
-            'id'    =>  'logo',
-            'text'  =>  'Logo'
-        ],
-        [
-            'id'    =>  'site_name',
-            'text'  =>  'Site Name'
-        ]
-    ],
-    'condition'    =>   ['show_logo', '===', true]
-]);

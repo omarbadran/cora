@@ -1,6 +1,6 @@
 <?php
 /**
- * backup options
+ * Advanced options
  * 
  * @since 1.0.0
  * @author Omar Badran
@@ -8,24 +8,24 @@
 
 # Add Section
 $this->parent->options->add_section([
-    'id'        =>  'backup',
-    'title'     =>  __('Backup' , 'cora'),
-    'icon'      =>  'archive',
+    'id'        =>  'advanced',
+    'title'     =>  __('Advanced' , 'cora'),
+    'icon'      =>  'settings',
 ]);
 
 
 # Import
 $this->parent->options->add_field([
     'id'           =>  'export',
-    'section'      =>  'backup',
-    'title'        =>   esc_html__('Export Data' , 'cora'),
+    'section'      =>  'advanced',
+    'title'        =>   __('Export Data' , 'cora'),
     'type'         =>   'export',
 ]);
 
 # Import
 $this->parent->options->add_field([
     'id'           =>  'import',
-    'section'      =>  'backup',
-    'title'        =>   esc_html__('Import  Data' , 'cora'),
+    'section'      =>  'advanced',
+    'title'        =>   __('Import  Data' , 'cora'),
     'type'         =>   'import',
 ]);

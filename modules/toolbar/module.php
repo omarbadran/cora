@@ -4,7 +4,7 @@
 defined( 'ABSPATH' ) || exit;
 
 /**
- * Toolbar Class
+ * Toolbar Module
  * 
  * 
  * @since 1.0.0
@@ -24,7 +24,7 @@ class Cora_Toolbar {
         # Load Options
         $this->parent = $parent;
 
-        require_once dirname(__FILE__) . "/options.php";
+        require_once $this->parent->dir("modules/toolbar/options.php");
 
         add_action( 'admin_bar_menu', [ $this, 'edit_toolbar'], 999);
 

@@ -29,7 +29,7 @@ html body #cf {
         background: rgba(0, 0, 0, 0.03);
 
         li {
-            color: var(--secondary_text_color);
+            color: var(--primary_text_color);
             opacity: 0.35;
                     
             &.active {
@@ -48,7 +48,13 @@ html body #cf {
 
         .cf-field {
             .cf-field-title {
-                color: var(--secondary_text_color);
+                color: var(--primary_text_color);
+                width: 40%;
+            }
+            
+            .cf-item-field-controls {
+                float: left;
+                width: 55%;
             }
         }
     }
@@ -56,31 +62,72 @@ html body #cf {
     //  Seprater
     .cora-separator {
         background: rgba(0,0,0,.1);
-        padding: 10px 20px;
+        padding: 8px 16px;
         border-radius: 3px;
         width: fit-content;
-        margin: 0;
+        margin: 0px 0px 15px 0px;
+    }
+
+    // premium version
+    .cora-section-go-premium {
+        position: absolute;
+        top: 0;
+        left: 190px;
+        margin: 105px;
+        padding: 45px;
+        border-radius: 5px;
+        background: var(--primary_background_color);
+        z-index: 999;
+
+        h2 {
+            margin-bottom: 25px;
+            margin-top: 0px;
+            font-size: 26px;
+        }
+
+        p {
+            line-height: 26px;
+            color: var(--primary_text_color);
+            margin: 0 0 25px;
+            font-size: 14px;
+        }
+    }
+
+    h2[section=theme], h2[section=login] {
+        opacity: 0;
+    }
+
+    .cora-section-placeholder{
+        position: absolute;
+        top: 10px;
+        left: 190px;
+        padding: 35px 50px;
+        border-radius: 5px;
+        z-index: 998;
+        box-shadow: 0 0 30px rgba(0,0,0,.05);
+        width: 609px;
+        height: calc(100%);
+        box-sizing: border-box;
+        opacity: 0.08;
     }
 
 }
 
 /* Fields */
 
-html body {
-    #cf {
-        input[type=number],
-        input[type=password],
-        input[type=text],
-        select,
-        textarea
-        {
-            background-color: rgba(0, 0, 0, 0.08);
-            
-            &:hover {
-                background-color: rgba(0, 0, 0, 0.15);
-            }
-        }        
-    }
+body {
+
+    input[type=number],
+    input[type=password],
+    input[type=text],
+    select,
+    textarea {
+        background-color: rgba(0, 0, 0, 0.08) !important;
+        
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.15) !important;
+        }
+    }        
 
 
     // Repeater field
@@ -149,7 +196,7 @@ html body {
     }
 
     // Switch
-    .cf-switch-inner span {
+    .cf-switch-inner.false span {
         background-color: rgba(0, 0, 0, 0.065);
     }
 
@@ -159,13 +206,40 @@ html body {
 
         .cf-demo {
             border: none;
-            border-radius: 5px;
+            border-radius: 3px;
+            box-shadow: 0 0 15px rgba(0,0,0,.065);
             background: var(--secondary_background_color);
+            border: 1px solid rgba(0,0,0,.12);
+            height: 200px;
+            position: relative;
+            
+            img {
+                width: 420px;
+                height: auto;
+                float: left;
+            }
 
-            .cf-demo-bottom span {
-                color: var(--secondary_text_color);
-            }            
+            .cf-demo-bottom {
+                padding: 9px 15px;
+                float: left;
+                width: 100%;
+                box-sizing: border-box;
+                line-height: 26px;
+                position: absolute;
+                bottom: 0;
+                z-index: 10;
+                background: var(--secondary_background_color);
+                border-top: 1px solid rgba(0,0,0,.05);
+                                
+                span {
+                    color: var(--secondary_text_color);
+                }
+            }
         }
     }
-    
+
+    // Image
+    .cf-image-field input {
+        margin-right: 1px;
+    }    
 }

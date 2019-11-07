@@ -9,7 +9,7 @@
 # Add Section
 $this->parent->options->add_section([
     'id'        =>  'toolbar',
-    'title'     =>  esc_html__('Toolbar' , 'cora'),
+    'title'     =>  __('Toolbar' , 'cora'),
     'icon'      =>  'layers',
 ]);
 
@@ -17,29 +17,29 @@ $this->parent->options->add_section([
 $this->parent->options->add_field([
     'id'            =>  'add_items',
     'section'       =>  'toolbar',
-    'title'         =>  esc_html__('Add Items' , 'cora'),
+    'title'         =>  __('Add Items' , 'cora'),
     'type'          =>  'repeater',
     'fields'        =>  [
         [
             'id'        =>  'title',
-            'title'     =>  esc_html__('Title' , 'cora'),
+            'title'     =>  __('Title' , 'cora'),
             'type'      =>  'text',
         ],
         [
             'id'        =>  'href',
-            'title'     =>  esc_html__('URL' , 'cora'),
+            'title'     =>  __('URL' , 'cora'),
             'type'      =>  'text',
         ],
         [
             'id'        =>  'new_tab',
             'section'   =>  'toolbar',
-            'title'     =>  esc_html__('Open In New Tab ?' , 'cora'),
+            'title'     =>  __('Open In New Tab ?' , 'cora'),
             'type'      =>  'switch',
             'default'   =>  false
         ],
     ],
     'new_item_default'  => [
-        'title'         =>  esc_html__('New Item', 'cora'),
+        'title'         =>  __('New Item', 'cora'),
         'href'          =>  'http://',
         'new_tab'       =>  true,
     ],
@@ -49,7 +49,7 @@ $this->parent->options->add_field([
 $this->parent->options->add_field([
     'id'        =>  'wp_logo',
     'section'   =>  'toolbar',
-    'title'     =>  'WP Logo',
+    'title'     =>  __('WP Logo', 'cora'),
     'type'      =>  'switch',
     'default'   =>  false,
 ]);
@@ -58,7 +58,7 @@ $this->parent->options->add_field([
 $this->parent->options->add_field([
     'id'        =>  'site_name',
     'section'   =>  'toolbar',
-    'title'     =>  'Site Name',
+    'title'     =>  __('Site Name', 'cora'),
     'type'      =>  'switch',
     'default'   =>  true,
 ]);
@@ -67,7 +67,7 @@ $this->parent->options->add_field([
 $this->parent->options->add_field([
     'id'        =>  'updates',
     'section'   =>  'toolbar',
-    'title'     =>  'Updates',
+    'title'     =>  __('Updates', 'cora'),
     'type'      =>  'switch',
     'default'   =>  true,
 ]);
@@ -76,7 +76,7 @@ $this->parent->options->add_field([
 $this->parent->options->add_field([
     'id'        =>  'comments',
     'section'   =>  'toolbar',
-    'title'     =>  'Comments',
+    'title'     =>  __('Comments', 'cora'),
     'type'      =>  'switch',
     'default'   =>  true,
 ]);
@@ -85,7 +85,7 @@ $this->parent->options->add_field([
 $this->parent->options->add_field([
     'id'        =>  'new_content',
     'section'   =>  'toolbar',
-    'title'     =>  'New Content',
+    'title'     =>  __('New Content', 'cora'),
     'type'      =>  'switch',
     'default'   =>  true,
 ]);
@@ -94,7 +94,7 @@ $this->parent->options->add_field([
 $this->parent->options->add_field([
     'id'        =>  'my_account',
     'section'   =>  'toolbar',
-    'title'     =>  'My Account',
+    'title'     =>  __('My Account', 'cora'),
     'type'      =>  'switch',
     'default'   =>  true,
 ]);

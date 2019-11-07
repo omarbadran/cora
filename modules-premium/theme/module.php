@@ -4,13 +4,13 @@
 defined( 'ABSPATH' ) || exit;
 
 /**
- * theme Class
+ * Theme Class
  * 
  * 
  * @since 1.0.0
  * @author Omar Badran
  */
-class Cora_theme {
+class Cora_Theme {
 
     /**
      * Class constructor.
@@ -24,20 +24,16 @@ class Cora_theme {
         # Load Options
         $this->parent = $parent;
         
-        # Define paths
-        $this->dir = trailingslashit( str_replace( '\\', '/', dirname( __FILE__ ) ) );
-        $this->url = site_url( str_replace( str_replace( '\\', '/', ABSPATH ), '', $this->dir ) );
+        require_once $this->parent->dir("modules-premium/theme/options.php");
 
-        require_once dirname(__FILE__) . "/options.php";
-
-        add_action( 'admin_head', array( $this  , "css_vars" ) );
-        add_action( 'login_head', array( $this  , "css_vars" ) );
+        add_action( 'admin_head', [$this  , "css_vars"] );
+        add_action( 'login_head', [$this  , "css_vars"] );
 
         add_filter( 'admin_body_class', [$this  , "shadows"]);
         add_filter( 'login_body_class', [$this  , "shadows"]);
 
         if( $this->parent->options->in_view() ){
-            add_action( 'admin_print_footer_scripts', array( $this  , "live_preview" ) );
+            add_action( 'admin_print_footer_scripts', [$this  , "live_preview"] );
         }
     }
 
@@ -49,7 +45,7 @@ class Cora_theme {
      * @return      void
      */
     public function shadows( $classes ) {
-        $use_shadows = $this->parent->options->get_value('theme', 'shadows');
+        $use_shadows = $this->parent->options->get_value('theme_premium', 'shadows');
 
         if ( filter_var($use_shadows, FILTER_VALIDATE_BOOLEAN) ) {
             if ( is_array($classes) ) {
@@ -75,10 +71,10 @@ class Cora_theme {
 
         foreach ($this->parent->options->fields as $field) {
 
-            if ($field['section'] == 'theme' && $field['type'] == 'color') {
+            if ($field['section'] == 'theme_premium' && $field['type'] == 'color') {
 
                 $id = $field['id'];
-                $value = $this->parent->options->get_value('theme', $id);
+                $value = $this->parent->options->get_value('theme_premium', $id);
                 
                 if( $value ){
                     echo "--$id: $value;";
@@ -108,9 +104,9 @@ class Cora_theme {
             
             $watch = '$watch';
 
-            if( $section == 'theme' && $type == 'color' ) {
+            if( $section == 'theme_premium' && $type == 'color' ) {
 
-                echo "CoraFramework.$watch( 'values.theme.$id', newVal => {
+                echo "CoraFramework.$watch( 'values.theme_premium.$id', newVal => {
                         document.documentElement.style.setProperty('--$id', newVal);
                     }); \n";
 

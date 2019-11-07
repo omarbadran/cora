@@ -1,5 +1,9 @@
 /* WooCommerce Support */
 
+body .woocommerce .subsubsub {
+    margin: 10px 0;
+}
+
 .post-type-product .woocommerce-BlankState .woocommerce-BlankState-message,
 .post-type-shop_order .woocommerce-BlankState .woocommerce-BlankState-message,
 .marketplace-suggestions-container.showing-suggestion .marketplace-suggestion-container .marketplace-suggestion-container-content p {

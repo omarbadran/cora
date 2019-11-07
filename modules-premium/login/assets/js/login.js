@@ -23,13 +23,13 @@ jQuery(document).ready(function($) {
      * Add New Logo
     */
     
-    if ( CoraLogin.show_logo == 'true' ) {
+    if ( JSON.parse(CoraLogin.show_logo) ) {
         
         $('body.login h1').show();
         
         if ( CoraLogin.logo_type == 'logo' ) {
         
-            $('body.login h1').append('<img src="' + CoraLogin.logo + '"/>');
+            $('body.login h1').append('<img src="' + CoraLogin.logo + '" width="' + CoraLogin.logo_width + '"/>');
         
         } else {
 

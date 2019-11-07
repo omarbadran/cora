@@ -1,6 +1,6 @@
 /* Shadows */
 
-$shadow: 0 0 20px rgba(0,0,0,.05);
+$shadow: 0 0 30px rgba(0,0,0,.05);
 
 body.cora-shadows {
 
@@ -25,7 +25,8 @@ body.cora-shadows {
     table.widefat,
     .notice,
     div.error,
-    div.updated
+    div.updated,
+    #fs_connect
     {
         box-shadow: $shadow !important;
     }

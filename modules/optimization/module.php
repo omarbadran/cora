@@ -4,7 +4,7 @@
 defined( 'ABSPATH' ) || exit;
 
 /**
- * Optimization Class
+ * Optimization Module
  * 
  * 
  * @since 1.0.0
@@ -24,52 +24,52 @@ class Cora_Optimization {
         # Load Options
         $this->parent = $parent;
 
-        require_once dirname(__FILE__) . "/options.php";
+        require_once $this->parent->dir("modules/optimization/options.php");
 
         extract( $this->parent->options->get_values()['optimization'] );
 
         # Filter returned booleans
-        $f = function ($var) {
+        $filter = function ($var) {
             return filter_var( $var, FILTER_VALIDATE_BOOLEAN );
         };
 
         # WP Version Meta-Tag
-        if ( !$f($wp_version_meta_tag) ) {
+        if ( !$filter($wp_version_meta_tag) ) {
             $this->disable_wp_version_meta_tag();
         }
 
         # WP Emoji
-        if ( !$f($wp_emoji) ) {
+        if ( !$filter($wp_emoji) ) {
             $this->disable_wp_emoji();
         }
 
         # RSS Feed
-        if ( !$f($rss_feed) ) {
+        if ( !$filter($rss_feed) ) {
             $this->disable_rss_feed();
         }
         
         # WP RSD
-        if ( !$f($wp_rsd) ) {
+        if ( !$filter($wp_rsd) ) {
             remove_action( 'wp_head', 'rsd_link' );
         }
 
         # WP wlwmanifest
-        if ( !$f($wp_wlwmanifest) ) {
+        if ( !$filter($wp_wlwmanifest) ) {
             remove_action( 'wp_head', 'wlwmanifest_link' );
         }
 
         # WP shortlink
-        if ( !$f($wp_shortlink) ) {
+        if ( !$filter($wp_shortlink) ) {
             remove_action( 'wp_head', 'wp_shortlink_wp_head' );
         }
         
         # WP OEmbed
-        if ( !$f($wp_oEmbed) ) {
+        if ( !$filter($wp_oEmbed) ) {
             $this->disable_wp_oEmbed();
         }
 
         # WP pingback
-        if ( !$f($wp_pingback) ) {
+        if ( !$filter($wp_pingback) ) {
             add_filter( 'xmlrpc_methods', function( $methods ) {
                 unset( $methods['pingback.ping'] );
                 return $methods;
@@ -81,24 +81,24 @@ class Cora_Optimization {
         }
 
         # WP OEmbed
-        if ( !$f($wp_oEmbed) ) {
+        if ( !$filter($wp_oEmbed) ) {
             $this->disable_wp_oEmbed();
         }
         
         # WP Heartbeat
-        if ( !$f($wp_heartbeat) ) {
+        if ( !$filter($wp_heartbeat) ) {
             add_action( 'init', function () {
                 wp_deregister_script('heartbeat');
             }, 1);
         }
 
         # WP SVG Support
-        if ( $f($svg_support) ) {
+        if ( $filter($svg_support) ) {
             $this->enable_svg_support();
         }
         
         # WP ICO Support
-        if ( $f($ico_support) ) {
+        if ( $filter($ico_support) ) {
             add_filter( 'wp_mime_type_icon', function( $icon, $mime, $post_id ) {
                 if( $src = false || 'image/x-icon' === $mime && $post_id > 0 ){
                     $src = wp_get_attachment_image_src( $post_id );
@@ -154,9 +154,9 @@ class Cora_Optimization {
      */
     public function disable_emojis_tinymce( $plugins ) {
         if ( is_array( $plugins ) ) {
-            return array_diff( $plugins, array( 'wpemoji' ) );
+            return array_diff( $plugins, ['wpemoji'] );
         } else {
-            return array();
+            return [];
         }
     }
    
@@ -170,7 +170,7 @@ class Cora_Optimization {
     public function disable_emojis_remove_dns_prefetch( $urls, $relation_type ) {
         if ( $relation_type == 'dns-prefetch' ) {
             $emoji_svg_url = apply_filters( 'emoji_svg_url', 'https://s.w.org/images/core/emoji/2/svg/' );
-            $urls = array_diff( $urls, array( $emoji_svg_url ) );
+            $urls = array_diff( $urls, [ $emoji_svg_url ] );
         }
 
         return $urls;
@@ -239,7 +239,7 @@ class Cora_Optimization {
      * @return      void
      */
     function disable_embeds_tiny_mce_plugin ($plugins) {
-        return array_diff($plugins, array('wpembed'));
+        return array_diff($plugins, ['wpembed']);
     }
 
     /**
@@ -266,12 +266,12 @@ class Cora_Optimization {
      * @return      void
      */
     function enable_svg_support() {
-        add_filter('upload_mimes', function ($file_types) {
+        add_filter('upload_mimes', function ($filterile_types) {
             $new_filetypes = [];
             $new_filetypes['svg'] = 'image/svg+xml';
-            $file_types = array_merge($file_types, $new_filetypes );
+            $filterile_types = array_merge($filterile_types, $new_filetypes );
         
-            return $file_types;        
+            return $filterile_types;        
         });
     }
     

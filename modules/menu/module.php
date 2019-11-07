@@ -4,7 +4,7 @@
 defined( 'ABSPATH' ) || exit;
 
 /**
- * Menu Class
+ * Menu Module
  * 
  * 
  * @since 1.0.0
@@ -24,9 +24,8 @@ class Cora_Menu {
         # Load Options
         $this->parent = $parent;
 
-        require_once dirname(__FILE__) . "/options.php";
+        require_once $this->parent->dir("modules/menu/options.php");
 
-        
         add_action('admin_menu', [$this, "build_menu"], PHP_INT_MAX);
         add_filter('adminmenu', [$this, "branding"]);
 
@@ -225,12 +224,11 @@ class Cora_Menu {
      * @return      array
      */
     public function branding () {
-
         $show_logo = $this->parent->options->get_value('menu', 'show_logo');
-
         $logo_type = $this->parent->options->get_value('menu', 'logo_type');
-        
-        $logo = $this->parent->options->get_value('general', 'logo');
+        $logo = $this->parent->options->get_value('menu', 'logo', '');
+        $logo_width = $this->parent->options->get_value('menu', 'logo_width');
+        $logo_width .= 'px';
 
         $name = get_bloginfo();
 
@@ -239,7 +237,7 @@ class Cora_Menu {
         }
 
         if ( $logo_type == 'logo' ) {
-            echo "<li class='cora-branding'> <img src='$logo' /> </li>";
+            echo "<li class='cora-branding'> <img src='$logo' width='$logo_width'/> </li>";
         } else {
             echo "<li class='cora-branding'>$name</li>";
         }

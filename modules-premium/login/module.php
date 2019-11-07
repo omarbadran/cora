@@ -4,7 +4,7 @@
 defined( 'ABSPATH' ) || exit;
 
 /**
- * Login Class
+ * Login Module
  * 
  * 
  * @since 1.0.0
@@ -23,20 +23,16 @@ class Cora_Login {
 
         # Load Options
         $this->parent = $parent;
-        
-        # Define paths
-        $this->dir = trailingslashit( str_replace( '\\', '/', dirname( __FILE__ ) ) );
-        $this->url = site_url( str_replace( str_replace( '\\', '/', ABSPATH ), '', $this->dir ) );
-        
+
+        require_once $this->parent->dir("modules-premium/login/options.php");
+                
         # Enqueu assets
-        add_action( 'login_enqueue_scripts', array( $this->parent, "styles" ) );
-        add_action( 'login_enqueue_scripts', array( $this, "scripts" ) );
+        add_action( 'login_enqueue_scripts', [$this->parent, "styles"] );
+        add_action( 'login_enqueue_scripts', [$this, "scripts"] );
 
 
-        add_filter( 'login_body_class', array( $this  , "body_class" ) );
-        add_action( 'login_enqueue_scripts', array( $this  , "vars" ) );
-
-        require_once dirname(__FILE__) . "/options.php";
+        add_filter( 'login_body_class', [$this  , "body_class"] );
+        add_action( 'login_enqueue_scripts', [$this  , "vars"] );
 
     }
 
@@ -68,7 +64,7 @@ class Cora_Login {
      */
     public function body_class ( $classes ) {
         
-        $layout = $this->parent->options->get_value('login', 'layout', 'standard');
+        $layout = $this->parent->options->get_value('login_premium', 'layout', 'standard');
         $classes[] = 'cora-' . $layout;
         
         return $classes;
@@ -84,8 +80,7 @@ class Cora_Login {
      */
     public function vars () {
 
-        $data = $this->parent->options->get_values()['login'];
-        $data['logo'] = $this->parent->options->get_value('general', 'logo');
+        $data = $this->parent->options->get_values()['login_premium'];
         $data['site_name'] = get_bloginfo();
 
         wp_localize_script(

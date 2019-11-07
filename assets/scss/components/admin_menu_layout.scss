@@ -61,7 +61,6 @@
     transition: all 0.15s;
     
     img {
-        width: 100%;
         height: auto;
         float: left;
     }
@@ -90,6 +89,10 @@
             box-sizing: border-box;
             float: left;
             margin-top: 30px;
+
+            > li:nth-child(2) {
+                margin-top: 0px !important;
+            }
         }
 
         li.menu-top {
@@ -135,7 +138,7 @@
         }
 
         li.wp-has-current-submenu {
-            margin: 6px 0;
+            margin: 8px 0;
 
             a.menu-top {
                 border-radius: 3px;
@@ -155,6 +158,28 @@
 
         #adminmenu .wp-submenu-head, #adminmenu a.menu-top {
             font-weight: bold;
+        }
+
+        .awaiting-mod, .update-plugins {
+            margin: 0px -12px 0px 10px !important;
+            padding: 0 6px !important;
+            min-width: auto !important;
+            background-color: rgba(255, 255, 255, 0.1) !important;
+            color: var(--menu_highlight_text) !important;
+            float: right !important;
+            border-radius: 3px !important;
+        }
+
+        .opensub{
+            .awaiting-mod, .update-plugins {
+                margin: 0 !important;
+            }
+        }
+
+        .current, a.wp-has-current-submenu, a.menu-top {
+            .awaiting-mod, .update-plugins {
+                display: none !important;
+            }
         }
 
     }
@@ -186,7 +211,7 @@
 	.components-notice-list{
 		left: var(--menu_width) !important;
     }
-
+        
 }
 
 

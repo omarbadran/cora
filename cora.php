@@ -3,7 +3,7 @@
  * The plugin bootstrap file
  *
  * @wordpress-plugin
- * Plugin Name:       Cora Dashboard
+ * Plugin Name:       Cora
  * Plugin URI:        http://coradashboard.com
  * Description:       Modern wordpress admin theme.
  * Version:           1.0.0
@@ -11,16 +11,17 @@
  * Author URI:        http://coradashboard.com/
  * Text Domain:       cora
  * License:           GPLv3
+ * 
+ * @fs_premium_only /modules-premium/
+ * 
  */
 
 # Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-        
-# DEV ONLY !
-if(isset($_REQUEST['del'])){
-    delete_option('cora');
-}
+# Load Freemius
+// require_once dirname(__FILE__) . '/freemius.php';
+
 
 /**
  * Plugin Class
@@ -41,24 +42,6 @@ class Cora {
     public $version = '1.0.0';
 
     /**
-     * Plugin directory path.
-     *
-     * @since       1.0.0
-     * @access      public
-     * @var         string
-     */
-    public $dir;
-    
-    /**
-     * Plugin directory url.
-     *
-     * @since       1.0.0
-     * @access      public
-     * @var         string
-     */
-    public $url;
-
-    /**
      * Options framework instance.
      *
      * @since       1.0.0
@@ -76,38 +59,121 @@ class Cora {
      */
     public function __construct() {
 
-        # Define paths
-        $this->dir = trailingslashit( str_replace( '\\', '/', dirname( __FILE__ ) ) );
-        $this->url = site_url( str_replace( str_replace( '\\', '/', ABSPATH ), '', $this->dir ) );
-
-
         # Options framework
-        require_once $this->dir . 'includes/framework/framework.php';
+        require_once $this->dir("includes/framework/framework.php");
 
         # Initialize options
-        $this->options = new CoraFramework( array(
+        $this->options = new CoraFramework( [
             'id'         => 'cora',
             'page_title' => esc_html__('Cora Settings' , 'cora'),
             'menu_title' => esc_html__('Cora' , 'cora'),
             'display_version' => 'v1.0.0'
-        ));
+        ]);
         
         # Enqueue styles
-        add_action( 'admin_enqueue_scripts', array( $this  , "styles" ) );
+        add_action( 'admin_enqueue_scripts', [ $this  , "styles" ] );
 
         # Enqueue scripts
-        add_action( 'admin_enqueue_scripts', array( $this  , "scripts" ) );
+        add_action( 'admin_enqueue_scripts', [ $this  , "scripts" ] );
 
-        # Load modules
-        foreach (['general', 'menu', 'toolbar', 'login', 'theme', 'optimization', 'backup'] as $module) {
+        # Load Modules
+        $this->load_modules();
 
-            require_once $this->dir . "modules/$module/class.$module.php";
+    }
 
-            $module_class = "Cora_$module"; 
-            new $module_class($this);
+    /**
+     * Plugin directory path.
+     *
+     * @since       1.0.0
+     * @access      public
+     * @return      void
+     */
+    public function dir ( $append = false ) {
+        $dir = trailingslashit( str_replace( '\\', '/', dirname( __FILE__ ) ) );
 
+        if ( $append ) {
+            $dir .= $append;
+        }
+
+        return $this->clean_path($dir);
+    }
+
+    /**
+     * Plugin directory url.
+     *
+     * @since       1.0.0
+     * @access      public
+     * @return      void
+     */
+    public function url ( $append = false ) {
+        $url = site_url( str_replace( str_replace( '\\', '/', ABSPATH ), '', $this->dir() ) ) . '/';
+
+        if ( $append ) {
+            $url .= $append;
+        }
+
+        return $this->clean_path($url);
+    }
+
+    /**
+     * Clean any path used in the file system.
+     *
+     * @since       1.0.0
+     * @access      public
+     * @return      void
+     */
+    public function clean_path ( $path ) {
+        $path = str_replace( '', '', str_replace( array( "\\", "\\\\" ), '/', $path ) );
+        
+        if ( $path[ strlen( $path ) - 1 ] === '/' ) {
+            $path = rtrim( $path, '/' );
+        }
+
+        return $path;
+    }
+
+    /**
+     * Load Modules.
+     *
+     * @since       1.0.0
+     * @access      public
+     * @return      void
+     */
+    public function load_modules () {
+
+        /**
+         *  $modules = [module => premium_available]
+         */
+        $modules = [
+            'general'       =>  false,
+            'menu'          =>  false,
+            'toolbar'       =>  false,
+            'theme'         =>  true,
+            'login'         =>  true,
+            'optimization'  =>  false,
+            'advanced'      =>  false,
+        ];
+        
+        foreach ( $modules as $module => $premium_available ) {
+
+            $path = $this->dir("modules/$module/module.php");
+
+            # Handling Licensing
+            if ( $premium_available
+            //  && cora_fs()->is_premium() && cora_fs()->can_use_premium_code() 
+            ){
+                $path = $this->dir("modules-premium/$module/module.php");
+            }
+
+            # Load Module
+            if ( file_exists($path) ) {
+                require_once $path;
+                $module_class = "Cora_$module"; 
+                new $module_class($this);
+            } 
         }
     }
+
 
     /**
      * Enqueue styles.
@@ -121,36 +187,33 @@ class Cora {
         # Material icons
         wp_enqueue_style( 
             'material-icons',
-            $this->url."/assets/vendor/material-icons/material-icons.css"
+            $this->url( "assets/vendor/material-icons/material-icons.css" )
         );
 
         # Menu icons
         wp_enqueue_style( 
             'cora-menu-icons',
-            $this->url."/assets/css/menu-icons.css"
+            $this->url( "assets/css/menu-icons.css" )
         );
 
         # Settings page
-        wp_enqueue_style( 
-            'cora-settings',
-            $this->url."/assets/css/settings.css"
-        );
-        
-        # Woocommerce Style
-        
-        include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
-
-        if ( is_plugin_active( 'woocommerce/woocommerce.php' ) ) {
+        if ( $this->options->in_view() ) {
             wp_enqueue_style( 
-                'cora-woocommerce',
-                $this->url."/assets/css/woocommerce.css"
+                'cora-settings',
+                $this->url( "assets/css/settings.css" )
             );
-        } 
+        }
+        
+        # Plugins Support
+        wp_enqueue_style( 
+            'cora-woocommerce',
+            $this->url( "assets/css/plugin-support.css" )
+        );
         
         # Cora
         wp_enqueue_style( 
             'cora',
-            $this->url."/assets/css/style.css"
+            $this->url( "assets/css/style.css" )
         );
 
     }
@@ -165,10 +228,7 @@ class Cora {
     public function scripts() {
 
         # Cora
-        wp_enqueue_script( 
-            'cora',
-            $this->url."/assets/js/app.min.js"
-        );
+        wp_enqueue_script( 'cora', $this->url( "assets/js/app.min.js" ) );
         
     }
 

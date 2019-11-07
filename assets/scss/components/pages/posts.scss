@@ -14,6 +14,10 @@ table.widefat {
     background: var(--secondary_background_color);
     border: 0px solid rgba(0, 0, 0, 0.06);
     border-radius: 5px;
+    .row-title {
+        font-size: 13px!important;
+        font-weight: 700;
+    }    
 }
 
 .alternate, .striped>tbody>:nth-child(odd), ul.striped>:nth-child(odd){
@@ -40,19 +44,18 @@ table.widefat {
         margin-right: 8px;
         
         a {
-            padding: 3px 10px 4px 10px;
             background: transparent;
-            border: 1px solid rgba(0, 0, 0, 0.1);
             line-height: inherit;
             border-radius: 5px;
             font-size: 12px;
-            padding: 4px 12px 5px;
+            padding: 4px 10px 5px;
 
             &.current {
                 color: var(--primary_text_color);
-                background: rgba(0, 0, 0, 0.1);
+                background: rgba(0,0,0,.065);
                 padding: 5px 12px 5px;
                 border: none;
+                font-weight: normal;
             }
         }
     }    

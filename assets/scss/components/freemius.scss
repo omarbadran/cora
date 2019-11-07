@@ -1,0 +1,42 @@
+/* Freemius */
+
+#fs_connect {
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+iframe#fs_promo_tab {
+    display: none;
+}
+
+.wrap.fs-section .nav-tab-wrapper {
+    margin-bottom: 20px;
+}
+
+body .fs-secure-notice {
+    top: 53px;
+    left: var(--menu_width);
+    box-shadow: none;
+    background-color: #dcecdc;
+}
+
+.fs-submenu-item.pricing.upgrade-mode {
+    color: #fd5e5e !important;
+}
+
+body {
+    .fs-notice, .fs-notice.promotion {
+        overflow: hidden;
+        background-color: var(--secondary_background_color) !important;
+        
+        label.fs-plugin-title {
+            display: none;
+        }
+
+        a {
+            float: left;
+            margin: 10px 0px;
+        }
+    }
+
+}

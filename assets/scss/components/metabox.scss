@@ -12,6 +12,7 @@
     }
 
     .inside {
+        padding: 0 18px 18px;
         margin: 18px 0;
     }    
 }
@@ -19,15 +20,15 @@
 .metabox-holder {
     .postbox>h3, .stuffbox>h3, h2.hndle, h3.hndle {
         font-size: 14px;
-        padding: 12px 14px !important;
+        padding: 14px 18px !important;
         font-weight: 700;
         padding-bottom: 14px;
         border-bottom-color: transparent !important;
     }
 
     .postbox .handlediv {
-        width: 44px;
-        height: 44px;
+        width: 48px;
+        height: 48px;
 
         .toggle-indicator:before {
             margin-top: 1px;

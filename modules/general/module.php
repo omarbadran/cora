@@ -4,7 +4,7 @@
 defined( 'ABSPATH' ) || exit;
 
 /**
- * General Class
+ * General Module
  * 
  * 
  * @since 1.0.0
@@ -24,14 +24,31 @@ class Cora_General {
         # Load Options
         $this->parent = $parent;
 
-        require_once dirname(__FILE__) . "/options.php";
+        require_once $this->parent->dir("modules/general/options.php");
 
-        add_filter( 'admin_footer_text',  [ $this, 'footer' ], PHP_INT_MAX);
-        add_action( 'wp_dashboard_setup', [ $this, 'add_dashboard_widgets' ]);
-        add_action( 'admin_head', [ $this, 'admin_scripts' ]);
-        add_action( 'wp_head', [ $this, 'frontend_scripts' ]);
-        add_action( 'login_head', [ $this, 'login_scripts' ]);
+        add_filter( 'admin_footer_text',  [$this, 'footer'], PHP_INT_MAX );
 
+        add_action( 'wp_dashboard_setup', [$this, 'add_dashboard_widgets'] );
+        add_action( 'admin_head', [$this, 'screen_options'] );
+        add_action( 'admin_head', [$this, 'admin_scripts'] );
+        add_action( 'wp_head', [$this, 'frontend_scripts'] );
+        add_action( 'login_head', [$this, 'login_scripts'] );
+
+    }
+
+    /**
+     * Screen options.
+     *
+     * @since       1.0.0
+     * @access      public
+     * @return      void
+     */
+    public function screen_options() {
+        $screen_options = $this->parent->options->get_value('general', 'screen_options');
+
+        if ( ! filter_var( $screen_options, FILTER_VALIDATE_BOOLEAN ) ){
+            echo "<style>#screen-meta-links{display:none;}</style>";
+        }
     }
 
     /**

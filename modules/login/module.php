@@ -4,13 +4,13 @@
 defined( 'ABSPATH' ) || exit;
 
 /**
- * Backup Class
+ * Login Module
  * 
  * 
  * @since 1.0.0
  * @author Omar Badran
  */
-class Cora_Backup {
+class Cora_Login {
     
     /**
      * Class constructor.
@@ -20,11 +20,11 @@ class Cora_Backup {
      * @return      void
      */
     public function __construct( $parent ) {
-        
+
         # Load Options
         $this->parent = $parent;
-
-        require_once dirname(__FILE__) . "/options.php";
+        
+        require_once $this->parent->dir("modules/login/options.php");
 
     }
 

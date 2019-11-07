@@ -5,16 +5,30 @@
     background-color: var(--secondary_background_color);
 }
 
+#dashboard_right_now .main {
+    padding: 0 18px 18px;
+}
+
+#dashboard_quick_press form {
+    margin: 18px;
+}
+
 #activity-widget #the-comment-list li.comment-item {
     background: rgba(0, 0, 0, 0.1);
+    box-shadow: none;
 }
 
 .community-events ul {
-    background: rgba(0, 0, 0, 0.08);
-    li{
-        color: var(--secondary_text_color);
+    background: rgba(0, 0, 0, 0.1);
 
+    li {
+        color: var(--secondary_text_color);
     }
+}
+
+#latest-comments #the-comment-list {
+    position: relative;
+    margin: 0 -18px;
 }
 
 #dashboard_quick_press .drafts li time {
@@ -29,6 +43,7 @@
     background: var(--secondary_background_color);
     border: none;
     border-radius: 5px;
+    box-shadow: none;
 }
 
 .welcome-panel-column p, .welcome-panel p {
