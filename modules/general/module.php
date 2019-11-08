@@ -26,13 +26,18 @@ class Cora_General {
 
         require_once $this->parent->dir("modules/general/options.php");
 
-        add_filter( 'admin_footer_text',  [$this, 'footer'], PHP_INT_MAX );
+        add_filter('admin_footer_text',  [$this, 'footer'], PHP_INT_MAX);
 
-        add_action( 'wp_dashboard_setup', [$this, 'add_dashboard_widgets'] );
-        add_action( 'admin_head', [$this, 'screen_options'] );
-        add_action( 'admin_head', [$this, 'admin_scripts'] );
-        add_action( 'wp_head', [$this, 'frontend_scripts'] );
-        add_action( 'login_head', [$this, 'login_scripts'] );
+        add_action('wp_dashboard_setup', [$this, 'add_dashboard_widgets']);
+        add_action('admin_head', [$this, 'screen_options']);
+
+
+        $post_thumbnail = $this->parent->options->get_value('general', 'post_thumbnail');
+
+        if ( filter_var( $post_thumbnail, FILTER_VALIDATE_BOOLEAN ) ){
+            add_filter('manage_posts_columns', [$this, 'add_post_admin_thumbnail_column']);
+            add_action('manage_posts_custom_column', [$this, 'show_post_thumbnail_column'], 5, 2);
+        }
 
     }
 
@@ -48,66 +53,6 @@ class Cora_General {
 
         if ( ! filter_var( $screen_options, FILTER_VALIDATE_BOOLEAN ) ){
             echo "<style>#screen-meta-links{display:none;}</style>";
-        }
-    }
-
-    /**
-     * Admin Scripts.
-     *
-     * @since       1.0.0
-     * @access      public
-     * @return      void
-     */
-    public function admin_scripts() {
-        $scripts = $this->parent->options->get_value('general', 'admin_scripts');
-
-        if ( is_array($scripts) ) {
-            foreach ($scripts as $script) {
-                extract( $script );
-                $tag = ($type == 'css') ? 'style' : 'script';
-
-                echo "<$tag>$content</$tag>";
-            }
-        }
-    }
-
-    /**
-     * Front end Scripts.
-     *
-     * @since       1.0.0
-     * @access      public
-     * @return      void
-     */
-    public function frontend_scripts() {
-        $scripts = $this->parent->options->get_value('general', 'frontend_scripts');
-
-        if ( is_array($scripts) ) {
-            foreach ($scripts as $script) {
-                extract( $script );
-                $tag = ($type == 'css') ? 'style' : 'script';
-
-                echo "<$tag>$content</$tag>";
-            }
-        }
-    }
-
-    /**
-     * Login Scripts.
-     *
-     * @since       1.0.0
-     * @access      public
-     * @return      void
-     */
-    public function login_scripts() {
-        $scripts = $this->parent->options->get_value('general', 'login_scripts');
-
-        if ( is_array($scripts) ) {
-            foreach ($scripts as $script) {
-                extract( $script );
-                $tag = ($type == 'css') ? 'style' : 'script';
-
-                echo "<$tag>$content</$tag>";
-            }
         }
     }
 
@@ -176,6 +121,44 @@ class Cora_General {
         }
 
         return $content;
+    }
+
+    /**
+     * Add the post thumbnail column.
+     *
+     * @since       1.0.0
+     * @access      public
+     * @return      array
+     */
+    public function add_post_admin_thumbnail_column( $columns ){
+        global $post_type;
+
+        if ( $post_type == 'post') {
+            $columns['cora-thumb'] = '<span class="cora-thumb-icon">'. __('Image', 'cora') .'</span>';
+        }
+        
+        return $columns;
+    }
+
+        
+    /**
+     * show post thumbnail.
+     *
+     * @since       1.0.0
+     * @access      public
+     * @return      string
+     */
+    public function show_post_thumbnail_column( $columns, $id ){
+        switch( $columns ){
+            case 'cora-thumb':
+                if( function_exists('the_post_thumbnail') ){
+                    echo the_post_thumbnail( 'thumbnail' );
+                }
+                else {
+                    echo __('your theme doesn\'t support featured image', 'cora');
+                }
+            break;
+        }
     }
 
 }
