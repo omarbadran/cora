@@ -5,6 +5,8 @@ html body #cf {
     .cf-body {
         background: rgba(0, 0, 0, 0.065);
         margin-top: 25px;
+        min-height: 580px;
+        overflow: hidden;
     }
     
     .cf-header {
@@ -69,37 +71,51 @@ html body #cf {
     }
 
     // premium version
-    .cora-section-go-premium {
+    .cora-go-premium {
         position: absolute;
         top: 0;
         left: 190px;
-        margin: 105px;
-        padding: 45px;
+        margin: 140px 130px;
+        padding: 40px;
         border-radius: 5px;
         background: var(--primary_background_color);
         z-index: 999;
+        box-shadow: 0 0 30px rgba(0,0,0,.05);
 
         h2 {
             margin-bottom: 25px;
-            margin-top: 0px;
-            font-size: 26px;
+            margin-top: 0;
         }
 
         p {
-            line-height: 26px;
+            line-height: 28px;
             color: var(--primary_text_color);
-            margin: 0 0 25px;
-            font-size: 14px;
+            margin: 0 0px 25px;
+            font-size: 15px;
+        }
+        
+        .button {
+            text-transform: uppercase;
+            margin-right: 2px !important;
+        }
+        
+        .button-primary {
+            --primary_button_color: #ff5c42;
+        }
+
+        .button:not(.button-primary){
+            --secondary_button_color: #b2b2c5;
+            --secondary_button_text: #fff;
         }
     }
 
-    h2[section=theme], h2[section=login] {
-        opacity: 0;
+    h2[section=theme], h2[section=login], h2[section=scripts] {
+        opacity: .08;
     }
 
     .cora-section-placeholder{
         position: absolute;
-        top: 10px;
+        top: 65px;
         left: 190px;
         padding: 35px 50px;
         border-radius: 5px;
@@ -109,6 +125,7 @@ html body #cf {
         height: calc(100%);
         box-sizing: border-box;
         opacity: 0.08;
+        background-repeat: no-repeat;
     }
 
 }
@@ -229,7 +246,7 @@ body {
                 bottom: 0;
                 z-index: 10;
                 background: var(--secondary_background_color);
-                border-top: 1px solid rgba(0,0,0,.05);
+                border-top: 1px solid rgba(0,0,0,.035);
                                 
                 span {
                     color: var(--secondary_text_color);

@@ -26,7 +26,10 @@ body.cora-shadows {
     .notice,
     div.error,
     div.updated,
-    #fs_connect
+    #fs_connect,
+    &.login #login_error,
+    &.login .message,
+    &.login .success
     {
         box-shadow: $shadow !important;
     }

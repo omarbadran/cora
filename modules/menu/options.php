@@ -9,8 +9,8 @@
 # Add Section
 $this->parent->options->add_section([
     'id'        =>  'menu',
-    'title'     =>  __('Menu' , 'cora'),
-    'icon'      =>  'sort',
+    'title'     =>  __('Admin Menu' , 'cora'),
+    'icon'      =>  'menu',
 ]);
 
 # Show Logo

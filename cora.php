@@ -20,7 +20,7 @@
 defined( 'ABSPATH' ) || exit;
 
 # Load Freemius
-// require_once dirname(__FILE__) . '/freemius.php';
+require_once dirname(__FILE__) . '/freemius.php';
 
 
 /**
@@ -145,13 +145,14 @@ class Cora {
          *  $modules = [module => premium_available]
          */
         $modules = [
-            'general'       =>  false,
-            'menu'          =>  false,
-            'toolbar'       =>  false,
-            'theme'         =>  true,
-            'login'         =>  true,
-            'optimization'  =>  false,
-            'advanced'      =>  false,
+            'general'           =>    false,
+            'menu'              =>    false,
+            'toolbar'           =>    false,
+            'theme'             =>    true,
+            'login'             =>    true,
+            'scripts'           =>    true,
+            'optimization'      =>    false,
+            'advanced'          =>    false,
         ];
         
         foreach ( $modules as $module => $premium_available ) {
@@ -159,9 +160,7 @@ class Cora {
             $path = $this->dir("modules/$module/module.php");
 
             # Handling Licensing
-            if ( $premium_available
-            //  && cora_fs()->is_premium() && cora_fs()->can_use_premium_code() 
-            ){
+            if ( $premium_available && cora_fs()->is_premium() && cora_fs()->can_use_premium_code()  ){
                 $path = $this->dir("modules-premium/$module/module.php");
             }
 
@@ -170,7 +169,7 @@ class Cora {
                 require_once $path;
                 $module_class = "Cora_$module"; 
                 new $module_class($this);
-            } 
+            }
         }
     }
 
@@ -231,6 +230,35 @@ class Cora {
         wp_enqueue_script( 'cora', $this->url( "assets/js/app.min.js" ) );
         
     }
+
+    /**
+     * Render a promotion block.
+     *
+     * @since       1.0.0
+     * @access      public
+     * @return      string
+     */
+    public function promotion_block ($title, $message, $class = 'cora-go-premium') {
+
+        $upgrade_url    = cora_fs()->get_upgrade_url();
+        $trial_url      = cora_fs()->get_trial_url();
+        
+        $upgrade_txt    =  __('Upgrade', 'cora');
+        $trial_txt      =  __('14-day Free Trial', 'cora');
+
+        $block  =
+            "<div class='$class'>
+                <h2>$title</h2>
+                <p>$message</p>
+                <div class='cora-actions'>
+                    <a href='$upgrade_url' class='button button-small button-primary'>$upgrade_txt</a>
+                    <a href='$trial_url' class='button button-small'>$trial_txt</a>
+                </div>
+            </div>";
+
+        return $block;
+    }
+
 
 }
 

@@ -10,7 +10,7 @@
 $this->parent->options->add_section([
     'id'        =>  'theme_premium',
     'title'     =>  __('Theme' , 'cora'),
-    'icon'      =>  'color_lens',
+    'icon'      =>  'gesture',
 ]);
 
 

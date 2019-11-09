@@ -10,7 +10,7 @@
 $this->parent->options->add_section([
     'id'        =>  'theme',
     'title'     =>  __('Theme' , 'cora'),
-    'icon'      =>  'color_lens',
+    'icon'      =>  'gesture',
 ]);
 
 
@@ -18,21 +18,15 @@ $this->parent->options->add_section([
 $this->parent->options->add_field([
     'section'   =>  'theme',
     'type'      =>  'html',
-    'content'   =>  '<div class="cora-section-placeholder" style="background:url('. $this->parent->url("modules/theme") .'/screenshot.png);"></div>'
+    'content'   =>  '<div class="cora-section-placeholder" style="background-image:url('. $this->parent->url("modules/theme") .'/screenshot.png);"></div>'
 ]);
 
-# Upgrade message
 # Upgrade message
 $this->parent->options->add_field([
     'section'   =>  'theme',
     'type'      =>  'html',
-    'content'   =>  '
-        <div class="cora-section-go-premium">
-            <h2>'.__('Theme', 'cora').'</h2>
-            <p>' .__('This section allows you to customize every aspect of the admin area. Easily change the design to represent your brand or personal taste.', 'cora' ).'</p>
-            <div class="cora-actions">
-                <a href="#" class="button button-primary">'. __('Upgrade', 'cora'). '</a>
-                <a href="#" class="button">'. __('Free Trial', 'cora'). '</a>
-            </div>
-        </div>'
+    'content'   => $this->parent->promotion_block(
+        __('Theme', 'cora'),
+        __( 'Customize every part of your admin theme visually with live preview. Change the design to represent your brand or personal taste. You can choose a pre-designed theme or make your own.', 'cora' )
+    )
 ]);

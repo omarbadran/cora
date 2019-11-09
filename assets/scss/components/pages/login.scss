@@ -89,10 +89,10 @@ body.login {
 
     #login_error, .message, .success {
         background: var(--secondary_background_color);
-        background: var(--secondary_background_color);
         float: left;
-        width: 100%;
+        width: calc(100% - 60px);
         box-sizing: border-box;
+        margin: 0px 30px;
     }
 
 }
