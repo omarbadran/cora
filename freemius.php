@@ -8,11 +8,12 @@
  */
 
 if ( ! function_exists( 'cora_fs' ) ) {
-
+    // Create a helper function for easy SDK access.
     function cora_fs() {
         global $cora_fs;
 
         if ( ! isset( $cora_fs ) ) {
+            // Include Freemius SDK.
             require_once dirname(__FILE__) . '/includes/freemius/start.php';
 
             $cora_fs = fs_dynamic_init( array(
@@ -22,6 +23,7 @@ if ( ! function_exists( 'cora_fs' ) ) {
                 'public_key'          => 'pk_ad853ee408af80f6c440b64f984e2',
                 'is_premium'          => true,
                 'premium_suffix'      => 'Professional',
+                // If your plugin is a serviceware, set this option to false.
                 'has_premium_version' => true,
                 'has_addons'          => false,
                 'has_paid_plans'      => true,
@@ -33,6 +35,7 @@ if ( ! function_exists( 'cora_fs' ) ) {
                     'slug'           => 'cora',
                     'support'        => false,
                 ),
+                // Set the SDK to work in a sandbox mode (for development & testing).
                 // IMPORTANT: MAKE SURE TO REMOVE SECRET KEY BEFORE DEPLOYMENT.
                 'secret_key'          => 'sk_eQ-%:#:m1IUP~!vVEBSlfBYMR;T6j',
             ) );
@@ -41,7 +44,8 @@ if ( ! function_exists( 'cora_fs' ) ) {
         return $cora_fs;
     }
 
+    // Init Freemius.
     cora_fs();
+    // Signal that SDK was initiated.
     do_action( 'cora_fs_loaded' );
-    
 }

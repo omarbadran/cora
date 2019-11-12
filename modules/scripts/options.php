@@ -26,6 +26,6 @@ $this->parent->options->add_field([
     'type'      =>  'html',
     'content'   => $this->parent->promotion_block(
         __( 'Custom Scripts', 'cora'),
-        __( 'Easily Add any custom JS & CSS code with a single click. Load third parties code like facebook pixel and google analytics in an organizable way without the risk of breaking your site or the need to install any additional plugins.', 'cora' )
+        __( 'Quickly add any custom JS & CSS code with a single click. Load third-party code like facebook pixel and google analytics in an organizable way without the risk of breaking your site or the need to install any additional plugins.', 'cora' )
     )
 ]);

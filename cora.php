@@ -160,7 +160,7 @@ class Cora {
             $path = $this->dir("modules/$module/module.php");
 
             # Handling Licensing
-            if ( $premium_available && cora_fs()->is_premium() && cora_fs()->can_use_premium_code()  ){
+            if ( false ){
                 $path = $this->dir("modules-premium/$module/module.php");
             }
 
