@@ -20,7 +20,7 @@
 defined( 'ABSPATH' ) || exit;
 
 # Load Freemius
-require_once dirname(__FILE__) . '/freemius.php';
+// require_once dirname(__FILE__) . '/freemius.php';
 
 
 /**
@@ -60,7 +60,7 @@ class Cora {
     public function __construct() {
 
         # Options framework
-        require_once $this->dir("includes/framework/framework.php");
+        require_once $this->dir("includes/framework/Framework.php");
 
         # Initialize options
         $this->options = new CoraFramework( [
@@ -160,7 +160,9 @@ class Cora {
             $path = $this->dir("modules/$module/module.php");
 
             # Handling Licensing
-            if ( false ){
+            if ( 
+                $premium_available //&& cora_fs()->is_premium() && cora_fs()->can_use_premium_code()
+             ){
                 $path = $this->dir("modules-premium/$module/module.php");
             }
 
@@ -171,6 +173,7 @@ class Cora {
                 new $module_class($this);
             }
         }
+
     }
 
 
@@ -257,6 +260,7 @@ class Cora {
             </div>";
 
         return $block;
+    
     }
 
 

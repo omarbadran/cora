@@ -222,7 +222,7 @@ class Cora_Optimization {
             remove_action( 'rest_api_init', 'wp_oembed_register_route' );
             add_filter( 'embed_oembed_discover', '__return_false' );
             remove_filter( 'oembed_dataparse', 'wp_filter_oembed_result', 10 );
-            remove_action( 'wp_head', 'wp_oembed_add_discovery_links' );d.
+            remove_action( 'wp_head', 'wp_oembed_add_discovery_links' );
             remove_action( 'wp_head', 'wp_oembed_add_host_js' );
             add_filter( 'tiny_mce_plugins', [$this, 'disable_embeds_tiny_mce_plugin'] );
             add_filter( 'rewrite_rules_array', [$this, 'disable_embeds_rewrites'] );

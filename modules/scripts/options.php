@@ -17,7 +17,7 @@ $this->parent->options->add_section([
 $this->parent->options->add_field([
     'section'   =>  'scripts',
     'type'      =>  'html',
-    'content'   =>  '<div class="cora-section-placeholder" style="background-image:url('. $this->parent->url("modules/Scripts") .'/screenshot.png);"></div>'
+    'content'   =>  '<div class="cora-section-placeholder" style="background-image:url('. $this->parent->url("modules/scripts") .'/screenshot.png);"></div>'
 ]);
 
 # Upgrade Message
