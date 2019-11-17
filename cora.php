@@ -208,15 +208,23 @@ class Cora {
         
         # Plugins Support
         wp_enqueue_style( 
-            'cora-woocommerce',
+            'cora-plugin-support',
             $this->url( "assets/css/plugin-support.css" )
         );
         
-        # Cora
+        # Main Style
         wp_enqueue_style( 
             'cora',
             $this->url( "assets/css/style.css" )
         );
+
+        # RTL Support
+        if ( is_rtl() ) {
+            wp_enqueue_style( 
+                'cora-rtl',
+                $this->url( "assets/css/rtl.css" )
+            );
+        }
 
     }
 

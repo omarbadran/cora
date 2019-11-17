@@ -128,6 +128,19 @@ html body #cf {
         background-repeat: no-repeat;
     }
 
+    .cf-save {
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        width: 160px;
+        height: 38px;
+        line-height: 34px;
+        text-align: center;
+        font-weight: 700;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+    
 }
 
 /* Fields */

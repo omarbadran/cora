@@ -1,5 +1,5 @@
 /* Forms */
-html body {
+html body.wp-admin {
     input[type=checkbox],
     input[type=color],
     input[type=date],
@@ -20,9 +20,9 @@ html body {
     textarea
     {
         box-shadow: none;
-        background-color: var(--forms_field_background);
-        border-color: var(--forms_field_border);
-        color: var(--secondary_text_color);
+        background-color: var(--forms_field_background) !important;
+        border-color: var(--forms_field_border) !important;
+        color: var(--secondary_text_color) !important;
         border-radius: 3px;
     }
 }

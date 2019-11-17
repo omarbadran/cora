@@ -40,13 +40,18 @@ body.login {
 
     label {
         color: var(--secondary_text_color);
-        float: left;
-        width: 100%;    
     }
-    
+
+    .wp-pwd {
+        position: relative;
+        float: left;
+        width: 100%;
+    }
+
     form {
         background-color: transparent;
         box-shadow: none;
+        border: none;
 
         p {
             float: left;
@@ -58,21 +63,18 @@ body.login {
             border-radius: 4px;
         }
 
-        [for=user_login], [for=user_pass] {
-            font-size: 0px;
-            color: transparent;
-
-            input  {
-                margin-bottom: 5px;
+        .input, input[type=password], input[type=text] {
+            margin-bottom: 5px;
+            font-size: 13px;
+            padding: 12px;
+            color: var(--secondary_text_color)!important;
+            float: left;
+            width: 100%;
+                            
+            &::placeholder{
+                color: var(--secondary_text_color) !important;
                 font-size: 13px;
-                padding: 12px;
                 color: var(--secondary_text_color)!important;
-                float: left;
-                width: 100%;
-                                
-                &::placeholder{
-                    color: var(--secondary_text_color) !important;
-                }
             }
         }
 
