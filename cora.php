@@ -19,9 +19,6 @@
 # Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-# Load Freemius
-// require_once dirname(__FILE__) . '/freemius.php';
-
 
 /**
  * Plugin Class
@@ -59,22 +56,27 @@ class Cora {
      */
     public function __construct() {
 
-        # Options framework
+        add_action( 'cora_fs_loaded', [$this, "load_textdomain"] );
+
+        # Load Freemius
+        require_once dirname(__FILE__) . '/freemius.php';
+
+        # Options Framework
         require_once $this->dir("includes/framework/Framework.php");
 
-        # Initialize options
-        $this->options = new CoraFramework( [
-            'id'         => 'cora',
-            'page_title' => esc_html__('Cora Settings' , 'cora'),
-            'menu_title' => esc_html__('Cora' , 'cora'),
-            'display_version' => 'v1.0.0'
+        # Initialize Options
+        $this->options = new CoraFramework([
+            'id'                =>  'cora',
+            'page_title'        =>  __('Cora Settings' , 'cora'),
+            'menu_title'        =>  __('Cora' , 'cora'),
+            'display_version'   =>  'v1.0.0'
         ]);
         
-        # Enqueue styles
-        add_action( 'admin_enqueue_scripts', [ $this  , "styles" ] );
+        # Enqueue Styles
+        add_action( 'admin_enqueue_scripts', [$this, "styles"] );
 
-        # Enqueue scripts
-        add_action( 'admin_enqueue_scripts', [ $this  , "scripts" ] );
+        # Enqueue Scripts
+        add_action( 'admin_enqueue_scripts', [$this, "scripts"] );
 
         # Load Modules
         $this->load_modules();
@@ -133,6 +135,17 @@ class Cora {
     }
 
     /**
+     * Load Text Domain.
+     *
+     * @since       1.0.0
+     * @access      public
+     * @return      void
+     */
+    public function load_textdomain () {
+        load_plugin_textdomain( 'cora', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
+    }
+
+    /**
      * Load Modules.
      *
      * @since       1.0.0
@@ -145,14 +158,14 @@ class Cora {
          *  $modules = [module => premium_available]
          */
         $modules = [
-            'general'           =>    false,
-            'menu'              =>    false,
-            'toolbar'           =>    false,
-            'theme'             =>    true,
-            'login'             =>    true,
-            'scripts'           =>    true,
-            'optimization'      =>    false,
-            'advanced'          =>    false,
+            'general' => false,
+            'menu' => false,
+            'toolbar' => false,
+            'theme' => true,
+            'login' => true,
+            'scripts' => true,
+            'optimization' => false,
+            'advanced' => false,
         ];
         
         foreach ( $modules as $module => $premium_available ) {
@@ -160,14 +173,12 @@ class Cora {
             $path = $this->dir("modules/$module/module.php");
 
             # Handling Licensing
-            if ( 
-                $premium_available //&& cora_fs()->is_premium() && cora_fs()->can_use_premium_code()
-             ){
+            if ( $premium_available && cora_fs()->is_premium() && cora_fs()->can_use_premium_code() ){
                 $path = $this->dir("modules-premium/$module/module.php");
             }
 
             # Load Module
-            if ( file_exists($path) ) {
+            if ( file_exists( $path ) ) {
                 require_once $path;
                 $module_class = "Cora_$module"; 
                 new $module_class($this);
@@ -175,7 +186,6 @@ class Cora {
         }
 
     }
-
 
     /**
      * Enqueue styles.
@@ -257,7 +267,7 @@ class Cora {
         $upgrade_txt    =  __('Upgrade', 'cora');
         $trial_txt      =  __('14-day Free Trial', 'cora');
 
-        $block  =
+        return
             "<div class='$class'>
                 <h2>$title</h2>
                 <p>$message</p>
@@ -266,11 +276,8 @@ class Cora {
                     <a href='$trial_url' class='button button-small'>$trial_txt</a>
                 </div>
             </div>";
-
-        return $block;
     
     }
-
 
 }
 
