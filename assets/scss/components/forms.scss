@@ -25,18 +25,39 @@ html body.wp-admin {
         color: var(--secondary_text_color) !important;
         border-radius: 3px;
     }
+
+    input[type=date],
+    input[type=datetime-local],
+    input[type=datetime],
+    input[type=email],
+    input[type=month],
+    input[type=number],
+    input[type=password],
+    input[type=search],
+    input[type=tel],
+    input[type=text],
+    input[type=time],
+    input[type=url],
+    input[type=week]{
+        line-height: 1;
+        min-height: 28px;
+    }
 }
 
-::placeholder, ::-webkit-input-placeholder, :-ms-input-placeholder {
+::placeholder,
+::-webkit-input-placeholder,
+:-ms-input-placeholder {
     color: var(--secondary_text_color) !important;
 }
 
 
-.form-wrap p, p.description {
+.form-wrap p,
+p.description {
     color: var(--secondary_text_color);
 }
 
-.form-table th, .form-wrap label {
+.form-table th,
+.form-wrap label {
     color: var(--primary_text_color);   
 }
 

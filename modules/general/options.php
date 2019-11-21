@@ -75,6 +75,6 @@ $this->parent->options->add_field([
     'section'       =>  'general',
     'title'         =>  __('Screen Options', 'cora'),
     'type'          =>  'switch',
-    'default'       =>  true
+    'default'       =>  false
 ]);
 

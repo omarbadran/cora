@@ -6,6 +6,9 @@
 	border-color: $button-color;
 	color: $text-color;
 	text-shadow: none !important;
+    border: none;
+    padding-top: 1px;
+    padding-bottom: 1px;
 
 	&:hover,
 	&:focus {

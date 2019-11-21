@@ -82,7 +82,7 @@ $this->parent->options->add_field([
     'section'   =>  'theme_premium',
     'title'     =>  __('Primary Text', 'cora'),
     'type'      =>  'color',
-    'default'   =>  '#5d5d65'
+    'default'   =>  '#60606f'
 ]);
 
 $this->parent->options->add_field([
@@ -116,7 +116,7 @@ $this->parent->options->add_field([
     'section'   =>  'theme_premium',
     'title'     =>  __('Background', 'cora'),
     'type'      =>  'color',
-    'default'   =>  '#242831'
+    'default'   =>  '#3a3e48'
 ]);
 
 $this->parent->options->add_field([
@@ -148,7 +148,7 @@ $this->parent->options->add_field([
     'section'   =>  'theme_premium',
     'title'     =>  __('Submenu Background', 'cora'),
     'type'      =>  'color',
-    'default'   =>  '#242831'
+    'default'   =>  '#3a3e48'
 ]);
 
 $this->parent->options->add_field([
@@ -156,7 +156,7 @@ $this->parent->options->add_field([
     'section'   =>  'theme_premium',
     'title'     =>  __('Submenu Item Text', 'cora'),
     'type'      =>  'color',
-    'default'   =>  'rgba(255, 255, 255, 0.15)'
+    'default'   =>  'rgba(255, 255, 255, 0.1)'
 ]);
 
 $this->parent->options->add_field([
@@ -196,7 +196,7 @@ $this->parent->options->add_field([
     'section'   =>  'theme_premium',
     'title'     =>  __('Item Text', 'cora'),
     'type'      =>  'color',
-    'default'   =>  '#696d7b'
+    'default'   =>  '#767a8a'
 ]);
 
 $this->parent->options->add_field([
@@ -244,7 +244,7 @@ $this->parent->options->add_field([
     'section'   =>  'theme_premium',
     'title'     =>  __('Secondary Button Color', 'cora'),
     'type'      =>  'color',
-    'default'   =>  '#dadbe0'
+    'default'   =>  'rgba(0, 0, 0, 0.05)'
 ]);
 
 $this->parent->options->add_field([
@@ -252,7 +252,7 @@ $this->parent->options->add_field([
     'section'   =>  'theme_premium',
     'title'     =>  __('Secondary Button Text', 'cora'),
     'type'      =>  'color',
-    'default'   =>  '#666'
+    'default'   =>  '#737379'
 ]);
 
 
@@ -269,7 +269,7 @@ $this->parent->options->add_field([
     'section'   =>  'theme_premium',
     'title'     =>  __('Control Field Background', 'cora'),
     'type'      =>  'color',
-    'default'   =>  'rgba(255, 255, 255, 0)'
+    'default'   =>  'rgba(0, 0, 0, 0.05)'
 ]);
 
 $this->parent->options->add_field([
@@ -277,5 +277,5 @@ $this->parent->options->add_field([
     'section'   =>  'theme_premium',
     'title'     =>  __('Control Field Border', 'cora'),
     'type'      =>  'color',
-    'default'   =>  'rgba(0, 0, 0, 0.075)'
+    'default'   =>  'rgba(0, 0, 0, 0)'
 ]);
