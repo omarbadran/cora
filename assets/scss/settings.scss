@@ -4,7 +4,7 @@ html body #cf {
     padding: 0;
 
     .cf-body {
-        background: rgba(0, 0, 0, 0.065);
+        background: rgba(0, 0, 0, 0.05);
         margin-top: 25px;
         min-height: 580px;
         overflow: hidden;
@@ -29,7 +29,7 @@ html body #cf {
     }
 
     .cf-nav {
-        background: rgba(0, 0, 0, 0.03);
+        background: rgba(0, 0, 0, 0.035);
 
         li {
             color: var(--primary_text_color);
@@ -260,7 +260,7 @@ body {
                 bottom: 0;
                 z-index: 10;
                 background: var(--secondary_background_color);
-                border-top: 1px solid rgba(0,0,0,.035);
+                border-top: 1px solid rgba(0,0,0,.015);
                                 
                 span {
                     color: var(--secondary_text_color);
