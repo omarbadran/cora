@@ -158,11 +158,11 @@ class Cora {
          *  $modules = [module => premium_available]
          */
         $modules = [
-            'general' => false,
             'menu' => false,
             'toolbar' => false,
             'theme' => true,
             'login' => true,
+            'general' => false,
             'scripts' => true,
             'optimization' => false,
             'advanced' => false,
