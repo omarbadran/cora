@@ -12,7 +12,6 @@
  * Text Domain:       cora
  * License:           GPLv3
  * 
- * @fs_premium_only /modules-premium/
  * 
  */
 
@@ -55,17 +54,15 @@ class Cora {
      * @return      void
      */
     public function __construct() {
-
-        add_action( 'cora_fs_loaded', [$this, "load_textdomain"] );
-
-        # Load Freemius
-        require_once dirname(__FILE__) . '/freemius.php';
+        
+        # Load Textdomain
+        add_action( 'plugins_loaded', [$this, "load_textdomain"] );
 
         # Options Framework
         require_once $this->dir("includes/framework/Framework.php");
 
         # Initialize Options
-        $this->options = new CoraFramework([
+        $this->options = new CF([
             'id'                =>  'cora',
             'page_title'        =>  __('Cora Settings' , 'cora'),
             'menu_title'        =>  __('Cora' , 'cora'),
@@ -157,25 +154,10 @@ class Cora {
         /**
          *  $modules = [module => premium_available]
          */
-        $modules = [
-            'menu' => false,
-            'toolbar' => false,
-            'theme' => true,
-            'login' => true,
-            'general' => false,
-            'scripts' => true,
-            'optimization' => false,
-            'advanced' => false,
-        ];
+        $modules = [ 'menu', 'toolbar', 'theme', 'login', 'general', 'scripts', 'optimization', 'advanced' ];
         
-        foreach ( $modules as $module => $premium_available ) {
-
+        foreach ( $modules as $module ) {
             $path = $this->dir("modules/$module/module.php");
-
-            # Handling Licensing
-            if ( $premium_available && cora_fs()->is_premium() && cora_fs()->can_use_premium_code() ){
-                $path = $this->dir("modules-premium/$module/module.php");
-            }
 
             # Load Module
             if ( file_exists( $path ) ) {

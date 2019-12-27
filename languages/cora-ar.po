@@ -88,7 +88,7 @@ msgstr "تصدير البيانات"
 msgid "Import  Data"
 msgstr "أستيراد البيانات"
 
-#: modules/general/module.php:137 modules-premium/login/options.php:75
+#: modules/general/module.php:137 modules/login/options.php:75
 msgid "Image"
 msgstr "صورة"
 
@@ -96,7 +96,7 @@ msgstr "صورة"
 msgid "your theme doesn't support featured image"
 msgstr "ثيمك لا يدعم الصور المختارة"
 
-#: modules/general/options.php:12 modules-premium/theme/options.php:61
+#: modules/general/options.php:12 modules/theme/options.php:61
 msgid "General"
 msgstr "عام"
 
@@ -109,10 +109,10 @@ msgid "Easily add custom dashboard widgets."
 msgstr "اضافة ودجات الى الواجهة الرئيسية"
 
 #: modules/general/options.php:27 modules/menu/options.php:83 
-#: modules/toolbar/options.php:25 modules-premium/login/options.php:43 
-#: modules-premium/scripts/options.php:26 
-#: modules-premium/scripts/options.php:68 
-#: modules-premium/scripts/options.php:110
+#: modules/toolbar/options.php:25 modules/login/options.php:43 
+#: modules/scripts/options.php:26 
+#: modules/scripts/options.php:68 
+#: modules/scripts/options.php:110
 msgid "Title"
 msgstr "العنوان"
 
@@ -153,7 +153,7 @@ msgid "Screen Options"
 msgstr "خيارات الشاشة"
 
 #: modules/login/options.php:12 modules/login/options.php:28 
-#: modules-premium/login/options.php:12
+#: modules/login/options.php:12
 msgid "Login Page"
 msgstr "صفحة تسجيل الدخزل"
 
@@ -168,25 +168,25 @@ msgstr ""
 msgid "Admin Menu"
 msgstr "قائمة الأدمن"
 
-#: modules/menu/options.php:20 modules-premium/login/options.php:95
+#: modules/menu/options.php:20 modules/login/options.php:95
 msgid "Show Logo"
 msgstr "اضهار الشعار"
 
-#: modules/menu/options.php:29 modules-premium/login/options.php:104
+#: modules/menu/options.php:29 modules/login/options.php:104
 msgid "Logo Type"
 msgstr "نوع الشعار"
 
 #: modules/menu/options.php:35 modules/menu/options.php:49 
-#: modules-premium/login/options.php:110 modules-premium/login/options.php:124
+#: modules/login/options.php:110 modules/login/options.php:124
 msgid "Logo"
 msgstr "الشعار"
 
 #: modules/menu/options.php:39 modules/toolbar/options.php:61 
-#: modules-premium/login/options.php:114
+#: modules/login/options.php:114
 msgid "Site Name"
 msgstr "اسم الموقع"
 
-#: modules/menu/options.php:62 modules-premium/login/options.php:137
+#: modules/menu/options.php:62 modules/login/options.php:137
 msgid "Logo Width"
 msgstr "عرض الشعار"
 
@@ -206,9 +206,9 @@ msgstr ""
 msgid "Icon"
 msgstr "الأيقونة"
 
-#: modules/menu/options.php:93 modules-premium/scripts/options.php:31 
-#: modules-premium/scripts/options.php:73 
-#: modules-premium/scripts/options.php:115
+#: modules/menu/options.php:93 modules/scripts/options.php:31 
+#: modules/scripts/options.php:73 
+#: modules/scripts/options.php:115
 msgid "Type"
 msgstr "النوع"
 
@@ -289,7 +289,7 @@ msgid "Media ICO Support"
 msgstr "دعم ملفات ICO"
 
 #: modules/scripts/options.php:12 modules/scripts/options.php:28 
-#: modules-premium/scripts/options.php:12
+#: modules/scripts/options.php:12
 msgid "Custom Scripts"
 msgstr "سكربتات مخصصة"
 
@@ -303,7 +303,7 @@ msgstr ""
 "بكسل او اداوت تعقب كوكل بطريقة امنة. "
 
 #: modules/theme/options.php:12 modules/theme/options.php:29 
-#: modules-premium/theme/options.php:12
+#: modules/theme/options.php:12
 msgid "Theme"
 msgstr "الثيم"
 
@@ -317,7 +317,7 @@ msgstr ""
 "مناسبا للبراند الخاصة بك او كما يعجبك شخصيا. يمكنك اختيار ثيم مصمم مسبقا او "
 "تصميم واحد."
 
-#: modules/toolbar/options.php:12 modules-premium/theme/options.php:183
+#: modules/toolbar/options.php:12 modules/theme/options.php:183
 msgid "Toolbar"
 msgstr "شريط الأدوات"
 
@@ -349,192 +349,192 @@ msgstr "محتوى جديد"
 msgid "My Account"
 msgstr "حسابي"
 
-#: modules-premium/login/options.php:21
+#: modules/login/options.php:21
 msgid "Layout"
 msgstr "المظهر"
 
-#: modules-premium/login/options.php:26
+#: modules/login/options.php:26
 msgid "Standard"
 msgstr "اعتيادي"
 
-#: modules-premium/login/options.php:31
+#: modules/login/options.php:31
 msgid "Modern"
 msgstr "عصري"
 
-#: modules-premium/login/options.php:54
+#: modules/login/options.php:54
 msgid "Description"
 msgstr "الوصف"
 
-#: modules-premium/login/options.php:65
+#: modules/login/options.php:65
 msgid "Background Type"
 msgstr "نوع الخلفية"
 
-#: modules-premium/login/options.php:71
+#: modules/login/options.php:71
 msgid "Default"
 msgstr "اعتيادي"
 
-#: modules-premium/login/options.php:85
+#: modules/login/options.php:85
 msgid "Background Image"
 msgstr "نوع صورة الخلفية"
 
-#: modules-premium/scripts/options.php:20
+#: modules/scripts/options.php:20
 msgid "Admin Scripts"
 msgstr "سكربتات الأدمن"
 
-#: modules-premium/scripts/options.php:21
+#: modules/scripts/options.php:21
 msgid "This option allows you to add custom CSS & JS to the admin area."
 msgstr "هذا الخيار يمكنك من اضافة سكربتات مخصصة لصفحة الأدمن."
 
-#: modules-premium/scripts/options.php:35 
-#: modules-premium/scripts/options.php:77 
-#: modules-premium/scripts/options.php:119
+#: modules/scripts/options.php:35 
+#: modules/scripts/options.php:77 
+#: modules/scripts/options.php:119
 msgid "CSS"
 msgstr "سي اس اس"
 
-#: modules-premium/scripts/options.php:39 
-#: modules-premium/scripts/options.php:81 
-#: modules-premium/scripts/options.php:123
+#: modules/scripts/options.php:39 
+#: modules/scripts/options.php:81 
+#: modules/scripts/options.php:123
 msgid "JS"
 msgstr "جافاسكربت"
 
-#: modules-premium/scripts/options.php:46 
-#: modules-premium/scripts/options.php:88 
-#: modules-premium/scripts/options.php:130
+#: modules/scripts/options.php:46 
+#: modules/scripts/options.php:88 
+#: modules/scripts/options.php:130
 msgid "Code"
 msgstr "كود"
 
-#: modules-premium/scripts/options.php:48 
-#: modules-premium/scripts/options.php:90 
-#: modules-premium/scripts/options.php:132
+#: modules/scripts/options.php:48 
+#: modules/scripts/options.php:90 
+#: modules/scripts/options.php:132
 msgid "Paste your code here."
 msgstr "ضع الكود عنا."
 
-#: modules-premium/scripts/options.php:52 
-#: modules-premium/scripts/options.php:94 
-#: modules-premium/scripts/options.php:136
+#: modules/scripts/options.php:52 
+#: modules/scripts/options.php:94 
+#: modules/scripts/options.php:136
 msgid "Custom Script"
 msgstr "سكربات مخصصة"
 
-#: modules-premium/scripts/options.php:62
+#: modules/scripts/options.php:62
 msgid "Front-end Scripts"
 msgstr "سكربتات الواجهة لأمامية"
 
-#: modules-premium/scripts/options.php:63
+#: modules/scripts/options.php:63
 msgid "This option allows you to add custom CSS & JS on the front-end."
 msgstr "هذا الخيار يمكنك من اضافة سكربتات مخصصة للواجهة الأمامية."
 
-#: modules-premium/scripts/options.php:104
+#: modules/scripts/options.php:104
 msgid "Login Scripts"
 msgstr "سكربتات صفحة تسجيل الدخول"
 
-#: modules-premium/scripts/options.php:105
+#: modules/scripts/options.php:105
 msgid "This option allows you to add custom CSS & JS to the login area."
 msgstr "هذا الخيار يمكنك من اضافة سكربتات مخصصة لصفحة تسجيل الدخول."
 
-#: modules-premium/theme/options.php:27
+#: modules/theme/options.php:27
 msgid "Light"
 msgstr "فاتح"
 
-#: modules-premium/theme/options.php:32
+#: modules/theme/options.php:32
 msgid "Dark"
 msgstr "غامق"
 
-#: modules-premium/theme/options.php:44 modules-premium/theme/options.php:50
+#: modules/theme/options.php:44 modules/theme/options.php:50
 msgid "Shadows"
 msgstr "خيالات"
 
-#: modules-premium/theme/options.php:67
+#: modules/theme/options.php:67
 msgid "Primary Background"
 msgstr "الخلفية الرئيسية"
 
-#: modules-premium/theme/options.php:75
+#: modules/theme/options.php:75
 msgid "Secondary Background"
 msgstr "الخلفية الثانوية"
 
-#: modules-premium/theme/options.php:83
+#: modules/theme/options.php:83
 msgid "Primary Text"
 msgstr "النص الرئيسي"
 
-#: modules-premium/theme/options.php:91
+#: modules/theme/options.php:91
 msgid "Secondary Text"
 msgstr "النص الثانوي"
 
-#: modules-premium/theme/options.php:99
+#: modules/theme/options.php:99
 msgid "Links"
 msgstr "روابط"
 
-#: modules-premium/theme/options.php:111
+#: modules/theme/options.php:111
 msgid "Menu"
 msgstr "قائمة"
 
-#: modules-premium/theme/options.php:117
+#: modules/theme/options.php:117
 msgid "Background"
 msgstr "الخلفية"
 
-#: modules-premium/theme/options.php:125 modules-premium/theme/options.php:197
+#: modules/theme/options.php:125 modules/theme/options.php:197
 msgid "Item Text"
 msgstr "نص العنصر"
 
-#: modules-premium/theme/options.php:133 modules-premium/theme/options.php:205
+#: modules/theme/options.php:133 modules/theme/options.php:205
 msgid "Item Text - Highlight"
 msgstr "نص العنصر - تعيين"
 
-#: modules-premium/theme/options.php:141
+#: modules/theme/options.php:141
 msgid "Item Background - Highlight"
 msgstr "خلفية العنصر - تعيين"
 
-#: modules-premium/theme/options.php:149
+#: modules/theme/options.php:149
 msgid "Submenu Background"
 msgstr "خلفية القائمة الثانوية"
 
-#: modules-premium/theme/options.php:157
+#: modules/theme/options.php:157
 msgid "Submenu Item Text"
 msgstr "نص عنصر القامة الثانوية"
 
-#: modules-premium/theme/options.php:165
+#: modules/theme/options.php:165
 msgid "Submenu Item Text - Highlight"
 msgstr "نص عنصر القامة الثانوية - تعيين"
 
-#: modules-premium/theme/options.php:173
+#: modules/theme/options.php:173
 msgid "Logo Text"
 msgstr "نص الشعار"
 
-#: modules-premium/theme/options.php:189
+#: modules/theme/options.php:189
 msgid "Toolbar Background"
 msgstr "خلفية شريط الأدوات"
 
-#: modules-premium/theme/options.php:213
+#: modules/theme/options.php:213
 msgid "Item background - Highlight"
 msgstr "خلفية العنصر - تعيين"
 
-#: modules-premium/theme/options.php:223
+#: modules/theme/options.php:223
 msgid "Buttons"
 msgstr "ازرار"
 
-#: modules-premium/theme/options.php:229
+#: modules/theme/options.php:229
 msgid "Primary Button Color"
 msgstr "لون الزر الرئيسي"
 
-#: modules-premium/theme/options.php:237
+#: modules/theme/options.php:237
 msgid "Primary Button Text"
 msgstr "نص الزر الرئيسي"
 
-#: modules-premium/theme/options.php:245
+#: modules/theme/options.php:245
 msgid "Secondary Button Color"
 msgstr "لون الزر الثانوي"
 
-#: modules-premium/theme/options.php:253
+#: modules/theme/options.php:253
 msgid "Secondary Button Text"
 msgstr "نص الزر الثانوي"
 
-#: modules-premium/theme/options.php:264
+#: modules/theme/options.php:264
 msgid "Forms"
 msgstr "حقول"
 
-#: modules-premium/theme/options.php:270
+#: modules/theme/options.php:270
 msgid "Control Field Background"
 msgstr "خلفية عنصر الحقل"
 
-#: modules-premium/theme/options.php:278
+#: modules/theme/options.php:278
 msgid "Control Field Border"
 msgstr "حدود عنصر الحقل"
