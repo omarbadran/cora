@@ -23,12 +23,12 @@ $this->parent->options->add_field([
     'title'     =>  false,
     'options'   =>  [
         [
-            'img'   =>  $this->parent->url("modules/theme/themes/light/screenshot.png" ),
+            'img'   =>  $this->parent->url("modules/theme/themes/light/screenshot.png"),
             'title' =>  __('Light', 'cora'),
             'data'  =>  json_decode( file_get_contents( $this->parent->dir("modules/theme/themes/light/light.json") ), true )
         ],
         [
-            'img'   =>  $this->parent->url("modules/theme/themes/dark/screenshot.png" ),
+            'img'   =>  $this->parent->url("modules/theme/themes/dark/screenshot.png"),
             'title' =>  __('Dark', 'cora'),
             'data'  =>  json_decode( file_get_contents( $this->parent->dir("modules/theme/themes/dark/dark.json") ), true )
         ]
@@ -66,7 +66,7 @@ $this->parent->options->add_field([
     'section'   =>  'theme',
     'title'     =>  __('Primary Background', 'cora'),
     'type'      =>  'color',
-    'default'   =>  '#f5f5ff'
+    'default'   =>  '#f3f3f7'
 ]);
 
 $this->parent->options->add_field([
@@ -188,7 +188,7 @@ $this->parent->options->add_field([
     'section'   =>  'theme',
     'title'     =>  __('Toolbar Background', 'cora'),
     'type'      =>  'color',
-    'default'   =>  '#f5f5ff'
+    'default'   =>  '#f3f3f7'
 ]);
 
 $this->parent->options->add_field([

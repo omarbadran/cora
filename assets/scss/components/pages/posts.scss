@@ -8,10 +8,9 @@
 .widgets-holder-wrap,
 p.popular-tags,
 table.widefat {
-    margin: 15px 0px;
-    display: inline-block;
+    margin: 25px 0px;
     background: var(--secondary_background_color);
-    border: 0px solid rgba(0, 0, 0, 0.06);
+    border-color: transparent;
     border-radius: 5px;
 
     .row-title {
@@ -62,10 +61,6 @@ table.widefat {
 }
 .ac_match, .subsubsub a.current {
     color: var(--primary_text_color);
-}
-
-.tablenav.top .bulkactions{
-    display: none;
 }
 
 .cora-thumb-icon {

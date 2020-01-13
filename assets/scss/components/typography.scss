@@ -6,6 +6,7 @@
 
 a{
     color: var(--link_color);
+    text-decoration: none;
 }
 
 /* Typography: Headings */
@@ -15,9 +16,9 @@ h1{
 }
 
 .wrap h1{
-    margin-bottom: 40px;
+    margin-bottom: 35px;
     font-weight: 700;
-    font-size: 26px;
+    font-size: 25px;
     letter-spacing: -0.5px;
     padding: 0;
     font-family: Josefin Sans,sans-serif;

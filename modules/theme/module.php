@@ -31,7 +31,7 @@ class Cora_Theme {
 
         add_filter( 'admin_body_class', [$this  , "shadows"]);
         add_filter( 'login_body_class', [$this  , "shadows"]);
-
+        
         if( $this->parent->options->in_view() ){
             add_action( 'admin_print_footer_scripts', [$this  , "live_preview"] );
         }

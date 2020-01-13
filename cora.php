@@ -54,30 +54,28 @@ class Cora {
      * @return      void
      */
     public function __construct() {
-        
-        # Load Textdomain
+        # Require files
+        require_once $this->dir("includes/framework/framework.php");
+
+        # Load textdomain
         add_action( 'plugins_loaded', [$this, "load_textdomain"] );
 
-        # Options Framework
-        require_once $this->dir("includes/framework/Framework.php");
-
-        # Initialize Options
+        # Initialize options framework
         $this->options = new CF([
             'id'                =>  'cora',
             'page_title'        =>  __('Cora Settings' , 'cora'),
             'menu_title'        =>  __('Cora' , 'cora'),
             'display_version'   =>  'v1.0.0'
         ]);
-        
-        # Enqueue Styles
+
+        # Enqueue styles
         add_action( 'admin_enqueue_scripts', [$this, "styles"] );
 
-        # Enqueue Scripts
+        # Enqueue scripts
         add_action( 'admin_enqueue_scripts', [$this, "scripts"] );
 
-        # Load Modules
-        $this->load_modules();
-
+        # Load modules
+        $this->load_modules();    
     }
 
     /**
@@ -151,9 +149,6 @@ class Cora {
      */
     public function load_modules () {
 
-        /**
-         *  $modules = [module => premium_available]
-         */
         $modules = [ 'menu', 'toolbar', 'theme', 'login', 'general', 'scripts', 'optimization', 'advanced' ];
         
         foreach ( $modules as $module ) {
@@ -233,34 +228,7 @@ class Cora {
         wp_enqueue_script( 'cora', $this->url( "assets/js/app.min.js" ) );
         
     }
-
-    /**
-     * Render a promotion block.
-     *
-     * @since       1.0.0
-     * @access      public
-     * @return      string
-     */
-    public function promotion_block ($title, $message, $class = 'cora-go-premium') {
-
-        $upgrade_url    = cora_fs()->get_upgrade_url();
-        $trial_url      = cora_fs()->get_trial_url();
-        
-        $upgrade_txt    =  __('Upgrade', 'cora');
-        $trial_txt      =  __('14-day Free Trial', 'cora');
-
-        return
-            "<div class='$class'>
-                <h2>$title</h2>
-                <p>$message</p>
-                <div class='cora-actions'>
-                    <a href='$upgrade_url' class='button button-small button-primary'>$upgrade_txt</a>
-                    <a href='$trial_url' class='button button-small'>$trial_txt</a>
-                </div>
-            </div>";
     
-    }
-
 }
 
 # Fire

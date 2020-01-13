@@ -29,7 +29,8 @@ body.cora-shadows {
     #fs_connect,
     &.login #login_error,
     &.login .message,
-    &.login .success
+    &.login .success,
+    .update-nag
     {
         box-shadow: $shadow !important;
     }
