@@ -14,16 +14,17 @@ html body #cf {
 
         h1 {
             color: var(--primary_text_color);
-            line-height: 26px;
+            line-height: 25px;
+            font-size: 25px;
             font-weight: 700;
             font-family: Josefin Sans,sans-serif;
         }
-
+        
         span {
             background: rgba(0,0,0,.065);
             color: var(--secondary_text_color);
             margin: 16px 0 18px 20px;
-            line-height: 24px;
+            line-height: 22px;
         }
 
     }
@@ -152,6 +153,10 @@ body {
         }
     }
     
+    .select2-container--default .select2-search--inline .select2-search__field {
+        background-color: transparent !important;
+    }
+
     .select2-container--default .select2-selection--multiple .select2-selection__choice {
         background: rgba(0, 0, 0, 0.1);
         border-color: rgba(0, 0, 0, 0.1);

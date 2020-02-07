@@ -36,7 +36,7 @@ $this->parent->options->add_field([
     'new_item_default'  => [
         'title'         =>  __('Custom Widget', 'cora'),
         'content'       =>  ''
-    ],
+    ]
 ]);
 
 # Footer Text

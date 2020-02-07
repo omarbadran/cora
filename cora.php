@@ -148,7 +148,6 @@ class Cora {
      * @return      void
      */
     public function load_modules () {
-
         $modules = [ 'menu', 'toolbar', 'theme', 'login', 'general', 'scripts', 'optimization', 'advanced' ];
         
         foreach ( $modules as $module ) {
@@ -161,7 +160,6 @@ class Cora {
                 new $module_class($this);
             }
         }
-
     }
 
     /**
@@ -172,7 +170,6 @@ class Cora {
      * @return      void
      */
     public function styles() {
-
         # Material icons
         wp_enqueue_style( 
             'material-icons',
@@ -212,7 +209,6 @@ class Cora {
                 $this->url( "assets/css/rtl.css" )
             );
         }
-
     }
 
     /**
@@ -223,10 +219,8 @@ class Cora {
      * @return      void
      */
     public function scripts() {
-
         # Cora
         wp_enqueue_script( 'cora', $this->url( "assets/js/app.min.js" ) );
-        
     }
     
 }

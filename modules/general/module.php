@@ -73,9 +73,10 @@ class Cora_General {
                 extract($widget);
 
                 $id = str_replace('_', '-', plugin_basename( sanitize_title( $title ) ) );
-
+                $content = do_shortcode($content);
+                
                 wp_add_dashboard_widget($id, $title, function () use($content) {
-                    echo $content;
+                    echo "<div class='cora-dashboard-widget'>$content</div>";
                 });            
             }
 
