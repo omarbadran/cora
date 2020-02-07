@@ -64,7 +64,7 @@ class Cora_General {
      * @return      void
      */
     public function add_dashboard_widgets() {
-        global $wp_meta_boxes;
+        global $wp_meta_boxes, $pagenow;
         $widgets = $this->parent->options->get_value('general', 'add_widgets');
         
         if ( is_array($widgets) ) {
@@ -76,12 +76,16 @@ class Cora_General {
                 $content = do_shortcode($content);
                 
                 wp_add_dashboard_widget($id, $title, function () use($content) {
-                    echo "<div class='cora-dashboard-widget'>$content</div>";
+                    echo "<div class='cora-dashboard-widget editor-styles-wrapper'>$content</div>";
                 });            
             }
 
         }
 
+        if ($pagenow == 'index.php') {
+            wp_enqueue_style( 'wp-block-library-theme' );
+            wp_enqueue_style( 'wp-block-library' );
+        }
     }
 
     /**

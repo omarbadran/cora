@@ -28,7 +28,6 @@ class Cora_Menu {
 
         add_action('admin_menu', [$this, "build_menu"], PHP_INT_MAX);
         add_filter('adminmenu', [$this, "branding"]);
-
     }
 
     /**
@@ -71,16 +70,20 @@ class Cora_Menu {
             # Page item
             if ( $type == 'page' ) {
 
-                $menu_slug = plugin_basename( sanitize_title( $title ) );
+                $menu_slug = 'custom-page-' . plugin_basename( sanitize_title( $title ) );
                 $admin_page_hooks[ $menu_slug ] = sanitize_title( $title );
                 $hookname = get_plugin_page_hookname( $menu_slug, '' );
 
+                $page_content =  "<div class='wrap cora-custom-page editor-styles-wrapper'>
+                    <h1>$title</h1>
+                    $page_content
+                </div>";
+                
                 add_action( $hookname, function() use($title, $page_content) {
-                    echo
-                        "<div class='wrap'>
-                            <h1>$title</h1>
-                            $page_content
-                        </div>";
+                    wp_enqueue_style( 'wp-block-library-theme' );
+                    wp_enqueue_style( 'wp-block-library' );
+                            
+                    echo do_shortcode($page_content);
                 });
                 
                 $item = [$title, 'read', $menu_slug, $title, 'menu-top menu-top-first', $hookname];

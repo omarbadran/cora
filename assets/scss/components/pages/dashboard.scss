@@ -14,12 +14,12 @@
 }
 
 #activity-widget #the-comment-list li.comment-item {
-    background: rgba(0, 0, 0, 0.1);
+    background: rgba(0,0,0,.05);
     box-shadow: none;
 }
 
 .community-events ul {
-    background: rgba(0, 0, 0, 0.1);
+    background: rgba(0,0,0,.05);
 
     li {
         color: var(--secondary_text_color);
@@ -75,129 +75,4 @@
 
 .community-events-footer {
     color: transparent;
-}
-
-#dashboard-widgets .cora-dashboard-widget {
-    font-size: 15px;
-    margin-top: -10px;
-
-    // Typography
-    p, ul, ol, dl, blockquote, pre, dialog{
-        font-size:1em;
-        line-height:1.5em;
-        margin:0 0 0.8em;
-    }
-
-    blockquote{
-        border-left: 3px solid hsla(0, 0%, 0%, 0.03);
-        background: var(--primary_background_color);
-        font-style: italic;
-        padding: 12px 16px;
-        margin: 1.2em 0 1.8em!important;
-        border-radius: 5px;
-    }
-    
-    pre,code{
-        font-family:monaco,"Courier New",Courier,monospace;
-        font-size:1em;
-    }
-
-    sup,sub{
-        font-size:0.7em;line-height:1em;
-        vertical-align:baseline;
-    }
-    
-    sup{
-        position:relative;
-        top:-0.4em;
-    }
-
-    sub{
-        position:relative;
-        top:0.4em;
-    }
-    
-    ol, ul, dd{
-        margin: 1em !important;
-    }
-
-    ul{
-        list-style:disc;
-    }
-
-    li ul, li ol{
-        margin-bottom:0
-    }
-
-    ol{
-        list-style:decimal;
-    }
-
-    dt{
-        font-weight:bold;
-    }
-          
-    hr{
-        margin:1.3846em 0 1.308em 0;
-        height:0;
-        border:1px solid #888;
-        border-width:1px 0 0 0;
-    }
-    
-    $levels: (light: 300, medium: 500, strong: 700, regular: normal);
-    $font-sizes: (h1: 46px, h2: 30px, h3: 20px, h4: 18px, h5: 16px, h6: 14px, normal: 16px, small: 14px, xsmall: 12px, xxsmall: 10px);
-    
-    $headings: (
-            h1: (light, map-get($font-sizes, h1), -1.5px, 55),
-            h2: (light, map-get($font-sizes, h2), -.5px, 40),
-            h3: (medium, map-get($font-sizes, h3), normal, 30px),
-            h4: (medium, map-get($font-sizes, h4), normal, 25px),
-            h5: (medium, map-get($font-sizes, h5), .18px, 22px),
-            h6: (medium, map-get($font-sizes, h6), .15px, 22px),
-    );
-    
-    $classes: (
-            subtitle: (medium, map-get($font-sizes, normal), .15px, 24px),
-            subtitle-small: (medium, map-get($font-sizes, small), .1px, 24px),
-            button: (strong, map-get($font-sizes, small), 1.25px, 17px),
-            caption: (medium, map-get($font-sizes, xsmall), .4px, 16px),
-            overline: (medium, map-get($font-sizes, xxsmall), 1.5px, 16px)
-    );
-    
-    @mixin typo($opts) {
-      font-weight: map-get($levels, nth($opts, 1));
-      font-size: nth($opts, 2);
-      letter-spacing: nth($opts, 3);
-      line-height: nth($opts, 4);
-    }
-    
-    .font {
-      @each $alias, $size in $font-sizes {
-        &-#{$alias} {
-          font-size: $size;
-        }
-      }
-    }
-    
-    @each $heading, $opts in $headings {
-      #{$heading} {
-        @include typo($opts);
-        margin-bottom: 15px;
-      }
-    }
-    
-    @each $class, $opts in $classes {
-      .#{$class} {
-        @include typo($opts)
-      }
-    }
-    
-    button, form, p, html, div, ul, ol, li, input, span {
-      @each $alias, $level in (light: 300, medium: 500, strong: 700) {
-        &.#{$alias} {
-          font-weight: $level !important;
-        }
-      }
-    }
-    
 }
