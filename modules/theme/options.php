@@ -66,7 +66,7 @@ $this->parent->options->add_field([
     'section'   =>  'theme',
     'title'     =>  __('Primary Background', 'cora'),
     'type'      =>  'color',
-    'default'   =>  '#f3f3f7'
+    'default'   =>  '#f4f5ff'
 ]);
 
 $this->parent->options->add_field([
@@ -82,7 +82,7 @@ $this->parent->options->add_field([
     'section'   =>  'theme',
     'title'     =>  __('Primary Text', 'cora'),
     'type'      =>  'color',
-    'default'   =>  '#60606f'
+    'default'   =>  '#6c6c80'
 ]);
 
 $this->parent->options->add_field([
@@ -156,7 +156,7 @@ $this->parent->options->add_field([
     'section'   =>  'theme',
     'title'     =>  __('Submenu Item Text', 'cora'),
     'type'      =>  'color',
-    'default'   =>  'rgba(255, 255, 255, 0.1)'
+    'default'   =>  'rgba(255, 255, 255, 0.09)'
 ]);
 
 $this->parent->options->add_field([
@@ -164,7 +164,7 @@ $this->parent->options->add_field([
     'section'   =>  'theme',
     'title'     =>  __('Submenu Item Text - Highlight', 'cora'),
     'type'      =>  'color',
-    'default'   =>  'rgba(255, 255, 255, 0.9)'
+    'default'   =>  'rgba(255, 255, 255, 0.8)'
 ]);
 
 $this->parent->options->add_field([
@@ -188,7 +188,7 @@ $this->parent->options->add_field([
     'section'   =>  'theme',
     'title'     =>  __('Toolbar Background', 'cora'),
     'type'      =>  'color',
-    'default'   =>  '#f3f3f7'
+    'default'   =>  '#f4f5ff'
 ]);
 
 $this->parent->options->add_field([

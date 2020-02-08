@@ -148,7 +148,7 @@ class Cora {
      * @return      void
      */
     public function load_modules () {
-        $modules = [ 'menu', 'toolbar', 'theme', 'login', 'general', 'scripts', 'optimization', 'advanced' ];
+        $modules = [ 'menu', 'toolbar', 'theme', 'general', 'login', 'scripts', 'optimization', 'advanced' ];
         
         foreach ( $modules as $module ) {
             $path = $this->dir("modules/$module/module.php");

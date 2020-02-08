@@ -46,32 +46,21 @@
     box-shadow: none;
 
     .welcome-panel-close {
-        font-size: 13px;
-        line-height: 1.23076923;
-        text-decoration: none;
-        overflow: hidden;
-        text-indent: 40px;
-        white-space: nowrap;
-        width: 20px;
-        height: 20px;
-        padding: 5px;
-        top: 5px;
-        right: 5px;
         opacity: 0.3;
-
-        &:before {
-            font-size: 20px;
-            top: 5px;
-            left: -35px;
-        }
-        
     }
     
     .welcome-panel-column p, p {
         color: var(--secondary_text_color);
-    }        
+    }
+
+    .welcome-panel .welcome-icon {
+        background: 0 0!important;
+    }    
 }
 
+#dashboard_right_now li a:before, #dashboard_right_now li span:before, .welcome-panel .welcome-icon:before {
+    color: var(--secondary_text_color);
+}
 
 .community-events-footer {
     color: transparent;
