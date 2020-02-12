@@ -188,7 +188,7 @@ $this->parent->options->add_field([
     'section'   =>  'theme',
     'title'     =>  __('Toolbar Background', 'cora'),
     'type'      =>  'color',
-    'default'   =>  '#f4f5ff'
+    'default'   =>  'rgba(255, 255, 255, 0)'
 ]);
 
 $this->parent->options->add_field([
@@ -196,7 +196,7 @@ $this->parent->options->add_field([
     'section'   =>  'theme',
     'title'     =>  __('Item Text', 'cora'),
     'type'      =>  'color',
-    'default'   =>  '#767a8a'
+    'default'   =>  '#878b9a'
 ]);
 
 $this->parent->options->add_field([

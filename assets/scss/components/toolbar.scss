@@ -7,11 +7,12 @@ html.wp-toolbar {
 // Toolbar wrapper
 
 #wpadminbar {    
-    padding: 10px 75px;
+    padding: 10px 75px 10px 74px;
+    position: absolute;
     height: 53px;
     box-sizing: border-box;
-    background: var(--toolbar_background) !important;
-
+    background: var(--toolbar_background)!important;
+    
     * {
         font-size: 12px;
         letter-spacing: 0.5px;
@@ -100,3 +101,40 @@ html.wp-toolbar {
         } 
     }
 }
+
+// Custom icons
+#wpadminbar #wp-toolbar {
+    #wp-admin-bar-comments .ab-icon:before,
+    #wp-admin-bar-new-content .ab-icon:before,
+    #wp-admin-bar-site-name>.ab-item:before{
+        font-family: 'Material Icons' !important;
+        font-size: 18px;
+        font-weight: 400;
+        font-style: normal;
+        display: inline-block;
+        text-transform: none;
+        letter-spacing: normal;
+        word-wrap: normal;
+        white-space: nowrap;
+        direction: ltr;
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+        -moz-osx-font-smoothing: grayscale;
+        font-feature-settings: "liga";
+    }
+
+    #wp-admin-bar-site-name>.ab-item:before {
+        top: 3px !important;
+        content: "store" !important;
+    }
+    #wp-admin-bar-comments .ab-icon:before {
+        content: "mail" !important;
+        top: 1px !important;
+    }
+    #wp-admin-bar-new-content .ab-icon:before {
+        content: "flash_on" !important;
+        top: 2px !important;
+    }
+
+}
+
