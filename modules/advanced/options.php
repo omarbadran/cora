@@ -14,7 +14,7 @@ $this->parent->options->add_section([
 ]);
 
 
-# Import
+# Export
 $this->parent->options->add_field([
     'id'           =>  'export',
     'section'      =>  'advanced',

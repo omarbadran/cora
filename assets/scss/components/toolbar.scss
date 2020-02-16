@@ -97,7 +97,15 @@ html.wp-toolbar {
         #wp-toolbar{
             ul.ab-top-menu > li > a.ab-item {
                 padding: 0 !important;
-            }            
+            }
+            
+            .quicklinks>ul>li>a {
+                padding: 0;
+                height: 46px;
+                line-height: 46px;
+                width: auto;
+            }
+            
         } 
     }
 }
