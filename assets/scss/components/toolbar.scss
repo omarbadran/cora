@@ -69,9 +69,9 @@ html.wp-toolbar {
             }
 
         }
-
-        #wp-admin-bar-site-name>.ab-item:before {
-            content: "\f180";
+        
+        #wp-admin-bar-comments .count-0 {
+            opacity: 1;
         }
 
         #wp-admin-bar-my-account.with-avatar>.ab-empty-item img,
@@ -87,6 +87,32 @@ html.wp-toolbar {
 
 }
 
+// Custom icons
+#wpadminbar #wp-toolbar {
+    #wp-admin-bar-comments .ab-icon:before,
+    #wp-admin-bar-new-content .ab-icon:before,
+    #wp-admin-bar-site-name>.ab-item:before{
+        font-family: Material Icons!important;
+        font-size: 18px;
+        word-wrap: normal;
+        font-feature-settings: "liga";
+    }
+
+    #wp-admin-bar-site-name>.ab-item:before {
+        top: 3px;
+        content: "store";
+    }
+    #wp-admin-bar-comments .ab-icon:before {
+        content: "mail";
+        top: 1px;
+    }
+    #wp-admin-bar-new-content .ab-icon:before {
+        content: "flash_on";
+        top: 2px;
+    }
+
+}
+
 @media screen and (max-width: 782px) {
     #wpadminbar {
         width: 100% !important;
@@ -97,52 +123,16 @@ html.wp-toolbar {
         #wp-toolbar{
             ul.ab-top-menu > li > a.ab-item {
                 padding: 0 !important;
-            }
-            
-            .quicklinks>ul>li>a {
-                padding: 0;
-                height: 46px;
-                line-height: 46px;
-                width: auto;
-            }
-            
-        } 
+            } 
+        }
+
+        #wp-admin-bar-comments .ab-icon:before,
+        #wp-admin-bar-new-content .ab-icon:before,
+        #wp-admin-bar-site-name>.ab-item:before{
+            font-size: 24px !important;
+            top: 11px !important;
+            line-height: initial;
+        }
+
     }
 }
-
-// Custom icons
-#wpadminbar #wp-toolbar {
-    #wp-admin-bar-comments .ab-icon:before,
-    #wp-admin-bar-new-content .ab-icon:before,
-    #wp-admin-bar-site-name>.ab-item:before{
-        font-family: 'Material Icons' !important;
-        font-size: 18px;
-        font-weight: 400;
-        font-style: normal;
-        display: inline-block;
-        text-transform: none;
-        letter-spacing: normal;
-        word-wrap: normal;
-        white-space: nowrap;
-        direction: ltr;
-        -webkit-font-smoothing: antialiased;
-        text-rendering: optimizeLegibility;
-        -moz-osx-font-smoothing: grayscale;
-        font-feature-settings: "liga";
-    }
-
-    #wp-admin-bar-site-name>.ab-item:before {
-        top: 3px !important;
-        content: "store" !important;
-    }
-    #wp-admin-bar-comments .ab-icon:before {
-        content: "mail" !important;
-        top: 1px !important;
-    }
-    #wp-admin-bar-new-content .ab-icon:before {
-        content: "flash_on" !important;
-        top: 2px !important;
-    }
-
-}
-
