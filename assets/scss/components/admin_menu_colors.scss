@@ -62,7 +62,7 @@
 
 #adminmenumain #adminmenu .wp-submenu {
 
-    background-color: var(--menu_submenu_background);
+    background-color: var(--menu_submenu_background) !important;
     
     a {
         color: var(--menu_submenu_item_text);
