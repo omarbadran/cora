@@ -20,7 +20,6 @@ class Cora_Optimization {
      * @return      void
      */
     public function __construct( $parent ) {
-        
         # Load Options
         $this->parent = $parent;
 
@@ -107,7 +106,6 @@ class Cora_Optimization {
                 return is_array( $src ) ? array_shift( $src ) : $icon;
             }, 10, 3);             
         }
-        
     }
 
     /**
@@ -130,7 +128,6 @@ class Cora_Optimization {
      * @return      void
      */
     public function disable_wp_emoji() {
-
         add_action( 'init', function () {
             remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
             remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
@@ -139,10 +136,10 @@ class Cora_Optimization {
             remove_filter( 'the_content_feed', 'wp_staticize_emoji' );
             remove_filter( 'comment_text_rss', 'wp_staticize_emoji' );
             remove_filter( 'wp_mail', 'wp_staticize_emoji_for_email' );
+
             add_filter( 'tiny_mce_plugins', [$this, 'disable_emojis_tinymce'] );
             add_filter( 'wp_resource_hints', [$this, 'disable_emojis_remove_dns_prefetch'], 10, 2 );
         });
-
     }
 
     /**
@@ -184,7 +181,6 @@ class Cora_Optimization {
      * @return      void
      */
     public function disable_rss_feed() {
-
         $disable_feeds = function () {
             wp_redirect( home_url() );
             die;
@@ -206,7 +202,6 @@ class Cora_Optimization {
         add_action( 'feed_links_show_comments_feed', '__return_false', -1 );
         remove_action( 'wp_head', 'feed_links',       2 );
         remove_action( 'wp_head', 'feed_links_extra', 3 );
-        
     }
 
     /**
@@ -217,18 +212,18 @@ class Cora_Optimization {
      * @return      void
      */
     public function disable_wp_oEmbed() {
-
         add_action('init', function (){
             remove_action( 'rest_api_init', 'wp_oembed_register_route' );
-            add_filter( 'embed_oembed_discover', '__return_false' );
-            remove_filter( 'oembed_dataparse', 'wp_filter_oembed_result', 10 );
             remove_action( 'wp_head', 'wp_oembed_add_discovery_links' );
             remove_action( 'wp_head', 'wp_oembed_add_host_js' );
+
+            add_filter( 'embed_oembed_discover', '__return_false' );
             add_filter( 'tiny_mce_plugins', [$this, 'disable_embeds_tiny_mce_plugin'] );
             add_filter( 'rewrite_rules_array', [$this, 'disable_embeds_rewrites'] );
+
+            remove_filter( 'oembed_dataparse', 'wp_filter_oembed_result', 10 );
             remove_filter( 'pre_oembed_result', 'wp_filter_pre_oembed_result', 10 );
         }, 9999);
-
     }
     
     /**
@@ -236,7 +231,7 @@ class Cora_Optimization {
      *
      * @since       1.0.0
      * @access      public
-     * @return      void
+     * @return      array
      */
     function disable_embeds_tiny_mce_plugin ($plugins) {
         return array_diff($plugins, ['wpembed']);
@@ -247,7 +242,7 @@ class Cora_Optimization {
      *
      * @since       1.0.0
      * @access      public
-     * @return      void
+     * @return      array
      */
     function disable_embeds_rewrites($rules) {
         foreach($rules as $rule => $rewrite) {
@@ -255,6 +250,7 @@ class Cora_Optimization {
                 unset($rules[$rule]);
             }
         }
+
         return $rules;
     }
     

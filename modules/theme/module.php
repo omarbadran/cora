@@ -20,7 +20,6 @@ class Cora_Theme {
      * @return      void
      */
     public function __construct( $parent ) {
-        
         # Load Options
         $this->parent = $parent;
         
@@ -42,7 +41,7 @@ class Cora_Theme {
      *
      * @since       1.0.0
      * @access      public
-     * @return      void
+     * @return      array|string
      */
     public function shadows( $classes ) {
         $use_shadows = $this->parent->options->get_value('theme', 'shadows');
@@ -66,13 +65,10 @@ class Cora_Theme {
      * @return      void
      */
     public function css_vars() {
-
         echo "<style>:root {";
 
         foreach ($this->parent->options->fields as $field) {
-
             if ($field['section'] == 'theme' && $field['type'] == 'color') {
-
                 $id = $field['id'];
                 $value = $this->parent->options->get_value('theme', $id);
                 
@@ -80,11 +76,9 @@ class Cora_Theme {
                     echo "--$id: $value;";
                 }
             }
-
         };
 
         echo "}</style>";
-
     }
 
     /**
@@ -95,21 +89,15 @@ class Cora_Theme {
      * @return      void
      */
     public function live_preview() {
-
         echo "<script>jQuery(document).ready(function($) {";
 
         foreach ($this->parent->options->fields as $field) {
-            
             extract($field);
             
-            $watch = '$watch';
+            $watch = '$watch'; // :(
 
             if( $section == 'theme' && $type == 'color' ) {
-
-                echo "CoraFramework.$watch( 'values.theme.$id', newVal => {
-                        document.documentElement.style.setProperty('--$id', newVal);
-                    }); \n";
-
+                echo "CoraFramework.$watch( 'values.theme.$id', newVal => { document.documentElement.style.setProperty('--$id', newVal); }); \n";
             }
         }
 

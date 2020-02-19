@@ -78,7 +78,7 @@ $this->parent->options->add_field([
             'text'  =>  __('Image', 'cora')
         ]
     ],
-    'description'  =>   __('Choose a solid color or upload a custom background image.', 'cora'),
+    'description'  =>   __('Choose the default color or upload a custom background image.', 'cora'),
 ]);
 
 
@@ -149,5 +149,5 @@ $this->parent->options->add_field([
         ['logo_type', '===', 'logo'],
         ['show_logo', '===', true]
     ],
-    'description'  =>   __('Logo image width (in pixels). the height will be set automatically.', 'cora'),
+    'description'  =>   __('Logo image width measured in pixels. The height will be set automatically.', 'cora'),
 ]);

@@ -20,7 +20,6 @@ class Cora_Login {
      * @return      void
      */
     public function __construct( $parent ) {
-
         # Load Options
         $this->parent = $parent;
 
@@ -30,10 +29,8 @@ class Cora_Login {
         add_action( 'login_enqueue_scripts', [$this->parent, "styles"] );
         add_action( 'login_enqueue_scripts', [$this, "scripts"] );
 
-
         add_filter( 'login_body_class', [$this  , "body_class"] );
         add_action( 'login_enqueue_scripts', [$this  , "vars"] );
-
     }
 
     /**
@@ -44,7 +41,6 @@ class Cora_Login {
      * @return      void
      */
     public function scripts() {
-        
         wp_enqueue_script('jquery');
 
         # Login
@@ -52,7 +48,6 @@ class Cora_Login {
             'cora-login',
             $this->parent->url( "modules/login/assets/js/login.js" )
         );
-        
     }
 
     /**
@@ -63,12 +58,10 @@ class Cora_Login {
      * @return      array
      */
     public function body_class ( $classes ) {
-        
         $layout = $this->parent->options->get_value('login', 'layout', 'standard');
         $classes[] = 'cora-' . $layout;
         
         return $classes;
-    
     }
 
     /**
@@ -79,7 +72,6 @@ class Cora_Login {
      * @return      void
      */
     public function vars () {
-
         $data = $this->parent->options->get_values()['login'];
         $data['site_name'] = get_bloginfo();
 
@@ -88,7 +80,6 @@ class Cora_Login {
             'CoraLogin',
             $data
         );
-
     }
 
 }

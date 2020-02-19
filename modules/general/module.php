@@ -20,7 +20,6 @@ class Cora_General {
      * @return      void
      */
     public function __construct( $parent ) {
-        
         # Load Options
         $this->parent = $parent;
 
@@ -31,14 +30,12 @@ class Cora_General {
         add_action('wp_dashboard_setup', [$this, 'add_dashboard_widgets']);
         add_action('admin_head', [$this, 'screen_options']);
 
-
         $post_thumbnail = $this->parent->options->get_value('general', 'post_thumbnail');
 
         if ( filter_var( $post_thumbnail, FILTER_VALIDATE_BOOLEAN ) ){
             add_filter('manage_posts_columns', [$this, 'add_post_admin_thumbnail_column']);
             add_action('manage_posts_custom_column', [$this, 'show_post_thumbnail_column'], 5, 2);
         }
-
     }
 
     /**
@@ -147,11 +144,11 @@ class Cora_General {
 
         
     /**
-     * show post thumbnail.
+     * Show post thumbnail.
      *
      * @since       1.0.0
      * @access      public
-     * @return      string
+     * @return      void
      */
     public function show_post_thumbnail_column( $columns, $id ){
         switch( $columns ){

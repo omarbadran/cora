@@ -1,11 +1,11 @@
 <?php
 /**
- * The plugin bootstrap file
+ * The plugin bootstrap file.
  *
  * @wordpress-plugin
  * Plugin Name:       Cora
  * Plugin URI:        http://coradashboard.com
- * Description:       Modern wordpress admin theme.
+ * Description:       A clean and modern WordPress admin theme.
  * Version:           1.0.0
  * Author:            Cora
  * Author URI:        http://coradashboard.com/
@@ -60,7 +60,7 @@ class Cora {
         # Load textdomain
         add_action( 'plugins_loaded', [$this, "load_textdomain"] );
 
-        # Initialize options framework
+        # Initialize cora framework
         $this->options = new CF([
             'id'                =>  'cora',
             'page_title'        =>  __('Cora Settings' , 'cora'),
@@ -83,7 +83,7 @@ class Cora {
      *
      * @since       1.0.0
      * @access      public
-     * @return      void
+     * @return      string
      */
     public function dir ( $append = false ) {
         $dir = trailingslashit( str_replace( '\\', '/', dirname( __FILE__ ) ) );
@@ -100,7 +100,7 @@ class Cora {
      *
      * @since       1.0.0
      * @access      public
-     * @return      void
+     * @return      string
      */
     public function url ( $append = false ) {
         $url = site_url( str_replace( str_replace( '\\', '/', ABSPATH ), '', $this->dir() ) ) . '/';
@@ -117,7 +117,7 @@ class Cora {
      *
      * @since       1.0.0
      * @access      public
-     * @return      void
+     * @return      string
      */
     public function clean_path ( $path ) {
         $path = str_replace( '', '', str_replace( array( "\\", "\\\\" ), '/', $path ) );
@@ -153,7 +153,6 @@ class Cora {
         foreach ( $modules as $module ) {
             $path = $this->dir("modules/$module/module.php");
 
-            # Load Module
             if ( file_exists( $path ) ) {
                 require_once $path;
                 $module_class = "Cora_$module"; 

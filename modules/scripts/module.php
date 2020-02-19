@@ -20,7 +20,6 @@ class Cora_Scripts {
      * @return      void
      */
     public function __construct( $parent ) {
-        
         # Load Options
         $this->parent = $parent;
 
@@ -29,7 +28,6 @@ class Cora_Scripts {
         add_action( 'admin_head', [$this, 'admin_scripts'] );
         add_action( 'wp_head', [$this, 'frontend_scripts'] );
         add_action( 'login_head', [$this, 'login_scripts'] );
-
     }
 
     /**

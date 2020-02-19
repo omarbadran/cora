@@ -77,7 +77,7 @@ $this->parent->options->add_field([
     'title'     =>  __('Secondary Background', 'cora'),
     'type'      =>  'color',
     'default'   =>  '#ffffff',
-    'description'  =>   __('Used as the backgroud color for Content boxes, Posts list, login form, menu items & widgets.', 'cora'),
+    'description'  =>   __('Used as the backgroud color for Meta boxes, posts list, login form, menu items & widgets.', 'cora'),
 ]);
 
 $this->parent->options->add_field([
@@ -86,7 +86,7 @@ $this->parent->options->add_field([
     'title'     =>  __('Primary Text', 'cora'),
     'type'      =>  'color',
     'default'   =>  '#6c6c80',
-    'description'  =>   __('Main text color. used for titles & paragraphs.', 'cora'),
+    'description'  =>   __('Main text color. Used for titles & paragraphs.', 'cora'),
 ]);
 
 $this->parent->options->add_field([
@@ -95,7 +95,7 @@ $this->parent->options->add_field([
     'title'     =>  __('Secondary Text', 'cora'),
     'type'      =>  'color',
     'default'   =>  '#737379',
-    'description'  =>   __('This is used for short descriptions & sub-paragraphs.', 'cora'),
+    'description'  =>   __('Used for short descriptions & sub-paragraphs.', 'cora'),
 ]);
 
 $this->parent->options->add_field([
@@ -132,7 +132,7 @@ $this->parent->options->add_field([
     'title'     =>  __('Item Text', 'cora'),
     'type'      =>  'color',
     'default'   =>  'rgba(255, 255, 255, 0.08)',
-    'description'  =>   __('Menu items text color.', 'cora'),
+    'description'  =>   __('Menu item text color.', 'cora'),
 ]);
 
 $this->parent->options->add_field([
@@ -141,7 +141,7 @@ $this->parent->options->add_field([
     'title'     =>  __('Item Text - Highlight', 'cora'),
     'type'      =>  'color',
     'default'   =>  'rgba(255, 255, 255, 0.9)',
-    'description'  =>   __('Menu items text color when the item is highlighted.', 'cora'),
+    'description'  =>   __('Menu item text color when the item is highlighted.', 'cora'),
 ]);
 
 $this->parent->options->add_field([
@@ -150,7 +150,7 @@ $this->parent->options->add_field([
     'title'     =>  __('Item Background - Highlight', 'cora'),
     'type'      =>  'color',
     'default'   =>  '#02B875',
-    'description'  =>   __('Menu items background color when the item is highlighted.', 'cora'),
+    'description'  =>   __('Menu item background color when the item is highlighted.', 'cora'),
 ]);
 
 $this->parent->options->add_field([
@@ -168,7 +168,7 @@ $this->parent->options->add_field([
     'title'     =>  __('Submenu Item Text', 'cora'),
     'type'      =>  'color',
     'default'   =>  'rgba(255, 255, 255, 0.09)',
-    'description'  =>   __('Submenu items text color.', 'cora'),
+    'description'  =>   __('Submenu item text color.', 'cora'),
 ]);
 
 $this->parent->options->add_field([
@@ -177,7 +177,7 @@ $this->parent->options->add_field([
     'title'     =>  __('Submenu Item Text - Highlight', 'cora'),
     'type'      =>  'color',
     'default'   =>  'rgba(255, 255, 255, 0.8)',
-    'description'  =>   __('Menu items color when the item is highlighted.', 'cora'),
+    'description'  =>   __('Submenu item color when the item is highlighted.', 'cora'),
 ]);
 
 $this->parent->options->add_field([
@@ -186,7 +186,7 @@ $this->parent->options->add_field([
     'title'     =>  __('Logo Text', 'cora'),
     'type'      =>  'color',
     'default'   =>  'rgba(255, 255, 255, 0.9)',
-    'description'  =>   __('If you choose a text logo (Site name), you can set the color here. note that this won\'t affect image logos.', 'cora'),
+    'description'  =>   __('If you choose the site name as a logo, you can set the color here. Note that this won\'t affect image logos.', 'cora'),
 ]);
 
 # Toolbar Colors

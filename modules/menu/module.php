@@ -20,7 +20,6 @@ class Cora_Menu {
      * @return      void
      */
     public function __construct( $parent ) {
-        
         # Load Options
         $this->parent = $parent;
 
@@ -38,7 +37,6 @@ class Cora_Menu {
      * @return      void
      */
     public function build_menu () {
-
         global $menu, $admin_page_hooks, $_registered_pages, $_parent_pages;
         
         $this->update_if_necessary();
@@ -114,7 +112,6 @@ class Cora_Menu {
      * @return      array
      */
     public function get_menu_items () {
-
         global $menu;
 
         # Remove separators
@@ -122,17 +119,17 @@ class Cora_Menu {
             return strpos( $v[4], 'wp-menu-separator' ) === false;
         });
 
-        # Remove link Manager
+        # Remove links manager
         $menu = array_filter($menu, function($v){
             return $v[1] !== 'manage_links';
         });
         
-        # Remove
+        # Remove HTML from the item name
         array_walk($menu, function(&$item){
             $item[0] = preg_replace('@<(\w+)\b.*?>.*?</\1>@si', '', $item[0]);
         });
 
-        # Create The Array
+        # Create the array
         $res = array_map(function($item) {
             return [
                 'type'      =>   'default',
@@ -141,30 +138,28 @@ class Cora_Menu {
             ];
         }, $menu);
 
-        # Sort By Key
+        # Sort by key
         ksort($res);
         
         return array_values($res);
-
     }
 
     /**
      * Update if necessary.
      * 
-     * Compare saved menu items with the current ones before modifying to see if new
+     * Compare saved menu items with the current ones (before modifying) to see if new
      * items were added or removed. In case the user has enabled/disabled some plugins.
      *
      * @since       1.0.0
      * @access      public
-     * @return      array
+     * @return      void
      */
     public function update_if_necessary () {
-
         $should_update  =   false;
         $original       =   $this->get_menu_items();
         $saved          =   $this->parent->options->get_value('menu', 'items', []);
         
-        # Detect New Items
+        # Detect new items
         if( $original !== $saved ){
             foreach ( $original as $k => $v ) {
                 if ( !in_array( $v['info'], array_column($saved, 'info') ) ) {
@@ -188,7 +183,6 @@ class Cora_Menu {
         if( $should_update ){
             $this->parent->options->update_value('menu', 'items', array_values($saved));
         }
-
     }
 
     /**
@@ -201,7 +195,6 @@ class Cora_Menu {
      * @return      array
      */
     public function get_roles () {
-
         if ( ! function_exists( 'get_editable_roles' ) ) {
             require_once ABSPATH . 'wp-admin/includes/user.php';
         }
@@ -216,7 +209,6 @@ class Cora_Menu {
         }
 
         return $roles;
-
     }
 
     /**
@@ -224,7 +216,7 @@ class Cora_Menu {
      *
      * @since       1.0.0
      * @access      public
-     * @return      array
+     * @return      void
      */
     public function branding () {
         $show_logo = $this->parent->options->get_value('menu', 'show_logo');
@@ -244,7 +236,6 @@ class Cora_Menu {
         } else {
             echo "<li class='cora-branding'>$name</li>";
         }
-
     }
 
 }

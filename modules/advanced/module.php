@@ -20,7 +20,6 @@ class Cora_Advanced {
      * @return      void
      */
     public function __construct( $parent ) {
-        
         # Load Options
         $this->parent = $parent;
 
@@ -43,7 +42,7 @@ class Cora_Advanced {
      *
      * @since       1.0.0
      * @access      public
-     * @return      void
+     * @return      string
      */
     public function site_api_id() {
         $id = get_option('cora_api_id');
@@ -90,7 +89,6 @@ class Cora_Advanced {
                 update_option('cora_outdated', false);
             }
         }
-
     }
 
 

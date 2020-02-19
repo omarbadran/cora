@@ -53,9 +53,9 @@ $this->parent->options->add_field([
 $this->parent->options->add_field([
     'id'            =>  'footer_info',
     'section'       =>  'general',
-    'title'         =>  __('Footer Informations', 'cora'),
+    'title'         =>  __('Footer Information', 'cora'),
     'type'          =>  'switch',
-    'description'   =>  __('Show useful informations about your WordPress installation in the footer.', 'cora'),
+    'description'   =>  __('Show useful information about your WordPress installation in the footer.', 'cora'),
     'default'       =>  true
 ]);
 
@@ -77,6 +77,6 @@ $this->parent->options->add_field([
     'title'         =>  __('Screen Options', 'cora'),
     'type'          =>  'switch',
     'default'       =>  true,
-    'description'   =>  __('Show Screen options & help button.', 'cora'),
+    'description'   =>  __('Show screen options & help button.', 'cora'),
 ]);
 

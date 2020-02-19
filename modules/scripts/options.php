@@ -45,7 +45,7 @@ $this->parent->options->add_field([
             'id'    =>  'content',
             'title' =>  __('Code', 'cora'),
             'type'  =>  'textarea',
-            'placeholder' => __('Paste your code here.', 'cora')
+            'placeholder' => __('Put your code here.', 'cora')
         ],
     ],
     'new_item_default'  => [
@@ -87,7 +87,7 @@ $this->parent->options->add_field([
             'id'            =>      'content',
             'title'         =>      __('Code', 'cora'),
             'type'          =>      'textarea',
-            'placeholder'   =>      __('Paste your code here.', 'cora')
+            'placeholder'   =>      __('Put your code here.', 'cora')
         ],
     ],
     'new_item_default'  => [
@@ -129,7 +129,7 @@ $this->parent->options->add_field([
             'id'            =>      'content',
             'title'         =>      __('Code', 'cora'),
             'type'          =>      'textarea',
-            'placeholder'   =>      __('Paste your code here.', 'cora')
+            'placeholder'   =>      __('Put your code here.', 'cora')
         ],
     ],
     'new_item_default'  => [
