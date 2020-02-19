@@ -33,7 +33,7 @@ $this->parent->options->add_field([
             'type'  =>  'editor',
         ],
     ],
-    'new_item_default'  => [
+    'new_item_default'  =>  [
         'title'         =>  __('Custom Widget', 'cora'),
         'content'       =>  ''
     ]
@@ -45,7 +45,8 @@ $this->parent->options->add_field([
     'section'       =>  'general',
     'title'         =>  __('Footer Text', 'cora'),
     'type'          =>  'textarea',
-    'default'       =>  __('Thank you for creating with WordPress.', 'cora')
+    'default'       =>  __('Thank you for creating with WordPress.', 'cora'),
+    'description'   =>  __('Change the default admin footer text.', 'cora'),
 ]);
 
 # Footer info
@@ -54,7 +55,7 @@ $this->parent->options->add_field([
     'section'       =>  'general',
     'title'         =>  __('Footer Informations', 'cora'),
     'type'          =>  'switch',
-    'description'   =>  __('Show useful informations about your WordPress Installation in footer.', 'cora'),
+    'description'   =>  __('Show useful informations about your WordPress installation in the footer.', 'cora'),
     'default'       =>  true
 ]);
 
@@ -63,7 +64,7 @@ $this->parent->options->add_field([
     'id'            =>  'post_thumbnail',
     'section'       =>  'general',
     'title'         =>  __('Posts Thumbnail', 'cora'),
-    'description'   => __( 'Show the post image column in posts list.', 'cora'),
+    'description'   =>  __('Show the featured image in posts list.', 'cora'),
     'type'          =>  'switch',
     'default'       =>  true
 ]);
@@ -75,6 +76,7 @@ $this->parent->options->add_field([
     'section'       =>  'general',
     'title'         =>  __('Screen Options', 'cora'),
     'type'          =>  'switch',
-    'default'       =>  true
+    'default'       =>  true,
+    'description'   =>  __('Show Screen options & help button.', 'cora'),
 ]);
 

@@ -20,9 +20,9 @@
         "toolbar_highlight_background":"rgb(91, 96, 107)",
         "primary_button_color":"#02B875",
         "primary_button_text":"#ffffff",
-        "secondary_button_color":"rgba(0, 0, 0, 0.05)",
+        "secondary_button_color":"rgba(0, 0, 0, 0.065)",
         "secondary_button_text":"#737379",
-        "forms_field_background":"rgba(0, 0, 0, 0.05)",
+        "forms_field_background":"rgba(0, 0, 0, 0.065)",
         "forms_field_border":"rgba(0, 0, 0, 0)"
     }
 }

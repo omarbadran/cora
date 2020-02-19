@@ -91,6 +91,7 @@ html.wp-toolbar {
 #wpadminbar #wp-toolbar {
     #wp-admin-bar-comments .ab-icon:before,
     #wp-admin-bar-new-content .ab-icon:before,
+    #wp-admin-bar-updates .ab-icon:before,
     #wp-admin-bar-site-name>.ab-item:before{
         font-family: Material Icons!important;
         font-size: 18px;
@@ -98,9 +99,14 @@ html.wp-toolbar {
         font-feature-settings: "liga";
     }
 
+    #wp-admin-bar-updates .ab-icon:before{
+        content: "archive";
+        top: 1px;
+    }
+
     #wp-admin-bar-site-name>.ab-item:before {
         top: 3px;
-        content: "store";
+        content: "dashboard";
     }
     #wp-admin-bar-comments .ab-icon:before {
         content: "mail";

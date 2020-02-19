@@ -9,8 +9,8 @@
 # Add Section
 $this->parent->options->add_section([
     'id'        =>  'menu',
-    'title'     =>  __('Admin Menu' , 'cora'),
-    'icon'      =>  'sort',
+    'title'     =>  __('Menu' , 'cora'),
+    'icon'      =>  'clear_all',
 ]);
 
 # Show Logo
@@ -20,6 +20,7 @@ $this->parent->options->add_field([
     'title'        =>   __('Show Logo' , 'cora'),
     'type'         =>   'switch',
     'default'      =>   true,
+    'description'  =>   __('Display a logo above the menu items.', 'cora'),
 ]);
 
 # logo Type
@@ -39,7 +40,8 @@ $this->parent->options->add_field([
             'text'  =>  __('Site Name', 'cora')
         ]
     ],
-    'condition'    =>   ['show_logo', '===', true]
+    'condition'    =>   ['show_logo', '===', true],
+    'description'  =>   __('Choose the logo type.', 'cora'),
 ]);
 
 # Logo
@@ -52,7 +54,8 @@ $this->parent->options->add_field([
     'condition'     =>  [
         ['logo_type', '===', 'logo'],
         ['show_logo', '===', true]
-    ]
+    ],
+    'description'  =>   __('Logo image url.', 'cora'),
 ]);
 
 # Logo Width
@@ -65,7 +68,8 @@ $this->parent->options->add_field([
     'condition'     =>  [
         ['logo_type', '===', 'logo'],
         ['show_logo', '===', true]
-    ]
+    ],
+    'description'  =>   __('Logo image width (in pixels). the height will be set automatically.', 'cora'),
 ]);
 
 # Menu Items

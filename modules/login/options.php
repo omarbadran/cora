@@ -32,7 +32,8 @@ $this->parent->options->add_field([
             'id'    =>  'modern',
             'url'   =>  $this->parent->url('modules/login/assets/images/modern.png') 
         ]
-    ]
+    ],
+    'description'   =>  __('Select login page layout.', 'cora'),
 ]);
 
 
@@ -44,6 +45,7 @@ $this->parent->options->add_field([
     'type'         =>   'text',
     'default'      =>   '',
     'condition'    =>   ['layout', '===', 'modern'],
+    'description'  =>   __('Login page title.', 'cora'),
 ]);
 
 
@@ -55,6 +57,7 @@ $this->parent->options->add_field([
     'type'         =>   'editor',
     'default'      =>   '',
     'condition'    =>   ['layout', '===', 'modern'],
+    'description'  =>   __('A short paragraph that will be displayed under the title.', 'cora'),
 ]);
 
 
@@ -74,7 +77,8 @@ $this->parent->options->add_field([
             'id'    =>  'image',
             'text'  =>  __('Image', 'cora')
         ]
-    ]
+    ],
+    'description'  =>   __('Choose a solid color or upload a custom background image.', 'cora'),
 ]);
 
 
@@ -85,7 +89,8 @@ $this->parent->options->add_field([
     'title'        =>   __('Background Image' , 'cora'),
     'type'         =>   'image',
     'default'      =>   'https://images.unsplash.com/photo-1541253768886-47a2cef5e09e?w=1567',
-    'condition'    =>   ['background_type', '==', 'image']
+    'condition'    =>   ['background_type', '==', 'image'],
+    'description'  =>   __('Background image url.', 'cora'),
 ]);
 
 # Show Logo
@@ -95,6 +100,7 @@ $this->parent->options->add_field([
     'title'        =>   __('Show Logo' , 'cora'),
     'type'         =>   'switch',
     'default'      =>   true,
+    'description'  =>   __('Display a logo above the login form.', 'cora'),
 ]);
 
 # logo Type
@@ -114,7 +120,8 @@ $this->parent->options->add_field([
             'text'  =>  __('Site Name', 'cora')
         ]
     ],
-    'condition'    =>   ['show_logo', '===', true]
+    'condition'    =>   ['show_logo', '===', true],
+    'description'  =>   __('Choose the logo type.', 'cora'),
 ]);
 
 # Logo
@@ -127,7 +134,8 @@ $this->parent->options->add_field([
     'condition'     =>  [
         ['logo_type', '===', 'logo'],
         ['show_logo', '===', true]
-    ]
+    ],
+    'description'  =>   __('Logo image url.', 'cora'),
 ]);
 
 # Logo Width
@@ -140,5 +148,6 @@ $this->parent->options->add_field([
     'condition'     =>  [
         ['logo_type', '===', 'logo'],
         ['show_logo', '===', true]
-    ]
+    ],
+    'description'  =>   __('Logo image width (in pixels). the height will be set automatically.', 'cora'),
 ]);

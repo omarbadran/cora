@@ -43,6 +43,7 @@ $this->parent->options->add_field([
         'href'          =>  'http://',
         'new_tab'       =>  true,
     ],
+    'description'  =>   __('Add custom links to the admin toolbar. note that links will also be displayed in the fron-end if the admin toolbar is being rendered.', 'cora'),
 ]);
 
 # WP Logo
@@ -52,6 +53,7 @@ $this->parent->options->add_field([
     'title'     =>  __('WP Logo', 'cora'),
     'type'      =>  'switch',
     'default'   =>  false,
+    'description'  =>   __('show/hide the wordpress logo.', 'cora'),
 ]);
 
 # Site Name
@@ -61,6 +63,7 @@ $this->parent->options->add_field([
     'title'     =>  __('Site Name', 'cora'),
     'type'      =>  'switch',
     'default'   =>  true,
+    'description'  =>   __('show/hide the site link.', 'cora'),
 ]);
 
 # Updates
@@ -70,6 +73,7 @@ $this->parent->options->add_field([
     'title'     =>  __('Updates', 'cora'),
     'type'      =>  'switch',
     'default'   =>  true,
+    'description'  =>   __('show/hide pending updates item.', 'cora'),
 ]);
 
 # Comments
@@ -79,6 +83,7 @@ $this->parent->options->add_field([
     'title'     =>  __('Comments', 'cora'),
     'type'      =>  'switch',
     'default'   =>  true,
+    'description'  =>   __('show/hide comments item.', 'cora'),
 ]);
 
 # New Content
@@ -88,6 +93,7 @@ $this->parent->options->add_field([
     'title'     =>  __('New Content', 'cora'),
     'type'      =>  'switch',
     'default'   =>  true,
+    'description'  =>   __('show/hide the new-content item.', 'cora'),
 ]);
 
 # My Account
@@ -97,4 +103,5 @@ $this->parent->options->add_field([
     'title'     =>  __('My Account', 'cora'),
     'type'      =>  'switch',
     'default'   =>  true,
+    'description'  =>   __('show/hide user profile box.', 'cora'),
 ]);
