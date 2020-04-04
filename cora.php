@@ -47,13 +47,22 @@ class Cora {
     public $options;
 
     /**
+     * Plugin updater.
+     *
+     * @since       1.0.0
+     * @access      public
+     * @var         object
+     */
+    public $updater;
+
+    /**
      * Class constructor.
      *
      * @since       1.0.0
      * @access      public
      * @return      void
      */
-    public function __construct() {
+    public function __construct() {        
         # Require files
         require_once $this->dir("includes/framework/framework.php");
 
@@ -74,8 +83,19 @@ class Cora {
         # Enqueue scripts
         add_action( 'admin_enqueue_scripts', [$this, "scripts"] );
 
+        # Plugin updates
+        require_once $this->dir("includes/edd-client/EDD_Client_Init.php");
+        $this->updater = new EDD_Client_Init(__FILE__, 'https://coradashboard.com');
+
         # Load modules
-        $this->load_modules();    
+        $this->load_modules();
+        
+        # Redirect after activation
+        add_action('activated_plugin', function($plugin) {
+            if( $plugin == plugin_basename( __FILE__ ) ) {
+                exit( wp_redirect( admin_url( 'admin.php?page=cora' ) ) );
+            }        
+        });
     }
 
     /**
