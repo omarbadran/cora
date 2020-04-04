@@ -13,6 +13,10 @@
     margin: 18px;
 }
 
+#dashboard-widgets h3, #dashboard-widgets h4, #dashboard_quick_press .drafts h2, h2, h3 {
+    color: var(--primary_text_color);
+}
+
 #activity-widget #the-comment-list li.comment-item {
     background: rgba(0,0,0,.05);
     box-shadow: none;
@@ -46,8 +50,9 @@
     box-shadow: none;
 
     .welcome-panel-close {
-        opacity: .65;
+        opacity: .55;
         color: var(--secondary_text_color);
+        font-weight: 700;
     }
     
     .welcome-panel-column p, p {
@@ -62,7 +67,7 @@
 #dashboard_right_now li a:before,
 #dashboard_right_now li span:before,
 .welcome-icon:before {
-    color: var(--secondary_text_color);
+    color: var(--secondary_text_color) !important;
 }
 
 .welcome-icon:before {

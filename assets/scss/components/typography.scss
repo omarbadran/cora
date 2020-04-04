@@ -18,14 +18,9 @@ h1{
 .wrap h1{
     margin-bottom: 30px;
     font-weight: 700;
-    font-size: 25px;
+    font-size: 26px;
     padding: 0;
     font-family: Josefin Sans,sans-serif;
     margin-left: -2px;
-    line-height: 35px;
+    line-height: 30px;
 }
-
-#dashboard-widgets h3, #dashboard-widgets h4, #dashboard_quick_press .drafts h2, h2, h3 {
-    color: var(--primary_text_color);
-}
-

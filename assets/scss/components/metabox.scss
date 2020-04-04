@@ -23,7 +23,7 @@
         padding: 12px 18px !important;
         font-weight: 700;
         padding-bottom: 14px;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.035);
+        border-bottom: 0px solid rgba(0, 0, 0, 0.035);
     }
 
     .postbox .handlediv {
@@ -39,5 +39,5 @@
 }
 
 .accordion-section-title:after, .handlediv, .item-edit, .postbox .handlediv.button-link, .toggle-indicator {
-    color: rgba(0, 0, 0, 0.18);
+    color: rgba(0,0,0,.15);
 }
