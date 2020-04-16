@@ -25,11 +25,11 @@ body.block-editor-page {
     .edit-post-sidebar {
         top: 99px;
     }
-    .has-fixed-toolbar .edit-post-layout__content {
+    .has-fixed-toolbar .block-editor-editor-skeleton {
         top: 99px;
     }
-    .edit-post-layout__content {
-        margin-left: var(--menu_width);
+    .block-editor-editor-skeleton {
+        left: var(--menu_width) !important;
     }
 }
 

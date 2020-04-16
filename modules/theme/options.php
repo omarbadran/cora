@@ -85,7 +85,7 @@ $this->parent->options->add_field([
     'section'   =>  'theme',
     'title'     =>  __('Primary Text', 'cora'),
     'type'      =>  'color',
-    'default'   =>  '#7c7c8e',
+    'default'   =>  '#848490',
     'description'  =>   __('Main text color. Used for titles & paragraphs.', 'cora'),
 ]);
 
@@ -94,7 +94,7 @@ $this->parent->options->add_field([
     'section'   =>  'theme',
     'title'     =>  __('Secondary Text', 'cora'),
     'type'      =>  'color',
-    'default'   =>  '#7e7e92',
+    'default'   =>  '#778194',
     'description'  =>   __('Used for short descriptions & sub-paragraphs.', 'cora'),
 ]);
 
@@ -122,7 +122,7 @@ $this->parent->options->add_field([
     'section'   =>  'theme',
     'title'     =>  __('Background', 'cora'),
     'type'      =>  'color',
-    'default'   =>  '#4e5563',
+    'default'   =>  '#3a3e48',
     'description'  =>   __('Menu background color.', 'cora'),
 ]);
 
@@ -131,7 +131,7 @@ $this->parent->options->add_field([
     'section'   =>  'theme',
     'title'     =>  __('Item Text', 'cora'),
     'type'      =>  'color',
-    'default'   =>  'rgba(255, 255, 255, 0.09)',
+    'default'   =>  'rgba(255, 255, 255, 0.08)',
     'description'  =>   __('Menu item text color.', 'cora'),
 ]);
 
@@ -158,7 +158,7 @@ $this->parent->options->add_field([
     'section'   =>  'theme',
     'title'     =>  __('Submenu Background', 'cora'),
     'type'      =>  'color',
-    'default'   =>  '#4e5563',
+    'default'   =>  '#3a3e48',
     'description'  =>   __('Background color for submenus.', 'cora'),
 ]);
 
@@ -210,7 +210,7 @@ $this->parent->options->add_field([
     'section'   =>  'theme',
     'title'     =>  __('Item Text', 'cora'),
     'type'      =>  'color',
-    'default'   =>  '#868698'
+    'default'   =>  '#878b9a'
 ]);
 
 $this->parent->options->add_field([
@@ -266,7 +266,7 @@ $this->parent->options->add_field([
     'section'   =>  'theme',
     'title'     =>  __('Secondary Button Text', 'cora'),
     'type'      =>  'color',
-    'default'   =>  '#7e7e92'
+    'default'   =>  '#778194'
 ]);
 
 
