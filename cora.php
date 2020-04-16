@@ -83,10 +83,6 @@ class Cora {
         # Enqueue scripts
         add_action( 'admin_enqueue_scripts', [$this, "scripts"] );
 
-        # Plugin updates
-        require_once $this->dir("includes/edd-client/EDD_Client_Init.php");
-        $this->updater = new EDD_Client_Init(__FILE__, 'https://coradashboard.com');
-
         # Load modules
         $this->load_modules();
         
@@ -242,6 +238,27 @@ class Cora {
         wp_enqueue_script( 'cora', $this->url( "assets/js/app.min.js" ) );
     }
     
+    /**
+     * Render a promotion block.
+     *
+     * @since       1.0.0
+     * @access      public
+     * @return      string
+     */
+    public function promotion_block ($title, $message, $class = 'cora-go-premium') {
+        $upgrade_txt =  __('Upgrade', 'cora');
+        $upgrade_url = "https://coradashboard.com/#pricing-section";
+
+        return
+            "<div class='$class'>
+                <h2>$title</h2>
+                <p>$message</p>
+                <div class='cora-actions'>
+                    <a href='$upgrade_url' class='button button-primary'>$upgrade_txt</a>
+                </div>
+            </div>";
+    
+    }
 }
 
 # Fire
