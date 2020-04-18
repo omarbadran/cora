@@ -22,7 +22,7 @@ class Cora_Theme {
     public function __construct( $parent ) {
         # Load Options
         $this->parent = $parent;
-        
+
         require_once $this->parent->dir("modules/theme/options.php");
 
         add_filter( 'admin_body_class', [$this  , "shadows"]);
@@ -37,16 +37,12 @@ class Cora_Theme {
      * @return      array|string
      */
     public function shadows( $classes ) {
-        $use_shadows = $this->parent->options->get_value('theme', 'shadows');
-
-        if ( filter_var($use_shadows, FILTER_VALIDATE_BOOLEAN) ) {
-            if ( is_array($classes) ) {
-                $classes[] = 'cora-shadows';
-            } else {
-                $classes .= 'cora-shadows';
-            }
+        if ( is_array($classes) ) {
+            $classes[] = 'cora-shadows';
+        } else {
+            $classes .= 'cora-shadows';
         }
-
+    
         return $classes;
     }
 }
