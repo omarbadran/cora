@@ -59,7 +59,7 @@ class Cora_Login {
      */
     public function body_class ( $classes ) {
         $layout = $this->parent->options->get_value('login', 'layout', 'standard');
-        $classes[] = 'cora-' . $layout;
+        $classes[] = 'cora-' . esc_attr($layout);
         
         return $classes;
     }

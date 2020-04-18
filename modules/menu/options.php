@@ -50,7 +50,7 @@ $this->parent->options->add_field([
     'section'       =>  'menu',
     'title'         =>  __('Logo' , 'cora'),
     'type'          =>  'image',
-    'default'       =>  plugins_url() . '/cora/assets/SVG/logo-light.svg',
+    'default'       =>  $this->parent->url('assets/SVG/logo-light.svg'),
     'condition'     =>  [
         ['logo_type', '===', 'logo'],
         ['show_logo', '===', true]

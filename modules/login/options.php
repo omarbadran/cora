@@ -130,7 +130,7 @@ $this->parent->options->add_field([
     'section'       =>  'login',
     'title'         =>  __('Logo' , 'cora'),
     'type'          =>  'image',
-    'default'       =>  plugins_url() . '/cora/assets/SVG/logo-dark.svg',
+    'default'       =>  $this->parent->url('assets/SVG/logo-dark.svg'),
     'condition'     =>  [
         ['logo_type', '===', 'logo'],
         ['show_logo', '===', true]
