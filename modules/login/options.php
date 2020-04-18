@@ -15,9 +15,22 @@ $this->parent->options->add_section([
 
 # Placeholder image
 $this->parent->options->add_field([
+<<<<<<< HEAD
     'section'   =>  '_login',
     'type'      =>  'html',
     'content'   =>  '<div class="cora-section-placeholder" style="background-image:url('. $this->parent->url("modules/login") .'/screenshot.png);"></div>'
+=======
+    'id'            =>  'logo',
+    'section'       =>  'login',
+    'title'         =>  __('Logo' , 'cora'),
+    'type'          =>  'image',
+    'default'       =>  $this->parent->url('assets/SVG/logo-dark.svg'),
+    'condition'     =>  [
+        ['logo_type', '===', 'logo'],
+        ['show_logo', '===', true]
+    ],
+    'description'  =>   __('Logo image url.', 'cora'),
+>>>>>>> master
 ]);
 
 # Upgrade message
