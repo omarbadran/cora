@@ -48,11 +48,6 @@ class Cora_Menu {
         foreach ( $items as $v ) {
             extract( $v );
 
-            # Check user role first
-            if ( isset($hide_for) && in_array( wp_get_current_user()->roles[0], (array) $hide_for)) {
-                continue;
-            }
-
             # Default item
             if ( $type == 'default' ){
                 $item = $v['info'];
@@ -94,8 +89,10 @@ class Cora_Menu {
                 $item[6] = 'dashicons-cora-' . $v['custom_icon'];
             }
 
-            # Add the item
-            $res[] = $item;
+            # Check user role first, then add the item.
+            if ( ! ( isset($v['hide_for']) && in_array( wp_get_current_user()->roles[0], (array) $v['hide_for']) ) ) {
+                $res[] = $item;
+            }
         }
 
         # Change
