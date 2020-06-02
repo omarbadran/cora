@@ -17,8 +17,8 @@
     color: var(--primary_text_color);
 }
 
-#activity-widget #the-comment-list li.comment-item {
-    background: rgba(0,0,0,.05);
+#activity-widget #the-comment-list li.comment-item, #dashboard_right_now .sub {
+    background: rgba(0,0,0,.04);
     box-shadow: none;
 }
 
@@ -50,11 +50,16 @@
     box-shadow: none;
 
     .welcome-panel-close {
-        opacity: .6;
-        color: var(--secondary_text_color);
+        opacity: .55;
+        color: var(--secondary_text_color) !important;
         font-weight: 700;
-    }
+
+        &::before {
+            top: 9px;
+        }
     
+    }
+
     .welcome-panel-column p, p {
         color: var(--secondary_text_color);
     }

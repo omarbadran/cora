@@ -131,7 +131,7 @@ $this->parent->options->add_field([
     'section'   =>  'theme',
     'title'     =>  __('Item Text', 'cora'),
     'type'      =>  'color',
-    'default'   =>  'rgba(255, 255, 255, 0.08)',
+    'default'   =>  'rgba(255, 255, 255, 0.1)',
     'description'  =>   __('Menu item text color.', 'cora'),
 ]);
 
@@ -210,7 +210,7 @@ $this->parent->options->add_field([
     'section'   =>  'theme',
     'title'     =>  __('Item Text', 'cora'),
     'type'      =>  'color',
-    'default'   =>  '#878b9a'
+    'default'   =>  '#848490'
 ]);
 
 $this->parent->options->add_field([

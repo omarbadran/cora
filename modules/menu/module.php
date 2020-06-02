@@ -19,7 +19,7 @@ class Cora_Menu {
      * @access      public
      * @return      void
      */
-    public function __construct( $parent ) {
+    public function __construct( $parent ) {        
         # Load Options
         $this->parent = $parent;
 
@@ -38,7 +38,7 @@ class Cora_Menu {
      */
     public function build_menu () {
         global $menu, $admin_page_hooks, $_registered_pages, $_parent_pages;
-        
+
         $this->update_if_necessary();
 
         $items = $this->parent->options->get_value('menu', 'items', []);
@@ -50,7 +50,7 @@ class Cora_Menu {
 
             # Default item
             if ( $type == 'default' ){
-                $item = $v['info'];
+                $item = $info;
                 $item[0] = $title;
             }
             
@@ -152,14 +152,20 @@ class Cora_Menu {
      * @return      void
      */
     public function update_if_necessary () {
-        $should_update  =   false;
-        $original       =   $this->get_menu_items();
-        $saved          =   $this->parent->options->get_value('menu', 'items', []);
+        $should_update = false;
+
+        $original = $this->get_menu_items();
+        $original_info = array_column($original, 'info');
         
+        $saved = $this->parent->options->get_value('menu', 'items', []);
+        $saved_info = array_column($saved, 'info');
+
         # Detect new items
         if( $original !== $saved ){
             foreach ( $original as $k => $v ) {
-                if ( !in_array( $v['info'], array_column($saved, 'info') ) ) {
+                $is_new = $v['type'] == 'default' && !in_array($v['info'][5], array_column($saved_info, array_keys($saved_info)[5]) );
+    
+                if ( $is_new ) {
                     $saved[] = $v;
                     $should_update = true;
                 }
@@ -168,7 +174,7 @@ class Cora_Menu {
 
         # Removed missing items
         foreach ( $saved as $k => $v ) {
-            $missing = $v['type'] == 'default' && !in_array($v['info'], array_column($original, 'info') );
+            $missing = $v['type'] == 'default' && !in_array($v['info'][5], array_column($original_info, array_keys($original_info)[5]) );
             
             if ($missing) {
                 $should_update = true;
