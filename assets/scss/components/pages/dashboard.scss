@@ -43,21 +43,47 @@
     color: var(--secondary_text_color);
 }
 
+#dashboard-widgets .meta-box-sortables {
+    margin: 0 10px;
+}
+
+#dashboard-widgets-wrap {
+    margin: 0 -10px;
+}
+
+.site-health-progress-label {
+    margin-left: 0.75rem;
+}
+
 .welcome-panel {
     background: var(--secondary_background_color);
     border: none;
     border-radius: 5px;
     box-shadow: none;
+    margin: 10px 0;
 
+    h2 {
+        display: none;
+    }
+    
     .welcome-panel-close {
         opacity: .55;
         color: var(--secondary_text_color) !important;
         font-weight: 700;
 
         &::before {
-            top: 9px;
+            color: var(--secondary_text_color) !important;
         }
     
+    }
+    
+    .welcome-icon {
+        background: 0 0 !important;
+        color: var(--secondary_text_color) !important;
+    }
+
+    .load-customize {
+        border-radius: 30px;
     }
 
     .welcome-panel-column p, p {
@@ -65,7 +91,7 @@
     }
 
     .welcome-panel-column ul {
-        margin: 1.2em 1em 1.2em 0;
+        margin: 1.3em 1em 1.3em 0;
     }    
 }
 

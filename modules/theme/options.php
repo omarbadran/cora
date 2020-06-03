@@ -85,7 +85,7 @@ $this->parent->options->add_field([
     'section'   =>  'theme',
     'title'     =>  __('Primary Text', 'cora'),
     'type'      =>  'color',
-    'default'   =>  '#848490',
+    'default'   =>  '#717182',
     'description'  =>   __('Main text color. Used for titles & paragraphs.', 'cora'),
 ]);
 
@@ -122,7 +122,7 @@ $this->parent->options->add_field([
     'section'   =>  'theme',
     'title'     =>  __('Background', 'cora'),
     'type'      =>  'color',
-    'default'   =>  '#3a3e48',
+    'default'   =>  '#393e42',
     'description'  =>   __('Menu background color.', 'cora'),
 ]);
 
@@ -131,7 +131,7 @@ $this->parent->options->add_field([
     'section'   =>  'theme',
     'title'     =>  __('Item Text', 'cora'),
     'type'      =>  'color',
-    'default'   =>  'rgba(255, 255, 255, 0.1)',
+    'default'   =>  'rgba(255, 255, 255, 0.12)',
     'description'  =>   __('Menu item text color.', 'cora'),
 ]);
 
@@ -158,7 +158,7 @@ $this->parent->options->add_field([
     'section'   =>  'theme',
     'title'     =>  __('Submenu Background', 'cora'),
     'type'      =>  'color',
-    'default'   =>  '#3a3e48',
+    'default'   =>  '#393e42',
     'description'  =>   __('Background color for submenus.', 'cora'),
 ]);
 
@@ -167,7 +167,7 @@ $this->parent->options->add_field([
     'section'   =>  'theme',
     'title'     =>  __('Submenu Item Text', 'cora'),
     'type'      =>  'color',
-    'default'   =>  'rgba(255, 255, 255, 0.09)',
+    'default'   =>  'rgba(255, 255, 255, 0.125)',
     'description'  =>   __('Submenu item text color.', 'cora'),
 ]);
 
@@ -210,7 +210,7 @@ $this->parent->options->add_field([
     'section'   =>  'theme',
     'title'     =>  __('Item Text', 'cora'),
     'type'      =>  'color',
-    'default'   =>  '#848490'
+    'default'   =>  '#717182'
 ]);
 
 $this->parent->options->add_field([
