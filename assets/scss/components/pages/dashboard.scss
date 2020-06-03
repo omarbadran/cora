@@ -91,8 +91,27 @@
     }
 
     .welcome-panel-column ul {
-        margin: 1.3em 1em 1.3em 0;
-    }    
+        margin: 1.2em 1em 1.2em 0;
+        
+        li {
+            line-height: 1;
+        }
+    }
+
+    .welcome-widgets::before {
+        content: "\f489";
+        top: -2px;
+    }
+
+    .welcome-menus::before {
+        content: "\f228";
+        top: -3px;
+    }
+
+    .welcome-view-site::before {
+        top: -3px;
+        content: "\f148";
+    }
 }
 
 #dashboard_right_now li a:before,

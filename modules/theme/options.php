@@ -122,7 +122,7 @@ $this->parent->options->add_field([
     'section'   =>  'theme',
     'title'     =>  __('Background', 'cora'),
     'type'      =>  'color',
-    'default'   =>  '#393e42',
+    'default'   =>  '#323e48',
     'description'  =>   __('Menu background color.', 'cora'),
 ]);
 
@@ -158,7 +158,7 @@ $this->parent->options->add_field([
     'section'   =>  'theme',
     'title'     =>  __('Submenu Background', 'cora'),
     'type'      =>  'color',
-    'default'   =>  '#393e42',
+    'default'   =>  '#323e48',
     'description'  =>   __('Background color for submenus.', 'cora'),
 ]);
 
