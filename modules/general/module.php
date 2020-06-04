@@ -47,9 +47,11 @@ class Cora_General {
      * @return      void
      */
     public function dashboard_title() {
-        $usename = wp_get_current_user()->display_name;
+        if ( get_current_screen()->id === 'dashboard' ) {
+            $usename = wp_get_current_user()->display_name;
         
-        $GLOBALS['title'] =  __( "Good morning, " . $usename , 'cora' ); 
+            $GLOBALS['title'] =  __( "Good morning, " . $usename , 'cora' );     
+        }
     }
 
     /**

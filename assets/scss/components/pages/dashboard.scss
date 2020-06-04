@@ -112,6 +112,10 @@
         top: -3px;
         content: "\f148";
     }
+
+    .welcome-setup-home::before {
+        top: -2px;
+    }
 }
 
 #dashboard_right_now li a:before,
