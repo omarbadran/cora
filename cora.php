@@ -74,6 +74,10 @@ class Cora {
         # Enqueue scripts
         add_action( 'admin_enqueue_scripts', [$this, "scripts"] );
 
+        # Check updates for premium version
+        add_action( 'admin_init', [$this, "check_updates"] );
+        add_action( 'admin_notices', [$this, "update_notice"] );
+
         # Load modules
         $this->load_modules();
         
@@ -228,7 +232,64 @@ class Cora {
         # Cora
         wp_enqueue_script( 'cora', $this->url( "assets/js/app.min.js" ) );
     }
-    
+
+    /**
+     * Check for updates.
+     *
+     * @since       1.0.0
+     * @access      public
+     * @return      void
+     */
+    public function check_updates() {
+        $last_check = get_option('cora_last_version_chech');
+
+        if ( $last_check && (time() - $last_check < 10800)  ) {
+            return;
+        }
+
+        $user = get_site_url();
+
+        $request = wp_remote_get("https://plugincube.com/api.php?action=check-version&license_id=$user&license_user=$user");
+
+        if( is_wp_error($request) ) {
+            return false;
+        }
+        
+        $body = wp_remote_retrieve_body( $request );
+        
+        $data = json_decode( $body );
+
+        update_option('cora_last_version_chech', time());
+        update_option('cora_latest_version', $data->version);
+    }
+
+    /**
+     * Alert for new versions.
+     *
+     * @since       1.0.0
+     * @access      public
+     * @return      void
+     */
+    public function update_notice() {
+        $version = get_option('cora_latest_version');
+        $user = get_site_url();
+
+        if ($version && version_compare('1.1.0', $version) < 0 && current_user_can( 'manage_options' ) ) {
+            $request = wp_remote_get("https://plugincube.com/api.php?action=get-download-url&license_id=$user&license_user=$user");
+
+            if( is_wp_error($request) ) {
+                return false;
+            }
+            
+            $body = wp_remote_retrieve_body( $request );
+            
+            $data = json_decode( $body );
+
+            $msg = "A new premium version is available, please download it at: " . $data->download_url;
+
+            echo "<div class='notice notice-success is-dismissible'><p>$msg</p></div>";
+        }
+    }
 }
 
 # Fire

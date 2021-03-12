@@ -1,7 +1,7 @@
-=== Modern & Clean WordPress Admin Theme - Cora ===
+=== Admin Theme & Login Page Customizer - Cora ===
 Contributors: plugincube
 Donate link: 
-Tags: admin, admin theme, admin style, dashboard, white label
+Tags: admin, admin theme, login, dashboard, white label
 Requires at least: 4.8
 Tested up to: 5.7
 Stable tag: 1.1.0
@@ -51,7 +51,9 @@ Customize every part of your admin theme visually with live preview. Change the 
 ### Custom Login Page
 Differentiate your website with a unique modern login & sign-up page. Upgrade to customize & rebrand the login page completely within seconds.
 
+### Recomended Plugins
 
+- [Floating Contact Form & Social Chat for WordPress](https://wordpress.org/plugins/supportbubble/)
 
 == Installation ==
 
