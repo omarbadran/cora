@@ -25,32 +25,16 @@ class Cora_General {
 
         require_once $this->parent->dir("modules/general/options.php");
 
-        add_filter('admin_footer_text',  [$this, 'footer'], PHP_INT_MAX);
+        // add_filter('admin_footer_text',  [$this, 'footer'], PHP_INT_MAX);
 
         add_action('wp_dashboard_setup', [$this, 'add_dashboard_widgets']);
         add_action('admin_head', [$this, 'screen_options']);
-        add_action('admin_head', [$this, 'dashboard_title'] );
 
         $post_thumbnail = $this->parent->options->get_value('general', 'post_thumbnail');
 
         if ( filter_var( $post_thumbnail, FILTER_VALIDATE_BOOLEAN ) ){
             add_filter('manage_posts_columns', [$this, 'add_post_admin_thumbnail_column']);
             add_action('manage_posts_custom_column', [$this, 'show_post_thumbnail_column'], 5, 2);
-        }
-    }
-
-    /**
-     * Change dashboard title.
-     *
-     * @since       1.0.0
-     * @access      public
-     * @return      void
-     */
-    public function dashboard_title() {
-        if ( get_current_screen()->id === 'dashboard' ) {
-            $usename = wp_get_current_user()->display_name;
-        
-            $GLOBALS['title'] =  __( "Good morning, " . $usename , 'cora' );     
         }
     }
 

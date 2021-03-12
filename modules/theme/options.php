@@ -67,7 +67,7 @@ $this->parent->options->add_field([
     'section'   =>  'theme',
     'title'     =>  __('Primary Background', 'cora'),
     'type'      =>  'color',
-    'default'   =>  '#f4f5ff',
+    'default'   =>  '#f1f3fb',
     'description'  =>   __('Used as the backgroud color for admin & login pages.', 'cora'),
 ]);
 
@@ -85,7 +85,7 @@ $this->parent->options->add_field([
     'section'   =>  'theme',
     'title'     =>  __('Primary Text', 'cora'),
     'type'      =>  'color',
-    'default'   =>  '#717182',
+    'default'   =>  '#59668a',
     'description'  =>   __('Main text color. Used for titles & paragraphs.', 'cora'),
 ]);
 
@@ -94,7 +94,7 @@ $this->parent->options->add_field([
     'section'   =>  'theme',
     'title'     =>  __('Secondary Text', 'cora'),
     'type'      =>  'color',
-    'default'   =>  '#778194',
+    'default'   =>  '#868d98',
     'description'  =>   __('Used for short descriptions & sub-paragraphs.', 'cora'),
 ]);
 
@@ -103,7 +103,7 @@ $this->parent->options->add_field([
     'section'   =>  'theme',
     'title'     =>  __('Links', 'cora'),
     'type'      =>  'color',
-    'default'   =>  '#0073aa',
+    'default'   =>  '#417cc5',
     'description'  =>   __('Links color.', 'cora'),
 ]);
 
@@ -122,7 +122,7 @@ $this->parent->options->add_field([
     'section'   =>  'theme',
     'title'     =>  __('Background', 'cora'),
     'type'      =>  'color',
-    'default'   =>  '#323e48',
+    'default'   =>  '#1e2e42',
     'description'  =>   __('Menu background color.', 'cora'),
 ]);
 
@@ -158,7 +158,7 @@ $this->parent->options->add_field([
     'section'   =>  'theme',
     'title'     =>  __('Submenu Background', 'cora'),
     'type'      =>  'color',
-    'default'   =>  '#323e48',
+    'default'   =>  '#1e2e42',
     'description'  =>   __('Background color for submenus.', 'cora'),
 ]);
 
@@ -185,7 +185,7 @@ $this->parent->options->add_field([
     'section'   =>  'theme',
     'title'     =>  __('Logo Text', 'cora'),
     'type'      =>  'color',
-    'default'   =>  'rgba(255, 255, 255, 0.9)',
+    'default'   =>  'rgba(255, 255, 255, 0.95)',
     'description'  =>   __('If you choose the site name as a logo, you can set the color here. Note that this won\'t affect image logos.', 'cora'),
 ]);
 
@@ -210,7 +210,7 @@ $this->parent->options->add_field([
     'section'   =>  'theme',
     'title'     =>  __('Item Text', 'cora'),
     'type'      =>  'color',
-    'default'   =>  '#717182'
+    'default'   =>  '#59668a'
 ]);
 
 $this->parent->options->add_field([
@@ -258,7 +258,7 @@ $this->parent->options->add_field([
     'section'   =>  'theme',
     'title'     =>  __('Secondary Button Color', 'cora'),
     'type'      =>  'color',
-    'default'   =>  'rgba(0, 0, 0, 0.065)'
+    'default'   =>  '#a4aeb9'
 ]);
 
 $this->parent->options->add_field([
@@ -266,7 +266,7 @@ $this->parent->options->add_field([
     'section'   =>  'theme',
     'title'     =>  __('Secondary Button Text', 'cora'),
     'type'      =>  'color',
-    'default'   =>  '#778194'
+    'default'   =>  '#ffffff'
 ]);
 
 
@@ -283,7 +283,7 @@ $this->parent->options->add_field([
     'section'   =>  'theme',
     'title'     =>  __('Control Field Background', 'cora'),
     'type'      =>  'color',
-    'default'   =>  'rgba(0, 0, 0, 0.065)',
+    'default'   =>  'rgba(0, 0, 0, 0)',
     'description'  =>   __('Background color used in form elements, i.e. inputs, checkboxes, select, textarea, etc.', 'cora'),
 ]);
 
@@ -292,6 +292,6 @@ $this->parent->options->add_field([
     'section'   =>  'theme',
     'title'     =>  __('Control Field Border', 'cora'),
     'type'      =>  'color',
-    'default'   =>  'rgba(0, 0, 0, 0)',
+    'default'   =>  'rgba(0, 0, 0, 0.08)',
     'description'  =>   __('Border color used in form elements.', 'cora'),
 ]);

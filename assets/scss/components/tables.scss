@@ -17,4 +17,13 @@ table {
         border-bottom-color: var(--primary_background_color) !important;
     }
     
+    th.sortable a, th.sorted a {
+        padding: 10px 10px;
+    }    
+
+    
+}
+
+.tablenav.bottom {
+    display: none !important;
 }
