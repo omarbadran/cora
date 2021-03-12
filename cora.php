@@ -6,7 +6,7 @@
  * Plugin Name:       Cora
  * Plugin URI:        http://coradashboard.com
  * Description:       A clean and modern WordPress admin theme.
- * Version:           1.0.0
+ * Version:           1.1.0
  * Author:            Cora
  * Author URI:        http://coradashboard.com/
  * Text Domain:       cora
