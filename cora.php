@@ -4,11 +4,11 @@
  *
  * @wordpress-plugin
  * Plugin Name:       Cora
- * Plugin URI:        http://coradashboard.com
+ * Plugin URI:        http://plugincube.com
  * Description:       A clean and modern WordPress admin theme.
  * Version:           1.1.0
- * Author:            Cora
- * Author URI:        http://coradashboard.com/
+ * Author:            PluginCube
+ * Author URI:        http://plugincube.com/
  * Text Domain:       cora
  * License:           GPLv3
  * 
